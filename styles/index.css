@@ -6,15 +6,27 @@
 header{
     height: 80px;
     display: flex;
-    justify-content: space-around;
+    justify-content:baseline;
     align-items: center;
 }
-nav{
-    list-style-type: none;
+.partie1{
+    border: 1px solid;
+    width: 350px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-li>a{
+.titre{
+    font-size: 28px;
+    font-weight: 700;
+}
+.lien1{
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: chocolate;
+}
+.lien1>a{
     text-decoration: none;
-    color: black;
-    padding: 5px;
+    color: brown;
 }
