@@ -6,7 +6,7 @@
 header{
     height: 80px;
     display: flex;
-    justify-content:baseline;
+    justify-content:space-evenly;
     align-items: center;
 }
 .partie1{
@@ -17,16 +17,6 @@ header{
     align-items: center;
 }
 .titre{
-    font-size: 28px;
-    font-weight: 700;
-}
-.lien1{
-    padding: 10px;
-    border: 1px solid;
-    border-radius: 5px;
-    background-color: chocolate;
-}
-.lien1>a{
-    text-decoration: none;
-    color: brown;
+    font-size: 26px;
+    font-weight: 500;
 }
