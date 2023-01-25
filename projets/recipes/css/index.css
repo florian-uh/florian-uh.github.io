@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;padding: 0;
+}
+.top{
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-bar{
+    border: 1px solid;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link>a{
+    text-decoration: none;
+    color: black;
+}
+.nav-link>a:hover{
+    color: gray;
+}
+li{
+    list-style-type: none;
+    padding: 10px;
+}
+.article-head{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+}
+.titre{
+    text-align: center;
+    color: crimson;
+}
+.prepa{
+    display: flex;
+    justify-content: space-evenly;
+}
