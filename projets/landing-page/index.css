@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.head-page{
+    margin: 5px;
+}
+.top-page{
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-bar{
+    display: flex;
+}
+.nav-link{
+    list-style-type: none;
+    padding: 5px;
+}
+.nav-link>a{
+    text-decoration: none;
+    color: black;
+}
+.bottom-header{
+    display: flex;
+    margin-top: 15px;
+}
+.head-text>h1{
+    text-align: center;
+}
+.page{
+    margin-top: 25px;
+}
+.page>h2{
+    text-align: center;
+}
+.houses{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+}
