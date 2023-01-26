@@ -42,3 +42,36 @@
     justify-content: space-around;
     margin: 10px;
 }
+.presentation{
+    display: flex;
+    flex-direction: column;
+}
+.top-article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.30em;
+}
+.top-article>h2, h3{
+    margin: 15px;
+    padding: 15px;
+    font-family: cursive;
+    font-weight: 800;
+    background: linear-gradient(lightgrey, gray);
+    width: 30%;
+    text-align: center;
+    border-radius: 12px;
+    
+}
+.saga{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.30em;
+}
+button{
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+}
