@@ -4,42 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="/styles/index.css">
     <title>le site du lièvre</title>
 </head>
 <body>
-    <header>
-        <img src="./img/lievredemars-mini.jpg" alt="logo" width="50px">
-        <h1>Bienvenue</h1>
+    <header id="topPage" class="headPage">
+        <div class="logo">
+            <img src="/img/logo/lievredemars-mini.jpg" alt="logo">
+        </div>
+        <div class="bandeau">
+            <h1>hello first page</h1>
+        </div>
     </header>
     <main>
-        <article class="left">
-            <h2>Front-end Mentor</h2>
-            <div class="partie1">
-                <p><span class="titre">3 column preview card:</span></p>
-                <p class="lien1"><a href="./projets/3-column-preview-card-component-main/index.html">3 column preview card</a></p>
-                <p><a href="./img/desktop-design.jpg" target="_blank"><img src="./img/desktop-design-mini.jpg" alt="desktop-design-mini"></a></p>
+        <div id="sidebar">
+            <nav class="navSide">
+                <li class="nav-link"><a class="active" href="/index.html">Home</a></li>
+                <li class="nav-link"><a class="frontendmaster" href="#">front end master</a></li>
+                <li class="nav-link"><a class="freecodecamp" href="#">freecodecamp</a></li>
+                <li class="nav-link"><a class="odin" href="#">odin's project</a></li>
+                <li class="nav-link"><a class="about" href="#">contact</a></li>
+            </nav>
+        </div>
+        <div id="content">
+            <h2>Projets Front-end master</h2>
+            <div id="project" class="cardCars">
+                <img src="/img/design-exercices/columnCardCar.jpg" alt="image columnCardCar">
             </div>
-            <div class="partie2">
-                <p><span class="titre">qr-code: </span></p>
-                <p><a href="./projets/qr-code-component-main/index.html">qr-code</a></p>
-                <p><a href="./projets/qr-code-component-main/design/desktop-design.jpg"><img src="./projets/qr-code-component-main/design/desktop-preview.jpg" alt="qr-code" width="125px"></a></p>
+            <div id="project1" class="qrCode">
+                <img src="/img/design-exercices/qrCode.jpg" alt="">
             </div>
-        </article>
-        <article class="right">
-            <h2>Odin's Project</h2>
-            <div class="landing">
-                <h3>Landing Page</h3>
-                <p>Je suis parti sur une base Game of Thrones.<a href="./projets/landing-page/index.html">Game of Thrones</a></p>
+            <p></p>
+        </div>
+        <div id="slides" class="slideshow">
+            <div class="slideImg">
+                <img src="/img/paysages/tourEiffel1.jpg" alt="tour Eiffel">
             </div>
-            <div class="recipes">
-                <h3>Les recettes d'Odin</h3>
-                <p>Voici le projet de recettes d'Odin... (Odin's recipes)</p>
-                <p><a href="./projets/recipes/index.html">Odin's recipes</a></p>
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 5</div>
+                <div class="text">Caption Text</div>
             </div>
-        </article>
+            <div class="slideImg">
+                <img src="/img/paysages/jets-eaux.jpg" alt="">
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 5</div>
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="slideImg">
+                    <img src="/img/paysages/obelisque.jpg" alt="obelisque">
+                </div>
+                <div class="numbertext">3 / 5</div>
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="slideImg">
+                    <img src="/img/paysages/pyramide2.jpg" alt="pyramide2">
+                </div>
+                <div class="numbertext">4 / 5</div>
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 5</div>
+                <img src="/img/paysages/tourEiffel2.jpg" alt="">
+                <div class="text">Caption Text</div>
+            </div>
+            <button class="btn" id="prev" onclick="plusSlides(-1)">prev</button>
+            <button class="btn" id="next" onclick="plusSlides(1)">next</button>
+            <br>
+            <div>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
     </main>
-    <footer></footer>
-    <script src="./script/clock.js"></script>
+    <footer id="piedPage"></footer>
+    <script src="" async></script>
 </body>
 </html>
