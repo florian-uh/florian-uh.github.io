@@ -3,29 +3,79 @@
     margin: 0;
     padding: 0;
 }
-header{
-    height: 80px;
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
+#page{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-areas: 
+    "top top top"
+    "side content content"
+    "side content content"
+    "block slide slide"
+    "block1 slide slide";
+    grid-template-rows: auto;
 }
-main{
+#topPage{
+    grid-area: top;
+    height: 220px;
+}
+.headPage{
+    width: 100%;
     display: flex;
     justify-content: space-around;
 }
-.left{
+.logo>img{
+    display: block;
+    width: 75px;
+}
+.bandeau>h1{
+    font-family: cursive;
+}
+#sidebar{
+    display: none;
+    width: 200px;
+    background-color: hsl(231, 7%, 65%);
+    position: sticky;
+    height: 400px; 
+}
+#content{
+    display: flex;
+}
+#project{
+    max-width: 450px;
+    display: flex;
+    border: 1px solid;
+}
+.navSide{
+    list-style-type: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
-.partie1{
+
+.nav-link>a{
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+#project>img{
+    display: block;
+    width: 100%;
+}
+#project1{
+    max-width: 450px;
     border: 1px solid;
-    width: 350px;
 }
-.partie2{
-    border: 1px solid;
+#project1>img{
+    display: block;
+    width: 100%;
 }
-.titre{
-    font-size: 26px;
-    font-weight: 500;
+#slides{
+    grid-area: slides;
+}
+.slideshow{
+    max-width: 25%;
+}
+#piedPage{
+    grid-area: footer;
 }
