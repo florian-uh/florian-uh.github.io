@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*    Mise en page mobile first youpi!!!!    */
+#conteneur{
+    display: grid;
+    grid-template-areas: 
+    "entete"
+    "section"
+    "article"
+    "sidebar"
+    "piedpage";
+    gap: 10px;
+    width: 95%;
+    margin: auto;
+}
+header{
+    grid-area: entete;
+}
+section{
+    grid-area: section;
+}
+article{
+    grid-area: article;
+}
+aside{
+    grid-area: sidebar;
+}
+footer{
+    grid-area: piedpage;
+}
+/*    Mise en forme communes    */
+body{
+    margin: 0;
+    padding: 5px;
+}
+header, footer{
+    background-color: hsl(179, 100%, 13%);
+    text-align: center;
+}
+section, aside{
+    background-color: hsl(184, 100%, 22%);
+}
+article{
+    border: 1px solid;
+}
+h2, p{
+    padding: 10px;
+}
+/**/
