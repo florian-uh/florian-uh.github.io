@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+    "entete entete entete entete"
+    "sidebar main main main"
+    "sidebar main main main"
+    "footer footer footer footer";
+}
+header{
+    height: 15vh;
+    width: 100vw;
+    grid-area: entete;
+    background-color: blue;
+}
+aside{
+    width: 15vw;
+    grid-area: sidebar;
+    background-color: blueviolet;
+}
+main{
+    grid-area: main;
+    background-color: brown;
+}
+footer{
+    grid-area: footer;
+    background-color: cadetblue;
+}
