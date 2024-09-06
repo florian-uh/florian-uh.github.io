@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root{
+    --white: hsl(0, 0%, 100%);
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+}
+body{
+    height: 100svh;
+    background-color: var(--stone-150);
+    display: flex;
+    flex-direction: column;
+}
+#card{
+    background-color: var(--white);
+    width: 70%;
+    margin: auto;
+    padding: 2.5em;
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px;
+}
+header>img{
+    display: block;
+    max-width: 100%;
+    border-radius: 1em;
+    box-shadow: 1px 2px 3px;
+}
+.titre{
+    font-size: 2em;
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    color: var(--stone-900);
+}
+.texte-intro{
+    font-size: 1em;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+}
+.titre-prepa{
+    color: var(--rose-800);
+    font-weight: 600;
+}
+/*
+.prepa-liste{
+    list-style: none;
+}
+.prepa-liste>li::before{
+    content: "\2022";
+    color: var(--rose-800);
+    width: 1em;
+    margin-left: -1em;
+    /* https://www.w3.org/Style/Examples/007/color-bullets.fr.html *
+    * seule solution trouvée pour la couleur des puces             *
+    * sans problemes de compatibilitées                            *
+}
+*/
+.prepa-liste>li::marker{
+    color: var(--rose-800);
+}
+.prepa-liste>li, .ingred-liste>li, .instruct-liste>li{
+    font-size: 1em;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    color: var(--stone-600);
+}
+span{
+    color: var(--stone-900);
+    font-weight: 700;
+}
+.titre-ingredients, .instruct-titre, .nutri-titre{
+    color: var(--brown-800);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.ingred-liste>li::marker, .instruct-liste>li::marker{
+    color: var(--brown-800);
+}
+.block{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.block>ul{
+    list-style-type: none;
+}
+.nutri-texte, .nom{
+    color: var(--stone-600);
+}
+.quantites{
+    color: var(--brown-800);
+    font-weight: 700;
+}
+/*
+*font-family: "Young Serif", serif;
+*font-family: "Outfit", sans-serif;
+*/
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

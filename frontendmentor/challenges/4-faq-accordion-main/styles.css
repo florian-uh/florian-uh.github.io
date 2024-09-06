@@ -1,0 +1,61 @@
+:root{
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100svh;
+    width: 100svw;
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+}
+#card{
+    max-width: 60%;
+    margin: auto;
+    height: auto;
+    background-color: var(--white);
+    border: 1px solid;
+    border-radius: 10px;
+    
+}
+.top-card{
+    padding: 15px;
+    display: flex;
+}
+.top-card>h1{
+    margin-left: 15px;
+    padding: 10px;
+}
+.accordion{
+    color: var(--dark-purple);
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.active, .accordion:hover{
+    background-color: var(--grayish-purple);
+}
+.panel{
+    padding: 0 15px;
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
