@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Le ptit dev</title>
 </head>
 <body>
     <header>
         <h1>Hello world</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Odin's recipe</a></li>
-                <li><a href="#">Front end mentor</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="#news">News</a>
+            <div class="dropdown">
+                <button class="dropbtn">Odin's project</button>
+                <div class="dropdown-content">
+                <a href="odin/index.html">odin project 1</a>
+                <a href="#">recipes</a>
+                <a href="#">je sais plus</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Front end mentor</button>
+                <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                </div>
+            </div> 
         </nav>
     </header>
     <main>
