@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/*
+font-family: "Overpass", sans-serif;
+font-family: "Ubuntu", sans-serif;
+*/
+:root{
+    --light-red:hsl(356, 100%, 66%);/* CTA text */
+    --very-light-red:hsl(355, 100%, 74%);/* CTA hover background */
+    --very-dark-blue:hsl(208, 49%, 24%);/* heading */
+    --white:hsl(0, 0%, 100%);/* text */
+    --grayish-blue:hsl(240, 2%, 79%);/* footer text */
+    --very-dark-grayish-blue:hsl(207, 13%, 34%);/* body copy*/
+    --very-dark-black-blue: hsl(240, 10%, 16%);/* footer background */
+    /* Background gradient - Intro/CTA mobile nav: */
+    --very-light-red:hsl(13, 100%, 72%);
+    --light-red:hsl(353, 100%, 62%);
+    /*Background gradient - body:*/
+    --very-dark-gray-blue:hsl(237, 17%, 21%);
+    --very-dark-desaturated-blue:hsl(237, 23%, 32%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+}
+header{
+    height: 30vh;
+    background-color: var(--very-light-red);
+    background-image: url(images/bg-pattern-intro-desktop.svg);
+    background-position: center left;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.top-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.desktop-menu>ul{
+    list-style-type: none;
+    display: flex;
+}
+.desktop-menu a{
+    text-decoration: none;
+    color: white;
+}
+.sous{
+    list-style-type: none;
+    display: none;
+}
+.bottom-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+section{
+    display: flex;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

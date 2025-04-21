@@ -9,7 +9,6 @@
     --very-dark-blue: hsl(240, 100%, 5%);
 }
 /* Global styles */
-/* Global styles */
 *{
     box-sizing: border-box;
     margin: 0;
@@ -26,11 +25,12 @@ body{
     grid-gap: 15px;
 }
 header{
+    height: 10vh;
     grid-area: header;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--off-white);
 }
 .logo>img{
@@ -99,17 +99,22 @@ h3:hover{
     color: var(--soft-orange);
 }
 p{/* Scales between 0.9rem and 1rem */
+    color: var(--dark-grayish-blue);
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     line-height: 1.6;
 }
 button{/* Scales between 0.9rem and 1rem */
-    width: 250px;
-    height: 50px;
-    border-radius: 15px;
+    max-width: 250px;
+    max-height: 50px;
+    border-radius: 25px;
     background-color: var(--soft-red);
     color: var(--dark-grayish-blue);
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     font-weight: 800;
+}
+button:hover{
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
 }
 main{
     grid-area: main;
@@ -123,6 +128,7 @@ main{
 }
 .info{
     display: flex;
+    flex-direction: column;
 }
 .info-right{
     display: flex;
@@ -130,6 +136,8 @@ main{
     justify-content: space-evenly;
 }
 aside{
+    max-width: 100%;
+    padding: 15px;
     grid-area: aside;
     background-color: var(--very-dark-blue);
     display: flex;
@@ -142,6 +150,7 @@ footer{
     justify-content: space-between;
 }
 .foot-block{
+    max-width: 450px;
     display: flex;
 }
 .foot-left>img{
@@ -149,9 +158,13 @@ footer{
     max-width: 100%;
 }
 .foot-right{
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+.foot-right>h3{
+    color: var(--very-dark-blue);
 }
 /* Desktop styles */
 @media (min-width: 900px){
