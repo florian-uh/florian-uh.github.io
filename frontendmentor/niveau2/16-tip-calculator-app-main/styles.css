@@ -1,0 +1,134 @@
+:root {
+  --green-400: hsl(172, 67%, 45%);
+  --green-900: hsl(183, 100%, 15%);
+  --grey-500: hsl(186, 14%, 43%);
+  --grey-400: hsl(184, 14%, 56%);
+  --grey-200: hsl(185, 41%, 84%);
+  --grey-50: hsl(189, 47%, 97%);
+  --white: hsl(0, 100%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--grey-50);
+  color: var(--green-900);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 920px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 2rem;
+  gap: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.input-section,
+.output-section {
+  flex: 1 1 300px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--grey-200);
+  border-radius: 5px;
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.tip-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tip-btn {
+  background-color: var(--green-900);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tip-btn:hover {
+  background-color: var(--green-400);
+}
+
+#custom-tip {
+  border: 2px solid var(--grey-200);
+  border-radius: 5px;
+  text-align: right;
+}
+
+.output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.output-label p {
+  font-size: 0.9rem;
+}
+
+.output-value {
+  font-size: 2rem;
+  color: var(--green-400);
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--grey-500);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: not-allowed;
+}
+
+.reset-btn:enabled {
+  background-color: var(--green-400);
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution > a {
+  color: hsl(228, 45%, 44%);
+}
