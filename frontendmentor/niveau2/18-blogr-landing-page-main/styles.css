@@ -24,51 +24,178 @@ font-family: "Ubuntu", sans-serif;
     margin: 0;
     padding: 0;
 }
-body{
-    min-height: 100vh;
-}
 header{
-    height: 30vh;
+    height: 40vh;
     background-color: var(--very-light-red);
     background-image: url(images/bg-pattern-intro-desktop.svg);
-    background-position: center left;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    border-radius: 0 0 0 60px;
+    box-shadow: 0 0 20px;
+    display: flex;
+    flex-direction: column;
 }
-.top-head{
+.top-header{
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .top-left{
+    min-width: 450px;
+    display: flex;
+    align-items: center;
+}
+.navbar{
+    margin-left: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
-.desktop-menu>ul{
+.navbar>li{
     list-style-type: none;
-    display: flex;
 }
-.desktop-menu a{
+.navbar li a{
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 20px;
+}
+.navbar li:hover a{
+    background-color: var(--very-light-red);
+    color: var(--white);
+}
+.navbar li:hover .sous{
+    display: block;
+}
+.navbar li:hover .sous{
+    display: block;
+}
+.deroulant a{
+    list-style-type: none;
     text-decoration: none;
     color: white;
 }
 .sous{
-    list-style-type: none;
     display: none;
+    position: absolute;
+    background-color: var(--very-light-red);
+    border-radius: 5px;
 }
-.bottom-head{
+.sous li{
+    width: 100%;
+    padding: 10px;
+    list-style-type: none;
+}
+.bottom-header{
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
-section{
-    display: flex;
+button{
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
 }
-img{
+.design{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.design>h2{
+    font-size: 2.5rem;
+    color: var(--very-dark-black-blue);
+    text-align: center;
+}
+.container-design{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.design-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.design-left>.design-block{
+    max-width: 45vw;
+}
+.design-right{
+    background-image: url(images/bg-pattern-circles.svg);
+}
+.design-right>img{
     display: block;
     max-width: 100%;
+}
+.state{
+    background-color: var(--very-dark-blue);
+    border-radius: 0 60px 0 60px;
+    background-image: url(images/bg-pattern-circles.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.state-left>img{
+    display: block;
+    max-width: 100%;
+}
+.state-right{
+    max-width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.state-right>h2{
+    font-size: 2.5rem;
+}
+.free{
+    border-radius: 0 60px 0 60px;
+    background-image: url(images/bg-pattern-circles.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.free-left>img{
+    display: block;
+    max-width: 100%;
+}
+.free-right{
+    max-width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+footer{
+    height: 40vh;
+    background-color: var(--very-dark-black-blue);
+    border-radius: 60px 0 0 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.foot-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.foot-block ul{
+    list-style-type: none;
+}
+.foot-block>ul>li{
+    padding: 5px;
+    margin: 10px 0;
 }
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
