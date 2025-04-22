@@ -1,0 +1,151 @@
+/* Variables CSS */
+:root {
+  /* Couleurs principales utilisées dans le projet */
+  --primary-color: hsl(14, 86%, 42%); /* Couleur principale (rouge) */
+  --secondary-color: hsl(159, 69%, 38%); /* Couleur secondaire (vert) */
+  --background-color: hsl(20, 50%, 98%); /* Couleur de fond */
+  --text-color: hsl(14, 65%, 9%); /* Couleur du texte */
+  --white: hsl(0, 0%, 100%); /* Blanc */
+}
+
+/* Reset */
+* {
+  /* Supprime les marges et les paddings par défaut */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Définit le modèle de boîte pour inclure les bordures et paddings */
+}
+
+body {
+  /* Style global du corps de la page */
+  font-family: 'Red Hat Text', sans-serif; /* Police utilisée */
+  background-color: var(--background-color); /* Couleur de fond */
+  color: var(--text-color); /* Couleur du texte */
+  line-height: 1.6; /* Hauteur de ligne pour améliorer la lisibilité */
+  padding: 20px; /* Espacement autour du contenu */
+}
+
+/* Header */
+header {
+  /* Style pour l'en-tête */
+  text-align: center; /* Centrer le texte */
+  margin-bottom: 20px; /* Espacement en bas */
+}
+
+/* Product List */
+.product-list {
+  /* Conteneur pour la liste des produits */
+  display: grid; /* Utilisation de la grille CSS */
+  grid-template-columns: 1fr; /* Une seule colonne par défaut (mobile-first) */
+  gap: 20px; /* Espacement entre les éléments */
+}
+
+/* Product Card */
+.product-card {
+  /* Style pour chaque carte de produit */
+  background-color: var(--white); /* Fond blanc */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  overflow: hidden; /* Masque le contenu qui dépasse */
+  display: flex; /* Flexbox pour organiser le contenu */
+  flex-direction: column; /* Organiser les éléments verticalement */
+  text-align: center; /* Centrer le texte */
+}
+
+.product-card img {
+  /* Style pour les images des produits */
+  width: 100%; /* L'image occupe toute la largeur de la carte */
+  height: auto; /* Conserve les proportions de l'image */
+}
+
+.product-card h3 {
+  /* Style pour le titre du produit */
+  font-size: 1.2rem; /* Taille de police légèrement plus grande */
+  margin: 10px 0; /* Espacement vertical */
+}
+
+.product-card p {
+  /* Style pour les descriptions et le prix */
+  font-size: 1rem; /* Taille de police standard */
+  margin: 5px 0; /* Espacement vertical */
+}
+
+.product-card button {
+  /* Style pour les boutons (Add/Remove) */
+  background-color: var(--primary-color); /* Couleur de fond principale */
+  color: var(--white); /* Texte blanc */
+  border: none; /* Pas de bordure */
+  padding: 10px; /* Espacement interne */
+  margin: 10px; /* Espacement externe */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur pour indiquer un bouton cliquable */
+}
+
+.product-card button:hover {
+  /* Style au survol des boutons */
+  background-color: var(--secondary-color); /* Change la couleur de fond */
+}
+
+/* Cart */
+.cart {
+  /* Style pour le conteneur du panier */
+  margin-top: 20px; /* Espacement en haut */
+  padding: 20px; /* Espacement interne */
+  background-color: var(--white); /* Fond blanc */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.cart h2 {
+  /* Style pour le titre du panier */
+  font-size: 1.5rem; /* Taille de police plus grande */
+  margin-bottom: 10px; /* Espacement en bas */
+}
+
+.cart-total {
+  /* Style pour la section du total de la commande */
+  margin-top: 20px; /* Espacement en haut */
+  text-align: center; /* Centrer le texte */
+}
+
+.confirm-order {
+  /* Style pour le bouton de confirmation de commande */
+  background-color: var(--primary-color); /* Couleur de fond principale */
+  color: var(--white); /* Texte blanc */
+  border: none; /* Pas de bordure */
+  padding: 10px 20px; /* Espacement interne */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur */
+}
+
+.confirm-order:hover {
+  /* Style au survol du bouton de confirmation */
+  background-color: var(--secondary-color); /* Change la couleur de fond */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  /* Styles pour les écrans de taille moyenne (tablettes) */
+  .product-list {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Styles pour les écrans de grande taille (ordinateurs) */
+  .product-list {
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+  }
+}
+
+/* Attribution */
+.attribution {
+  /* Style pour le pied de page */
+  font-size: 11px; /* Taille de police réduite */
+  text-align: center; /* Centrer le texte */
+}
+
+.attribution a {
+  /* Style pour les liens dans le pied de page */
+  color: hsl(228, 45%, 44%); /* Couleur bleue */
+}

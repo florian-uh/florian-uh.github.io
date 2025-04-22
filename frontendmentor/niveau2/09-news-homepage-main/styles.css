@@ -39,6 +39,16 @@ header{
 .desktop-menu{
     display: none;
 }
+.desktop-menu>li{
+    list-style: none;
+}
+.desktop-menu>li>a{
+    text-decoration: none;
+    color: var(--very-dark-blue);
+    font-size: 16px;
+    font-weight: 700;
+}
+/* Mobile styles */
 .mobile-menu-icon{
     cursor: pointer;
 }
@@ -104,11 +114,11 @@ p{/* Scales between 0.9rem and 1rem */
     line-height: 1.6;
 }
 button{/* Scales between 0.9rem and 1rem */
-    max-width: 250px;
-    max-height: 50px;
+    width: 250px;
+    height: 50px;
     border-radius: 25px;
     background-color: var(--soft-red);
-    color: var(--dark-grayish-blue);
+    color: var(--very-dark-blue);
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     font-weight: 800;
 }
@@ -128,7 +138,6 @@ main{
 }
 .info{
     display: flex;
-    flex-direction: column;
 }
 .info-right{
     display: flex;
@@ -167,7 +176,7 @@ footer{
     color: var(--very-dark-blue);
 }
 /* Desktop styles */
-@media (min-width: 900px){
+@media screen and (min-width: 900px){
     body{
         font-size: 18px;
         /* Slightly larger base font size for desktops */
@@ -191,6 +200,8 @@ footer{
     }
 }
 .attribution {
+    margin-left: auto;
+    margin-right: auto;
     font-size: 11px;
     text-align: center;
 }
