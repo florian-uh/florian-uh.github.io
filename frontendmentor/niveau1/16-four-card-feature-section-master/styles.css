@@ -52,7 +52,8 @@ header>:last-child{
     font-size: 0.8em;
 }
 .card{
-    padding: 10px;
+    padding: 20px;
+    height: 200px;
     background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 2px 3px var(--grey-400);
@@ -72,9 +73,16 @@ header>:last-child{
     height: 50px;
     align-self: self-end;/* Alignement à la fin */
 }
-.card>h2 p{
-    font-size: 1em;
-    color: var(--grey-400);
+/* Style pour les titres et paragraphes dans les cartes */
+.card>h2 {
+    font-size: 1.2em; /* Taille de police */
+    color: var(--grey-500); /* Couleur grise foncée */
+    margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.card>p {
+    font-size: 1em; /* Taille de police */
+    color: var(--grey-400); /* Couleur grise */
 }
 #supervisor{/* Styles spécifiques pour chaque carte avec une bordure colorée */
     border-top: 8px solid var(--cyan);
@@ -95,7 +103,7 @@ header>:last-child{
 .attribution>a{
     color: hsl(228, 45%, 44%);
 }
-@media (min-width: 780px) {
+@media (min-width: 780px){
     #container-grid{
         display: grid;
         grid-template-rows: repeat(3, 1fr);

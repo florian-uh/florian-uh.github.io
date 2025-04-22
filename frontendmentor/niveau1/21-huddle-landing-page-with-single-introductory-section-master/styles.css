@@ -1,26 +1,150 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
-    background-color: hsl(257, 40%, 49%);
-    background-image: url(images/bg-desktop.svg);
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+
+/* Style global pour le corps */
+body {
+    background-color: hsl(257, 40%, 49%); /* Couleur de fond principale */
+    background-image: url(images/bg-desktop.svg); /* Image de fond */
+    background-position: center center; /* Centrer l'image */
+    background-size: contain; /* Adapter l'image à la taille de l'écran */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+    font-family: 'Poppins', sans-serif; /* Police principale */
+    font-size: 16px; /* Taille de police par défaut */
+    line-height: 1.5; /* Hauteur de ligne pour une meilleure lisibilité */
 }
-main{
-    display: flex;
+
+/* Conteneur principal */
+main {
+    display: flex; /* Utilisation de Flexbox */
+    flex-wrap: wrap; /* Permet de passer à une disposition en colonne sur petits écrans */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    padding: 20px; /* Espacement interne */
+    min-height: 100vh; /* Hauteur minimale de l'écran */
 }
-.left>img{
-    display: block;
-    max-width: 100%;
+
+/* Section gauche (image) */
+.left > img {
+    display: block; /* Affichage en bloc */
+    max-width: 100%; /* L'image ne dépasse jamais la largeur de son conteneur */
+    height: auto; /* Conserver les proportions */
 }
-.right{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+
+/* Section droite (texte et bouton) */
+.right {
+    display: flex; /* Utilisation de Flexbox */
+    flex-direction: column; /* Empiler les éléments verticalement */
+    justify-content: space-evenly; /* Espacement uniforme entre les éléments */
+    max-width: 500px; /* Largeur maximale pour limiter l'étirement */
+    text-align: center; /* Centrer le texte */
+    padding: 20px; /* Espacement interne */
+    color: white; /* Couleur du texte */
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Titre principal */
+.right h1 {
+    font-size: 2rem; /* Taille de police pour les grands écrans */
+    font-weight: 600; /* Poids de police gras */
+    margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+/* Paragraphe */
+.right p {
+    font-size: 1rem; /* Taille de police */
+    margin-bottom: 20px; /* Espacement sous le paragraphe */
+}
+
+/* Bouton */
+.right button {
+    background-color: hsl(300, 69%, 71%); /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprimer les bordures */
+    border-radius: 50px; /* Coins arrondis */
+    padding: 15px 30px; /* Espacement interne */
+    font-size: 1rem; /* Taille de police */
+    font-weight: 600; /* Poids de police gras */
+    cursor: pointer; /* Curseur pointeur */
+    transition: background-color 0.3s ease; /* Animation au survol */
+}
+
+.right button:hover {
+    background-color: hsl(300, 69%, 60%); /* Couleur plus foncée au survol */
+}
+
+/* Section des icônes sociales */
+.social {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    margin-top: 20px; /* Espacement au-dessus */
+}
+
+.social ul {
+    display: flex; /* Disposition en ligne */
+    list-style: none; /* Supprimer les puces */
+    gap: 15px; /* Espacement entre les icônes */
+}
+
+.social li a {
+    color: white; /* Couleur des icônes */
+    font-size: 1.5rem; /* Taille des icônes */
+    transition: color 0.3s ease; /* Animation au survol */
+}
+
+.social li a:hover {
+    color: hsl(300, 69%, 71%); /* Couleur au survol */
+}
+
+/* Attribution */
+.attribution {
+    font-size: 11px; /* Taille de police réduite */
+    text-align: center; /* Centrer le texte */
+    margin-top: 20px; /* Espacement au-dessus */
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); /* Couleur des liens */
+    text-decoration: none; /* Supprimer le soulignement */
+}
+
+.attribution a:hover {
+    text-decoration: underline; /* Ajouter un soulignement au survol */
+}
+
+/* Styles pour les écrans moyens */
+@media (max-width: 1024px) {
+    body {
+        background-image: url(images/bg-mobile.svg); /* Image de fond pour mobile */
+        background-size: cover; /* Couvrir tout l'écran */
+    }
+
+    .right h1 {
+        font-size: 1.8rem; /* Réduction de la taille du titre */
+    }
+
+    .right p {
+        font-size: 0.9rem; /* Réduction de la taille du texte */
+    }
+
+    .right button {
+        font-size: 0.9rem; /* Réduction de la taille du bouton */
+    }
+}
+
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Passer à une disposition en colonne */
+        text-align: center; /* Centrer le texte */
+    }
+
+    .right {
+        padding: 10px; /* Réduction de l'espacement interne */
+    }
+
+    .social ul {
+        gap: 10px; /* Réduction de l'espacement entre les icônes */
+    }
+}

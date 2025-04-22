@@ -25,6 +25,7 @@ body{
     background-color: var(--white);
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .image>img{
     display: block;
@@ -39,6 +40,7 @@ h2{
 p{
     color: var(--slate-500);
     font-size: 1.5rem;
+    line-height: 1.6;
 }
 .attribution{
     font-size: 11px;
@@ -46,4 +48,15 @@ p{
 }
 .attribution>a{
     color: hsl(228, 45%, 44%);
+}
+@media screen and (max-width: 375px){
+    #card{
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+    h2{
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+    p{
+        font-size: 1.2rem; /* Adjust paragraph size */
+    }
 }
