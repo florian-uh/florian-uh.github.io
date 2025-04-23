@@ -58,12 +58,13 @@ body {
 }
 
 /* Section de sortie avec espacement uniforme */
-.output-section {
+.output-section{
+  background-color: var(--green-900);
+  border-radius: 1rem;
   display: flex;
   flex-direction: column; /* Disposition verticale */
-  justify-content: space-evenly; /* Espacement uniforme entre les éléments */
+  justify-content: space-around; /* Espacement uniforme entre les éléments */
   align-items: center; /* Centrage horizontal */
-  height: 100%; /* Prend toute la hauteur disponible */
   gap: 1.5rem; /* Espacement vertical entre les blocs */
 }
 
@@ -101,8 +102,8 @@ input[type="number"] {
   text-align: center; /* Texte centré */
   border: none; /* Pas de bordure */
   border-radius: 5px; /* Coins arrondis */
-  background-color: var(--grey-900); /* Fond gris clair */
-  color: var(--green-900); /* Texte vert foncé */
+  background-color: var(--green-900);
+  color: var(--white); /* Texte vert foncé */
   cursor: pointer; /* Curseur pointeur */
 }
 
@@ -115,7 +116,8 @@ input[type="number"] {
 /* Champ personnalisé avec un fond blanc */
 #custom-tip {
   background-color: var(--white); /* Fond blanc */
-  border: 1px solid var(--grey-400); /* Bordure grise */
+  border: 1px solid var(--green-900);
+  color: var(--green-900);
 }
 
 /* Effet au survol des boutons */
@@ -140,14 +142,20 @@ input[type="number"] {
   font-weight: bold; /* Texte en gras */
   color: var(--green-400); /* Texte vert vif */
 }
-
+.output-label>p{
+  color: var(--white);
+  font-weight: 700;
+}
+.output-label>span{
+  color: var(--grey-400);
+}
 /* Bouton de réinitialisation */
 .reset-btn {
-  width: 100%; /* Prend toute la largeur */
+  width: 80%; /* Prend toute la largeur */
   height: 50px; /* Hauteur uniforme */
   font-size: 1rem; /* Taille de police */
-  background-color: var(--green-400); /* Fond vert vif */
-  color: var(--white); /* Texte blanc */
+  background-color: var(--grey-500); /* Fond vert vif */
+  color: var(--green-900); /* Texte blanc */
   border: none; /* Pas de bordure */
   border-radius: 5px; /* Coins arrondis */
   cursor: pointer; /* Curseur pointeur */
