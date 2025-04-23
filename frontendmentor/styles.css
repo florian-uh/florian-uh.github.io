@@ -68,9 +68,9 @@ nav>ul li:hover .sous{
     border-bottom: none;
     background-color: rgba(200, 200, 200, 0.1);
 }
-.deroulant>a::after{
-    content: url(images/icon-arrow-light.svg);
+i{
     font-size: 12px;
+    font-weight: 200;
 }
 main{
     margin-top: 150px;

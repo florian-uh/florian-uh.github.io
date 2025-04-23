@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --white: hsl(0, 100%, 100%);
+    --purple-100: hsl(275, 100%, 97%);
+    --purple-600: hsl(292, 16%, 49%);
+    --purple-950: hsl(292, 42%, 14%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+#card{
+    width: 40%;
+    height: 80%;
+    margin: auto;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+.top-card{
+    display: flex;
+    align-items: center;
+}
+.question{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column; /* Change la disposition en colonne */
+    align-items: flex-start; /* Aligne les éléments au début */
+    cursor: pointer;
+}
+.question>p{
+    margin: 0; /* Supprime les marges du texte de la question */
+    flex: 1; /* Permet au texte de prendre toute la largeur */
+}
+.question>img{
+    align-self: flex-end; /* Aligne l'icône à droite */
+    margin-top: 10px; /* Ajoute un petit espace entre le texte et l'icône */
+}
+.reponse{
+    max-height: 0; /* Définit la hauteur initiale à 0 */
+    overflow: hidden; /* Cache le contenu qui dépasse */
+    padding: 0; /* Supprime le padding par défaut */
+    border-top: 1px solid var(--purple-100);
+    color: var(--purple-950);
+    line-height: 1.5;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* Transition fluide */
+    width: 100%; /* S'assure que la réponse prend toute la largeur */
+}
+.reponse.open{
+    max-height: 500px; /* Une hauteur suffisante pour afficher le contenu */
+    padding: 10px 0; /* Ajoute un padding lors de l'ouverture */
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
