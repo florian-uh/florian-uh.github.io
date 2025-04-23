@@ -39,16 +39,33 @@ peopleInput.addEventListener("input", () => {
 // Écouteurs d'événements pour les boutons de pourboire
 tipButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    tipPercentage = parseInt(button.dataset.tip); // Récupération du pourcentage depuis l'attribut data-tip
-    customTipInput.value = ""; // Réinitialisation du champ personnalisé
-    calculateTip(); // Recalcul des montants
+    // Supprimer la classe active de tous les boutons
+    tipButtons.forEach((btn) => btn.classList.remove("active"));
+
+    // Ajouter la classe active au bouton cliqué
+    button.classList.add("active");
+
+    // Récupérer le pourcentage de pourboire depuis l'attribut data-tip
+    tipPercentage = parseInt(button.dataset.tip);
+
+    // Réinitialiser le champ personnalisé
+    customTipInput.value = "";
+
+    // Recalculer les montants
+    calculateTip();
   });
 });
 
 // Écouteur d'événement pour le champ de pourboire personnalisé
 customTipInput.addEventListener("input", () => {
-  tipPercentage = parseFloat(customTipInput.value) || 0; // Conversion en nombre ou 0 si vide
-  calculateTip(); // Recalcul des montants
+  // Supprimer la classe active de tous les boutons
+  tipButtons.forEach((btn) => btn.classList.remove("active"));
+
+  // Récupérer le pourcentage de pourboire personnalisé
+  tipPercentage = parseFloat(customTipInput.value) || 0;
+
+  // Recalculer les montants
+  calculateTip();
 });
 
 // Écouteur d'événement pour le bouton de réinitialisation
