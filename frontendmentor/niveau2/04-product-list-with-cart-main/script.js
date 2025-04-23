@@ -1,114 +1,103 @@
-// Charger les données JSON dynamiquement
-async function fetchProducts() {
-  try {
-    // Effectuer une requête pour récupérer le fichier JSON contenant les produits
-    const response = await fetch('./data.json'); // Charger le fichier JSON
-    const products = await response.json(); // Convertir la réponse en objet JavaScript
-    renderProducts(products); // Appeler la fonction pour générer les cartes des produits
-  } catch (error) {
-    // Gérer les erreurs en cas de problème lors du chargement des données
-    console.error('Erreur lors du chargement des produits :', error);
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Sélectionne tous les produits (cartes) et les éléments du panier
+  const productList = document.querySelectorAll(".card");
+  const cartItemsContainer = document.getElementById("cart-items");
+  const cartCount = document.getElementById("cart-count");
+  const orderTotal = document.getElementById("order-total");
 
-// Sélectionner les éléments HTML nécessaires pour manipuler le DOM
-const productList = document.getElementById('product-list'); // Conteneur pour afficher les cartes des produits
-const cartItems = document.getElementById('cart-items'); // Conteneur pour afficher les articles du panier
-const cartCount = document.getElementById('cart-count'); // Élément pour afficher le nombre total d'articles dans le panier
-const orderTotal = document.getElementById('order-total'); // Élément pour afficher le total de la commande
+  // Objet pour stocker les produits ajoutés au panier
+  let cart = {};
 
-// Initialiser le panier comme un tableau vide
-let cart = [];
+  // Parcourt chaque carte produit
+  productList.forEach((card) => {
+    const addToCartButton = card.querySelector(".btn-ajout"); // Bouton "Add to cart"
+    const quantityContainer = card.querySelector(".quantite"); // Conteneur des boutons de quantité
+    const decrementButton = card.querySelector(".btn-moins, .moins"); // Bouton pour diminuer la quantité
+    const incrementButton = card.querySelector(".btn-plus, .plus"); // Bouton pour augmenter la quantité
+    const quantityDisplay = quantityContainer.querySelector("span"); // Affichage de la quantité
+    const priceElement = card.querySelector("#prix"); // Prix du produit
+    const productName = card.querySelector("h3").textContent.trim(); // Nom du produit
+    const productPrice = parseFloat(priceElement.textContent.replace("$", "").trim()); // Prix en tant que nombre
 
-// Générer les cartes des produits
-function renderProducts(products) {
-  products.forEach(product => {
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
+    // Cache les contrôles de quantité au départ
+    quantityContainer.style.display = "none";
 
-    // Ajouter le contenu HTML de la carte avec les boutons "Add" et "Remove"
-    productCard.innerHTML = `
-      <img src="${product.image.thumbnail}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>${product.category}</p>
-      <p>$${product.price.toFixed(2)}</p>
-      <div class="product-actions">
-        <button class="add-btn" data-name="${product.name}" data-price="${product.price}">Add</button>
-        <button class="remove-btn" data-name="${product.name}">Remove</button>
-      </div>
-    `;
-    productList.appendChild(productCard);
-  });
-}
+    // Événement pour ajouter un produit au panier
+    addToCartButton.addEventListener("click", () => {
+      quantityContainer.style.display = "flex"; // Affiche les contrôles de quantité
+      updateCart(productName, productPrice, 1); // Ajoute 1 produit au panier
+      quantityDisplay.textContent = "1"; // Met à jour l'affichage de la quantité
+    });
 
-// Mettre à jour l'affichage du panier
-function updateCart() {
-  // Réinitialiser le contenu du conteneur des articles du panier
-  cartItems.innerHTML = '';
-  let total = 0; // Initialiser le total de la commande à 0
+    // Événement pour augmenter la quantité
+    incrementButton.addEventListener("click", () => {
+      const currentQuantity = parseInt(quantityDisplay.textContent); // Quantité actuelle
+      const newQuantity = currentQuantity + 1; // Nouvelle quantité
+      quantityDisplay.textContent = newQuantity; // Met à jour l'affichage
+      updateCart(productName, productPrice, newQuantity); // Met à jour le panier
+    });
 
-  // Parcourir chaque article dans le panier
-  cart.forEach(item => {
-    // Créer un élément div pour représenter un article dans le panier
-    const cartItem = document.createElement('div');
-    cartItem.classList.add('cart-item'); // Ajouter une classe CSS pour le style
-
-    // Ajouter le contenu HTML de l'article, incluant le nom, la quantité, le prix total et un bouton pour supprimer
-    cartItem.innerHTML = `
-      <p>${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}</p> <!-- Nom, quantité et prix total -->
-      <button data-name="${item.name}">Remove</button> <!-- Bouton pour supprimer l'article -->
-    `;
-
-    // Ajouter l'article au conteneur du panier
-    cartItems.appendChild(cartItem);
-
-    // Ajouter le prix total de cet article au total général
-    total += item.price * item.quantity;
+    // Événement pour diminuer la quantité
+    decrementButton.addEventListener("click", () => {
+      const currentQuantity = parseInt(quantityDisplay.textContent); // Quantité actuelle
+      if (currentQuantity > 1) {
+        const newQuantity = currentQuantity - 1; // Diminue la quantité
+        quantityDisplay.textContent = newQuantity; // Met à jour l'affichage
+        updateCart(productName, productPrice, newQuantity); // Met à jour le panier
+      } else {
+        // Si la quantité atteint 0, retire le produit du panier
+        quantityContainer.style.display = "none"; // Cache les contrôles de quantité
+        quantityDisplay.textContent = "0"; // Réinitialise l'affichage
+        updateCart(productName, productPrice, 0); // Supprime le produit du panier
+      }
+    });
   });
 
-  // Mettre à jour le nombre total d'articles dans le panier
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+  // Fonction pour mettre à jour le panier
+  function updateCart(productName, productPrice, quantity) {
+    if (quantity > 0) {
+      // Ajoute ou met à jour le produit dans le panier
+      cart[productName] = { price: productPrice, quantity: quantity };
+    } else {
+      // Supprime le produit du panier si la quantité est 0
+      delete cart[productName];
+    }
 
-  // Mettre à jour le total de la commande
-  orderTotal.textContent = `$${total.toFixed(2)}`;
-}
-
-// Ajouter un produit au panier
-function addToCart(name, price) {
-  // Vérifier si le produit existe déjà dans le panier
-  const existingItem = cart.find(item => item.name === name);
-  if (existingItem) {
-    // Si le produit existe, augmenter sa quantité
-    existingItem.quantity++;
-  } else {
-    // Sinon, ajouter un nouvel article avec une quantité initiale de 1
-    cart.push({ name, price, quantity: 1 });
+    renderCart(); // Met à jour l'affichage du panier
   }
-  // Mettre à jour l'affichage du panier
-  updateCart();
-}
 
-// Supprimer un produit du panier
-function removeFromCart(name) {
-  // Filtrer le panier pour supprimer l'article correspondant au nom donné
-  cart = cart.filter(item => item.name !== name);
-  // Mettre à jour l'affichage du panier
-  updateCart();
-}
+  // Fonction pour afficher le contenu du panier
+  function renderCart() {
+    cartItemsContainer.innerHTML = ""; // Vide l'affichage actuel du panier
+    let totalItems = 0; // Compteur pour le nombre total d'articles
+    let totalPrice = 0; // Total du prix
 
-// Écouter les clics sur les boutons
-document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('add-btn')) {
-    // Ajouter un produit au panier
-    const name = e.target.dataset.name;
-    const price = parseFloat(e.target.dataset.price);
-    addToCart(name, price);
-  } else if (e.target.classList.contains('remove-btn')) {
-    // Retirer un produit du panier
-    const name = e.target.dataset.name;
-    removeFromCart(name);
+    // Parcourt chaque produit dans le panier
+    for (const [productName, productDetails] of Object.entries(cart)) {
+      const { price, quantity } = productDetails;
+      totalItems += quantity; // Ajoute la quantité au total
+      totalPrice += price * quantity; // Calcule le prix total
+
+      // Crée un élément pour afficher le produit dans le panier
+      const cartItem = document.createElement("div");
+      cartItem.classList.add("cart-item");
+      cartItem.innerHTML = `
+        <p>${productName} x${quantity}</p>
+        <p>$${(price * quantity).toFixed(2)}</p>
+      `;
+      cartItemsContainer.appendChild(cartItem); // Ajoute l'élément au conteneur du panier
+    }
+
+    // Met à jour le compteur d'articles et le prix total
+    cartCount.textContent = totalItems;
+    orderTotal.textContent = `$${totalPrice.toFixed(2)}`;
+
+    // Affiche un message si le panier est vide
+    if (totalItems === 0) {
+      cartItemsContainer.innerHTML = `
+        <img src="assets/images/illustration-empty-cart.svg" alt="illustration-empty-cart">
+        <p>Your added items will appear here</p>
+      `;
+    }
   }
 });
-
-// Initialiser l'application en chargeant les produits
-fetchProducts();
