@@ -1,22 +1,42 @@
-// Sélectionne tous les éléments de menu (Daily, Weekly, Monthly) dans le DOM
-const menuItems = document.querySelectorAll("#menu li");
+const data = {
+    daily: [
+        { id: "work", current: 5, previous: 7 },
+        { id: "play", current: 1, previous: 2 },
+        { id: "study", current: 0, previous: 1 },
+        { id: "exercice", current: 1, previous: 1 },
+        { id: "social", current: 1, previous: 3 },
+        { id: "selfcare", current: 0, previous: 1 },
+    ],
+    weekly: [
+        { id: "work", current: 32, previous: 36 },
+        { id: "play", current: 10, previous: 8 },
+        { id: "study", current: 4, previous: 7 },
+        { id: "exercice", current: 4, previous: 5 },
+        { id: "social", current: 5, previous: 10 },
+        { id: "selfcare", current: 2, previous: 2 },
+    ],
+    monthly: [
+        { id: "work", current: 103, previous: 128 },
+        { id: "play", current: 23, previous: 29 },
+        { id: "study", current: 13, previous: 19 },
+        { id: "exercice", current: 11, previous: 18 },
+        { id: "social", current: 21, previous: 23 },
+        { id: "selfcare", current: 7, previous: 11 },
+    ],
+};
 
-// Sélectionne toutes les cartes (Work, Play, Study, etc.) dans le DOM
+const menuItems = document.querySelectorAll("#menu li");
 const cards = document.querySelectorAll(".card");
 
-// Fonction pour mettre à jour les cartes avec les données JSON
+// Function to update the cards based on the selected timeframe
 function updateCards(timeframe) {
-    // Récupère les données correspondant au "timeframe" sélectionné (daily, weekly, monthly)
     const timeframeData = data[timeframe];
 
-    // Parcourt chaque entrée des données pour mettre à jour les cartes
     timeframeData.forEach((entry) => {
-        // Sélectionne la carte correspondante en fonction de l'ID
         const card = document.getElementById(entry.id);
-        // Sélectionne l'élément où les données seront affichées
         const display = card.querySelector(".display");
 
-        // Met à jour le contenu HTML de la carte avec les heures actuelles et précédentes
+        // Update current and previous hours
         display.innerHTML = `
             <h3>${entry.current}hrs</h3>
             <p>Last ${timeframe === "daily" ? "Day" : timeframe === "weekly" ? "Week" : "Month"} - ${entry.previous}hrs</p>
@@ -24,28 +44,26 @@ function updateCards(timeframe) {
     });
 }
 
-// Ajoute des écouteurs d'événements "click" à chaque élément de menu
+// Add click event listeners to menu items
 menuItems.forEach((item) => {
     item.addEventListener("click", () => {
-        // Supprime la classe "active" de tous les éléments de menu
+        // Remove active class from all menu items
         menuItems.forEach((menuItem) => menuItem.classList.remove("active"));
-        // Ajoute la classe "active" à l'élément cliqué
+        // Add active class to the clicked item
         item.classList.add("active");
 
-        // Met à jour les cartes en fonction du "timeframe" sélectionné (daily, weekly, monthly)
-        const timeframe = item.id; // Récupère l'ID de l'élément cliqué
+        // Update the cards based on the selected timeframe
+        const timeframe = item.id; // "daily", "weekly", or "monthly"
         updateCards(timeframe);
     });
 });
 
-// Ajoute des écouteurs d'événements "click" aux ellipses (icônes de menu) dans chaque carte
+// Add click event listeners to ellipses
 cards.forEach((card) => {
-    // Sélectionne l'icône ellipse dans la carte
     const ellipse = card.querySelector("img[alt='icon-ellipsis']");
     ellipse.addEventListener("click", () => {
-        // Récupère l'élément de menu actuellement actif
+        // Toggle between timeframes (daily -> weekly -> monthly)
         const currentActive = document.querySelector("#menu li.active");
-        // Détermine le prochain "timeframe" à afficher (daily -> weekly -> monthly -> daily)
         const nextTimeframe =
             currentActive.id === "daily"
                 ? "weekly"
@@ -53,14 +71,14 @@ cards.forEach((card) => {
                 ? "monthly"
                 : "daily";
 
-        // Met à jour l'état actif dans le menu
+        // Update the active menu item
         menuItems.forEach((menuItem) => menuItem.classList.remove("active"));
         document.getElementById(nextTimeframe).classList.add("active");
 
-        // Met à jour les cartes avec le nouveau "timeframe"
+        // Update the cards
         updateCards(nextTimeframe);
     });
 });
 
-// Initialise l'affichage par défaut en sélectionnant "weekly"
+// Set default view to "Weekly"
 document.getElementById("weekly").click();

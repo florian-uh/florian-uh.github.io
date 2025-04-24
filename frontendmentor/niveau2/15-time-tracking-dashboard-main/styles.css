@@ -12,15 +12,13 @@
     --purple-500:hsl(235, 45%, 61%);
     --navy-200:hsl(236, 100%, 87%);
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 body{
     min-height: 100vh;
     background-color: var(--navy-900);
     font-family: "Rubik", sans-serif;
+    font-size: 1.2vw; /* Taille relative à la largeur de la fenêtre */
+    min-font-size: 14px; /* Taille minimale pour les petits écrans */
+    max-font-size: 18px; /* Taille maximale pour les grands écrans */
     display: flex;
     flex-direction: column;
 }
@@ -28,65 +26,50 @@ main{
     margin: auto;
     display: grid;
     grid-template-areas: 
-        "profil work play study"
-        "profil exercice social selfcare";
-    grid-gap: 1.5rem; /* Espacement entre les cartes */
+    "profil work play study"
+    "profil exercice social selfcare";
+    grid-template-columns: repeat(4, 1fr );
+    gap: 1.5rem;
+    
 }
 .card{
-    width: 300px;
-    height: 300px;
+    width: 20vw;
+    height: 25vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrer verticalement les données */
-    align-items: center; /* Centrer horizontalement les données */
-    border-radius: 10px;
+    background-color: var(--navy-950);
+    border-radius: 25px;
     color: var(--navy-200);
-    padding: 1rem;
-    text-align: center;
+    box-shadow: 1px 2px 5px;
 }
 .profil-card{
-    grid-area: profil;
-    background-color: var(--purple-600);
-    border-radius: 15px;
+    width: 15vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
+    box-shadow: 1px 2px 5px;
+    border-radius: 25px;
 }
 .top-card{
-    height: 80%;
-    width: 100%;
-    background-color: var(--purple-500);
-    border-radius: 15px 0 0 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    background-color: var(--purple-600);
+    border-radius: 25px;
 }
 .top-card>img{
+    height: auto;
+    width: 10vw;
+    min-width: 80px; /* Taille minimale pour les petits écrans */
+    max-width: 150px; /* Taille maximale pour les grands écrans */
+    margin: 10px auto;
     display: block;
-    width: 80px;
-    height: 80px;
+    max-width: 100%;
+    border: 5px solid var(--navy-200);
     border-radius: 50%;
-    border: 2px solid var(--navy-200);
 }
-.top-text>p{
-    font-size: 1rem;
-    color: var(--navy-200);
-}
-.top-text>h1 {
-    font-size: 1.5rem;
-    color: white;
-}
-#menu>ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
+h1{
+    font-size: 2.5em;
 }
 #menu>ul>li{
-    list-style: none;
+    list-style-type: none;
+    padding: 10px;
     cursor: pointer;
     font-size: 0.9rem;
     color: var(--navy-200);
@@ -99,7 +82,35 @@ main{
     color: var(--purple-500);
 }
 .top{
-    height: 8vh;
+    height: 20%;
+    border-radius: 25px 25px 0 0;
+}
+.top-display{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px 25px 0 0;
+}
+.display{
+    margin: auto;
+    background-color: var(--navy-950);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.display h3{
+    font-size: 1.5em;
+    color: white;
+}
+.display p{
+    margin-left: 15px;
+    font-size: 1em;
+    color: var(--purple-500);
+}
+#profil{
+    grid-area: profil;
 }
 #work>.top{
     background-color: var(--work);
@@ -137,23 +148,6 @@ main{
     background-repeat: no-repeat;
     background-position: right;
 }
-.top-display{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-.display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-}
-
-#profil{
-    grid-area: profil;
-}
 #work{
     grid-area: work;
 }
@@ -172,48 +166,71 @@ main{
 #selfcare{
     grid-area: selfcare;
 }
-/* mobile styles */
-@media (max-width: 768px) {
-    main {
-        grid-template-areas: 
-            "profil"
-            "work"
-            "play"
-            "study"
-            "exercice"
-            "social"
-            "selfcare";
-        gap: 1rem;
+@media (max-width: 768px){
+    body{
+        font-size: 16px;
+    }
+    main{
+        margin: auto;
+        display: grid;
+        grid-template-areas:
+        "profil"
+        "work"
+        "play"
+        "study"
+        "exercice"
+        "social"
+        "selfcare";
+        gap: 20px;
     }
     .profil-card{
-        width: 100%;
-    }
-    .top-card>img{
-        display: block;
-        max-width: 100px;
-    }
-    #menu>ul{
-        flex-direction: column;
-        gap: 0.5rem;
+        width: 350px;
+        height: 450px;
     }
     .card{
-        width: 100%;
-        height: auto;
+        width: 350px;
+        box-shadow: 1px 2px 5px;
     }
-}
-.display{
-    margin: auto;
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-.display h3 {
-    color: white;
-    margin: 0;
-}
-.display>p {
-    color: var(--purple-500);
-    margin: 0;
+    .top-card>img{
+        width: 20vw;
+    }
+    .top{
+        height: 20%;
+    }
+    h1{
+        font-size: 2em;
+    }
+    h3{
+        font-size: 1.2em;
+    }
+    p{
+        font-size: 0.9em;
+    }
+    #menu>ul{
+        display: flex;
+        justify-content: space-around;
+    }
+    #profil{
+        grid-area: profil;
+    }
+    #work{
+        grid-area: work;
+    }
+    #play{
+        grid-area: play;
+    }
+    #study{
+        grid-area: study;
+    }
+    #exercice{
+        grid-area: exercice;
+    }
+    #social{
+        grid-area: social;
+    }
+    #selfcare{
+        grid-area: selfcare;
+    }
 }
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
