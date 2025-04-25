@@ -73,3 +73,61 @@ i{
     font-size: 12px;
     font-weight: 200;
 }
+main{
+    margin-top: 150px;
+}
+.centre{
+    width: 75%;
+    margin: 0 auto;
+}
+article{
+    background-color: #FFF;
+    margin-bottom: 10px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.carte:hover{
+    box-sizing: border-box;
+    border: 2px solid #aaa;
+}
+figure{
+    margin: 0;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+figcaption{
+    text-align: center;
+    font-style: italic;
+}
+h2{
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1em;
+    background-color: #ccc;
+}
+p{
+    padding: 10px;
+    background-color: #FFF;
+}
+@media screen and (min-width: 600px) {
+    .cartes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .carte{
+        flex: 0 0 48%;
+        display: flex;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .carte{
+        flex: 0 0 32%;
+    }
+    
+}
