@@ -8,27 +8,35 @@ body{
     min-height: 100vh;
 }
 header{
+    list-style-type: none;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.head-top{
     display: flex;
     align-items: center;
+}
+.head-block{
+    padding: 10px;
 }
 .logo>img{
     display: block;
     max-width: 190px;
     border-radius: 50%;
+    box-shadow: 1px 3px 5px;
 }
 nav{
-    width: 100%;
-    margin: 0 auto;
-    background-color: white;
+    width: 80%;
+    margin: auto;
+    background-color: lightslategray;
     position: sticky;
-    top: 0px;
     border-radius: 20px;
-}
-nav ul{
-    list-style-type: none;
     display: flex;
 }
-nav ul li{
+nav li{
     flex: 1 1 auto;
     text-align: center;
     position: relative;
@@ -49,18 +57,24 @@ nav a:hover{
     box-shadow: 0px 1px 2px #CCC;
     background-color: white;
     position: absolute;
+    border: 1px solid transparent;
+    border-radius: 25px;
     width: 100%;
     z-index: 1000;
 }
-nav>ul li:hover .sous{
+nav li:hover .sous{
     display: flex;
     flex-flow: column wrap;
+}
+.sous{
+    list-style-type: none;
 }
 .sous li{
     flex: 1 1 auto;
     text-align: left;
 }
 .sous a{
+    text-align: center;
     padding: 10px;
     border-bottom: none;
 }
