@@ -90,6 +90,11 @@ body.theme-3{
     height: 120px;
     position: relative;
 }
+.toggle-label{
+    display: flex;
+    justify-content: space-between;
+    color: var(--White);
+}
 .toggle-label-color{
     font-size: 14px;
     font-weight: bold;
