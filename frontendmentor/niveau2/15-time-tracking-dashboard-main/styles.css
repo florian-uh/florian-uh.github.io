@@ -14,11 +14,9 @@
 }
 body{
     min-height: 100vh;
-    background-color: var(--navy-900);
+    background-color: var(--navy-950);
     font-family: "Rubik", sans-serif;
     font-size: 1.2vw; /* Taille relative à la largeur de la fenêtre */
-    min-font-size: 14px; /* Taille minimale pour les petits écrans */
-    max-font-size: 18px; /* Taille maximale pour les grands écrans */
     display: flex;
     flex-direction: column;
 }
@@ -33,17 +31,14 @@ main{
     
 }
 .card{
-    width: 20vw;
-    height: 25vh;
     display: flex;
     flex-direction: column;
     background-color: var(--navy-950);
     border-radius: 25px;
     color: var(--navy-200);
-    box-shadow: 1px 2px 5px;
 }
 .profil-card{
-    width: 15vw;
+    width: 350px;
     display: flex;
     flex-direction: column;
     box-shadow: 1px 2px 5px;
@@ -56,13 +51,15 @@ main{
 .top-card>img{
     height: auto;
     width: 10vw;
-    min-width: 80px; /* Taille minimale pour les petits écrans */
-    max-width: 150px; /* Taille maximale pour les grands écrans */
     margin: 10px auto;
     display: block;
     max-width: 100%;
     border: 5px solid var(--navy-200);
     border-radius: 50%;
+}
+.top-text{
+    margin-left: 15px;
+    color: var(--navy-200);
 }
 h1{
     font-size: 2.5em;
@@ -82,22 +79,27 @@ h1{
     color: var(--purple-500);
 }
 .top{
-    height: 20%;
+    height: 5vh;
     border-radius: 25px 25px 0 0;
 }
-.top-display{
-    padding: 10px;
+.top-info{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 25px 25px 0 0;
+}
+.top-display{
+    background-color: var(--navy-900);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 25px;
 }
 .display{
-    margin: auto;
-    background-color: var(--navy-950);
     border-radius: 25px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .display h3{
@@ -105,7 +107,6 @@ h1{
     color: white;
 }
 .display p{
-    margin-left: 15px;
     font-size: 1em;
     color: var(--purple-500);
 }
@@ -113,58 +114,58 @@ h1{
     grid-area: profil;
 }
 #work>.top{
-    background-color: var(--work);
     background-image: url(./images/icon-work.svg);
     background-repeat: no-repeat;
     background-position: right;
 }
 #play>.top{
-    background-color: var(--play);
     background-image: url(./images/icon-play.svg);
     background-repeat: no-repeat;
     background-position: right;
 }
 #study>.top{
-    background-color: var(--study);
     background-image: url(./images/icon-study.svg);
     background-repeat: no-repeat;
     background-position: right;
 }
 #exercice>.top{
-    background-color: var(--exercice);
     background-image: url(./images/icon-exercise.svg);
     background-repeat: no-repeat;
     background-position: right;
 }
 #social>.top{
-    background-color: var(--social);
     background-image: url(./images/icon-social.svg);
     background-repeat: no-repeat;
     background-position: right;
 }
 #selfcare>.top{
-    background-color: var(--selfcare);
     background-image: url(./images/icon-self-care.svg);
     background-repeat: no-repeat;
     background-position: right;
 }
 #work{
     grid-area: work;
+    background-color: var(--work);
 }
 #play{
     grid-area: play;
+    background-color: var(--play);
 }
 #study{
     grid-area: study;
+    background-color: var(--study);
 }
 #exercice{
     grid-area: exercice;
+    background-color: var(--exercice);
 }
 #social{
     grid-area: social;
+    background-color: var(--social);
 }
 #selfcare{
     grid-area: selfcare;
+    background-color: var(--selfcare);
 }
 @media (max-width: 768px){
     body{

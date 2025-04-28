@@ -1,28 +1,24 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const questions = document.querySelectorAll(".question");
+// Sélectionne toutes les questions et réponses
+const questions = document.querySelectorAll('.question');
+const responses = document.querySelectorAll('.reponse');
 
-  questions.forEach((question) => {
-    question.addEventListener("click", () => {
-      // Fermer toutes les réponses ouvertes
-      questions.forEach((item) => {
-        const response = item.querySelector(".reponse");
-        const icon = item.querySelector("img");
-        if (item !== question) {
-          response.classList.remove("open"); // Ferme la réponse
-          icon.src = "assets/images/icon-plus.svg"; // Change l'icône
-        }
-      });
+// Ajoute un gestionnaire d'événements à chaque question
+questions.forEach((question, index) => {
+  question.addEventListener('click', () => {
+    // Vérifie si la réponse associée est déjà ouverte
+    const response = responses[index];
+    const isOpen = response.classList.contains('open');
 
-      // Ouvrir ou fermer la réponse de la question cliquée
-      const response = question.querySelector(".reponse");
-      const icon = question.querySelector("img");
-      if (response.classList.contains("open")) {
-        response.classList.remove("open"); // Ferme la réponse
-        icon.src = "assets/images/icon-plus.svg"; // Change l'icône
-      } else {
-        response.classList.add("open"); // Ouvre la réponse
-        icon.src = "assets/images/icon-minus.svg"; // Change l'icône
-      }
+    // Ferme toutes les réponses et remet les icônes à "plus"
+    responses.forEach((res, i) => {
+      res.classList.remove('open');
+      questions[i].querySelector('img').src = 'assets/images/icon-plus.svg';
     });
+
+    // Si la réponse n'était pas ouverte, ouvre-la et change l'icône en "moins"
+    if (!isOpen) {
+      response.classList.add('open');
+      question.querySelector('img').src = 'assets/images/icon-minus.svg';
+    }
   });
 });

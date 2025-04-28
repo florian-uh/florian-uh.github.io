@@ -17,17 +17,21 @@
   box-sizing: border-box;
 }
 body{
+  min-height: 100vh;
   font-family: 'Red Hat Text', sans-serif;
   background-color: var(--rose-50);
   color: var(--rose-900);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 /* Header */
 header{
-  margin-bottom: 20px;
+  margin: 125px 20px;
 }
 /* Main Grid Layout */
 main{
+  margin-left: 125px;
   display: grid;
   grid-template-areas: 
     "header header cart"

@@ -33,11 +33,13 @@ body{
     display: flex;
     align-items: center;
 }
+h1{
+    margin-left: 10px;
+}
 .question{
     padding: 10px 0;
     display: flex;
-    flex-direction: column; /* Change la disposition en colonne */
-    align-items: flex-start; /* Aligne les éléments au début */
+    align-items: center;
     cursor: pointer;
 }
 .question>p{
