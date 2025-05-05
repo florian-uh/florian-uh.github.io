@@ -10,6 +10,10 @@
     margin: 0;
     padding: 0;
 }
+html{
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+}
 body{
     min-height: 100vh;
     background-image: url(assets/images/background-pattern-desktop.svg);
@@ -35,6 +39,12 @@ body{
 }
 h1{
     margin-left: 10px;
+    font-size: 2em;
+    font-weight: 700;
+}
+p{
+    font-size: 1em;
+    color: var(--purple-600);
 }
 .question{
     padding: 10px 0;
@@ -44,6 +54,7 @@ h1{
 }
 .question>p{
     margin: 0; /* Supprime les marges du texte de la question */
+    font-weight: 600;
     flex: 1; /* Permet au texte de prendre toute la largeur */
 }
 .question>img{
@@ -59,6 +70,9 @@ h1{
     line-height: 1.5;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* Transition fluide */
     width: 100%; /* S'assure que la réponse prend toute la largeur */
+}
+.reponse>p{
+    font-weight: 600;
 }
 .reponse.open{
     max-height: 500px; /* Une hauteur suffisante pour afficher le contenu */

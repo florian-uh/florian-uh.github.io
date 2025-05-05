@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display: flex;
+    flex-direction: column;
+}
+header{
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-between;
+}
+main{
+    height: 75vh;
+}
+.game{
+    height: 450px;
+    width: 450px;
+    margin: auto;
+    background-image: url(images/bg-triangle.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* Styles pour le modal des règles */
+.rules-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.rules-content{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+.rules-content h2{
+    margin-bottom: 10px;
+}
+.rules-content p{
+    margin: 5px 0;
+}
+.rules-content .close-rules{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: hsl(214, 47%, 23%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

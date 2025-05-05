@@ -73,12 +73,9 @@ i{
     font-size: 12px;
     font-weight: 200;
 }
-main{
-    margin-top: 150px;
-}
 .centre{
+    margin: 100px auto;
     width: 75%;
-    margin: 0 auto;
     flex: 1 1 25%;
 }
 article{
@@ -92,6 +89,7 @@ a{
 .carte:hover{
     box-sizing: border-box;
     border: 2px solid #aaa;
+    box-shadow: 1px 1px 5px;
 }
 figure{
     margin: 0;
