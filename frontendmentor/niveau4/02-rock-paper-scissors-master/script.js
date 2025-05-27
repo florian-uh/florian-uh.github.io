@@ -1,88 +1,99 @@
-// Sélection des éléments nécessaires
-const choices = ["rock", "paper", "scissors", "lizard", "spock"]; // Les choix possibles
-const gameElements = document.querySelectorAll(".game > div"); // Les boutons du jeu
-const scoreDisplay = document.querySelector(".display"); // Affichage du score
-const rulesButton = document.querySelector(".rules"); // Bouton pour afficher les règles
-const rulesModal = document.createElement("div"); // Modal pour afficher les règles
-let score = 0; // Score initial
+const choices = ["rock", "paper", "scissors"];
+const sheldonChoices = ["rock", "paper", "scissors", "lizard", "spock"];
+const rules = {
+  rock: ["scissors", "lizard"],
+  paper: ["rock", "spock"],
+  scissors: ["paper", "lizard"],
+  lizard: ["spock", "paper"],
+  spock: ["scissors", "rock"],
+};
 
-// Fonction pour obtenir le choix aléatoire de l'ordinateur
-function getComputerChoice() {
-  const randomIndex = Math.floor(Math.random() * choices.length);
-  return choices[randomIndex];
-}
+let score = 0;
+let isSheldon = false;
 
-// Fonction pour déterminer le gagnant
-function determineWinner(playerChoice, computerChoice) {
-  // Règles du jeu
-  const winConditions = {
-    rock: ["scissors", "lizard"],
-    paper: ["rock", "spock"],
-    scissors: ["paper", "lizard"],
-    lizard: ["spock", "paper"],
-    spock: ["scissors", "rock"],
+// Elements
+const scoreDisplay = document.querySelector(".score-number");
+const gameSection = document.getElementById("game-section");
+const resultSection = document.getElementById("result-section");
+const playAgainBtn = document.getElementById("play-again");
+const resultMessage = document.getElementById("result-message");
+const playerPicked = document.getElementById("player-picked");
+const housePicked = document.getElementById("house-picked");
+const toggleSheldonBtn = document.getElementById("toggle-sheldon");
+const optionsTriangle = document.getElementById("options-triangle");
+const optionsPentagon = document.getElementById("options-pentagon");
+const gameTitle = document.getElementById("game-title");
+
+// Helper pour créer le bouton choisi
+function createPicked(choice) {
+  if (!choice) return "";
+  const borderColors = {
+    rock: "var(--rock)",
+    paper: "var(--paper)",
+    scissors: "var(--scissors)",
+    lizard: "var(--lizard)",
+    spock: "var(--spock)",
   };
-
-  if (playerChoice === computerChoice) {
-    return "draw"; // Égalité
-  } else if (winConditions[playerChoice].includes(computerChoice)) {
-    return "win"; // Le joueur gagne
-  } else {
-    return "lose"; // L'ordinateur gagne
-  }
+  return `<div class="picked-option" style="border-color: ${borderColors[choice]};">
+    <img src="images/icon-${choice}.svg" alt="${choice}"/>
+  </div>`;
 }
 
-// Fonction pour mettre à jour le score
-function updateScore(result) {
-  if (result === "win") {
+// Affiche la section de choix
+function showGame() {
+  gameSection.style.display = "flex";
+  resultSection.classList.remove("active");
+}
+
+// Affiche la section résultat
+function showResult(playerChoice, computerChoice, result) {
+  gameSection.style.display = "none";
+  resultSection.classList.add("active");
+  playerPicked.innerHTML = createPicked(playerChoice);
+  housePicked.innerHTML = createPicked(computerChoice);
+  resultMessage.textContent = result;
+}
+
+// Gère le choix du joueur
+function handleChoice(choice) {
+  const availableChoices = isSheldon ? sheldonChoices : choices;
+  const computerChoice = availableChoices[Math.floor(Math.random() * availableChoices.length)];
+  let result;
+  if (choice === computerChoice) {
+    result = "DRAW";
+  } else if (rules[choice].includes(computerChoice)) {
+    result = "YOU WIN";
     score++;
-  } else if (result === "lose") {
-    score = Math.max(0, score - 1); // Le score ne peut pas être négatif
+  } else {
+    result = "YOU LOSE";
+    score = Math.max(0, score - 1);
   }
-  scoreDisplay.textContent = score; // Mise à jour de l'affichage du score
+  scoreDisplay.textContent = score;
+  showResult(choice, computerChoice, result);
 }
 
-// Fonction pour afficher les règles
-function showRules() {
-  rulesModal.classList.add("rules-modal");
-  rulesModal.innerHTML = `
-    <div class="rules-content">
-      <h2>Règles</h2>
-      <p>Pierre bat Ciseaux et Lézard</p>
-      <p>Papier bat Pierre et Spock</p>
-      <p>Ciseaux bat Papier et Lézard</p>
-      <p>Lézard bat Spock et Papier</p>
-      <p>Spock bat Ciseaux et Pierre</p>
-      <button class="close-rules">Fermer</button>
-    </div>
-  `;
-  document.body.appendChild(rulesModal);
-
-  // Gestion de la fermeture des règles
-  const closeButton = rulesModal.querySelector(".close-rules");
-  closeButton.addEventListener("click", () => {
-    rulesModal.remove();
+// Ajoute les listeners sur les boutons de choix
+function setupOptions() {
+  document.querySelectorAll(".option").forEach(btn => {
+    btn.onclick = () => {
+      handleChoice(btn.dataset.choice);
+    };
   });
 }
 
-// Gestion des clics sur les choix du joueur
-gameElements.forEach((element) => {
-  element.addEventListener("click", () => {
-    const playerChoice = element.id; // Récupère l'id du choix du joueur
-    const computerChoice = getComputerChoice(); // Choix aléatoire de l'ordinateur
+// Play again
+playAgainBtn.onclick = showGame;
 
-    // Détermine le résultat
-    const result = determineWinner(playerChoice, computerChoice);
+// Toggle Sheldon mode
+toggleSheldonBtn.onclick = () => {
+  isSheldon = !isSheldon;
+  document.body.classList.toggle("sheldon", isSheldon);
+  gameTitle.innerHTML = isSheldon
+    ? "ROCK<br>PAPER<br>SCISSORS<br>LIZARD<br>SPOCK"
+    : "ROCK<br>PAPER<br>SCISSORS";
+  showGame();
+};
 
-    // Met à jour le score
-    updateScore(result);
-
-    // Affiche le résultat dans la console (vous pouvez personnaliser l'affichage)
-    console.log(`Vous avez choisi : ${playerChoice}`);
-    console.log(`L'ordinateur a choisi : ${computerChoice}`);
-    console.log(`Résultat : ${result}`);
-  });
-});
-
-// Gestion du clic sur le bouton des règles
-rulesButton.addEventListener("click", showRules);
+// Initialisation
+showGame();
+setupOptions();
