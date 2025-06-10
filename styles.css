@@ -26,6 +26,13 @@ nav{
     border-radius: 20px;
     display: flex;
 }
+nav>ul{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
 nav li{
     flex: 1 1 auto;
     text-align: center;
