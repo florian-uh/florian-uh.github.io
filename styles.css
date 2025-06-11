@@ -120,6 +120,34 @@ p{
     padding: 10px;
     background-color: #FFF;
 }
+/* exemple flexbox 1 */
+.flexbox{
+    display: flex; /* Active le modèle flexbox */
+    flex-direction: row; /* Aligne les éléments en ligne */
+}
+.info-flex{
+    display: flex; /* Active le modèle flexbox */
+    flex-direction: column; /* Aligne les éléments en colonne */
+    align-items: center; /* Centre les éléments sur l'axe transversal */
+    justify-content: center; /* Centre les éléments sur l'axe principal */
+    height: 50vh; /* Hauteur de la vue */
+}
+.container{
+    display: flex;
+    flex-direction: row; /* Aligne les éléments en ligne */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Aligne les éléments au centre de l'axe transversal */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    border: 1px solid green; /* Bordure pour visualiser le conteneur */
+}
+.item{
+    flex: 1; /* Chaque élément prend une part égale de l'espace disponible */
+    margin: 10px; /* Espace entre les éléments */
+    padding: 20px; /* Espace à l'intérieur de chaque élément */
+    background-color: #f0f0f0; /* Couleur de fond des éléments */
+    border: 1px solid #ccc; /* Bordure des éléments */
+}
+/* fin exemple flexbox 1 */
 @media screen and (min-width: 600px) {
     .cartes{
         display: flex;

@@ -29,8 +29,12 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
 }
-.card>img{
+.image>img{
+    padding: 10px;
+    background-color: var(--grey-900);
     display: block;
+    border: 1px solid;
+    border-radius: 50%;
 }
 #rating{
     align-items: flex-start;
@@ -43,7 +47,7 @@ body{
 }
 .image>img{
     padding: 10px;
-    background-color: var(--grey-500);
+    background-color: var(--grey-900);
     display: block;
     border-radius: 50%;
 }

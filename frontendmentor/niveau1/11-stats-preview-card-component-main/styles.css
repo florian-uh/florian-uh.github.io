@@ -27,20 +27,22 @@ body{
 }
 .left{
     width: 40%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
 }
-.left>h1{
+h1{
     font-size: 1.5rem;
     color: var(--white);
     font-weight: 700;
 }
+
 span{
     color: var(--soft-violet);
 }
-.left>p{
+p{
     font-size: 1rem;
     color: var(--slightly-transparent-white-1);
 }
@@ -55,16 +57,33 @@ span{
 }
 .stat>h3{
     font-size: 1.3rem;
-    color: var(--slightly-transparent-white-2);
+    color: var(--white);
 }
 .stat>p{
     font-size: 0.8rem;
-    color: var(--white);
+    color: var(--slightly-transparent-white-2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.right{
+    position: relative;
+}
+.right::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--soft-violet);
+    opacity: 0.5;
+    border-radius: 0 20px 20px 0;
+    pointer-events: none;
+    z-index: 1;
 }
 .right>img{
     display: block;
     max-width: 100%;
     border-radius: 0 20px 20px 0;
+    position: relative;
+    z-index: 0;
 }
 .attribution{
     font-size: 11px;

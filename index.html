@@ -53,7 +53,6 @@
                     <ul class="sous">
                         <li><a href="frontendmentor/niveau3/04-calculator-app-main/index.html">Calculator App</a></li>
                         <li><a href="frontendmentor/niveau3/05-launch-countdown-timer-main/index.html">Launch Countdown Timer</a></li>
-                        <!-- Ajoute d'autres projets de niveau 3 ici -->
                     </ul>
                 </li>
                 <li class="deroulant">
@@ -244,9 +243,65 @@
                 </a>
             </article>
         </section>
+        <section>
+            <h2>Flexbox & Grid</h2>
+            <div class="flexbox">
+                <div class="flexbox1">
+                    <h3>les modèles de boites</h3>
+                    <h4>Introduction</h4>
+                    <p>La mise en page flexbox permet de resoudre toute une problématique de mise en page, en offrant une plus grande souplesse et un meilleur contrôle sur l'alignement et la distribution des éléments.
+                        <br>Flexbox est particulièrement utile pour les mises en page unidimensionnelles, où les éléments sont disposés en ligne ou en colonne.
+                        <br>Il est idéal pour les barres de navigation, les galeries d'images, et les mises en page réactives.
+                        <br>Flexbox permet de créer des mises en page adaptatives, où les éléments s'ajustent automatiquement en fonction de l'espace disponible.
+                        <br>Il offre des propriétés telles que "justify-content", "align-items", et "flex-wrap" pour contrôler l'alignement, la distribution et le comportement des éléments dans un conteneur flex.
+                        <br>Flexbox est compatible avec la plupart des navigateurs modernes, ce qui en fait un choix populaire pour les développeurs front-end.
+                    </p>
+                    <h4>Les propriétés de Flexbox</h4>
+                    <p>Les propriétés de Flexbox permettent de contrôler l'alignement, la distribution et le comportement des éléments dans un conteneur flex. Voici quelques-unes des propriétés les plus courantes :</p>
+                    <ul>
+                        <li><code>display: flex;</code> : active le mode flex sur un conteneur.</li>
+                        <li><code>flex-direction</code> : définit la direction des éléments flex (ligne ou colonne).</li>
+                        <li><code>justify-content</code> : aligne les éléments le long de l'axe principal.</li>
+                        <li><code>align-items</code> : aligne les éléments le long de l'axe transversal.</li>
+                        <li><code>flex-wrap</code> : contrôle le comportement des éléments lorsque l'espace est insuffisant.</li>
+                    </ul>
+                </div>
+                <div class="info-flex">
+                    <h4>Exemple de Flexbox</h4>
+                    <p>Voici un exemple simple de mise en page Flexbox :</p>
+                    <pre><code>
+/* Conteneur Flex */
+.container {
+    display: flex;
+    flex-direction: row; /* Aligne les éléments en ligne */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Aligne les éléments au centre de l'axe transversal */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+}
+.item {
+    flex: 1; /* Chaque élément prend une part égale de l'espace disponible */
+    margin: 10px; /* Espace entre les éléments */
+    padding: 20px; /* Espace à l'intérieur de chaque élément */
+    background-color: #f0f0f0; /* Couleur de fond des éléments */
+    border: 1px solid #ccc; /* Bordure des éléments */
+}
+                    </code></pre>
+                    <div class="container" style="margin:20px 0;">
+                        <div class="item">Élément 1</div>
+                        <div class="item">Élément 2</div>
+                        <div class="item">Élément 3</div>
+                    </div>
+                </div>
+                <p>Dans cet exemple, le conteneur Flex est défini avec <code>display: flex;</code>, et les éléments à l'intérieur sont alignés en ligne avec un espace entre eux. Chaque élément prend une part égale de l'espace disponible grâce à la propriété <code>flex: 1;</code>.
+                    <br>Les propriétés <code>justify-content</code> et <code>align-items</code> permettent de contrôler l'alignement des éléments à l'intérieur du conteneur Flex.
+                    <br>La propriété <code>flex-wrap</code> permet aux éléments de passer à la ligne si l'espace est insuffisant.
+                    <br>Flexbox est un outil puissant pour créer des mises en page flexibles et adaptatives, offrant un contrôle précis sur l'alignement et la distribution des éléments dans un conteneur.
+                </p>
+            </div>
+        </section>
     </main>
     <footer>
-        <p>vous pouvez trouver d'autres exercices sur ces sites :</p>
+        <p>Liens utiles :</p>
         <ul>
             <li><a href="https://www.frontendmentor.io">frontend mentor exercices</a></li>
             <li><a href="https://www.theodinproject.com/">Odin's Project</a></li>

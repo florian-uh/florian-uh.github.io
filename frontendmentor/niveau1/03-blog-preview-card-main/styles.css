@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 :root{
     --yellow:hsl(47, 88%, 63%);
     --white:hsl(0, 0%, 100%);
@@ -12,6 +13,7 @@
 body{
     min-height: 100vh;
     background-color: var(--yellow);
+    font-family: "Figtree", sans-serif;
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -32,16 +34,16 @@ body{
 h2{
     font-size: 1.3rem;
     font-weight: 800;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-top: 10px;
-    padding: 5px;
+    padding: 10px;
     background-color: var(--yellow);
     color: var(--gray-900);
 }
 h3{
     margin-top: 10px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--gray-900);
 }
 h1{
@@ -67,6 +69,11 @@ h1{
 }
 .info>img{
     margin-right: 15px;
+}
+.info>p{
+    font-size: 0.9rem;
+    color: var(--gray-900);
+    font-weight: 800;
 }
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
