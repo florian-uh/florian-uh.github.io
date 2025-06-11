@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 :root{
     --very-dark-blue:hsl(233, 47%, 7%);/* main background */
     --dark-desatured-blue:hsl(244, 38%, 16%);/* card background */
@@ -35,6 +37,7 @@ body{
 }
 h1{
     font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
     color: var(--white);
     font-weight: 700;
 }
@@ -43,6 +46,8 @@ span{
     color: var(--soft-violet);
 }
 p{
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
     font-size: 1rem;
     color: var(--slightly-transparent-white-1);
 }
@@ -54,12 +59,17 @@ p{
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 .stat>h3{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
     font-size: 1.3rem;
     color: var(--white);
 }
 .stat>p{
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
     font-size: 0.8rem;
     color: var(--slightly-transparent-white-2);
     text-transform: uppercase;
