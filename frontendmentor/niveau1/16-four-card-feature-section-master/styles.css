@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{/* Déclaration des variables CSS pour les couleurs */
+    --red:hsl(0, 78%, 62%);
+    --cyan:hsl(180, 62%, 55%);
+    --orange:hsl(34, 97%, 64%);
+    --blue:hsl(212, 86%, 64%);
+    --grey-500:hsl(234, 12%, 34%);
+    --grey-400:hsl(212, 6%, 44%);
+    --white:hsl(0, 0%, 100%);
+}
+*{/* Réinitialisation des marges et paddings par défaut */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{/* Style global pour le corps de la page */
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+main{/* Style principal pour le contenu */
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#container-grid{/* Grille pour contenir les cartes */
+    max-width: 375px;/* Largeur maximale pour petits écrans */
+    margin: 0 auto;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: repeat(4, auto);/* 4 lignes pour petits écrans */
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+header>:first-child{/* Style pour le premier élément de l'en-tête */
+    font-size: 2em;
+    font-weight: 200;
+    color: var(--grey-400);
+}
+header>h1{
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--grey-500);
+}
+header>:last-child{
+    color: var(--grey-400);
+    font-size: 0.8em;
+}
+.card{
+    padding: 20px;
+    height: 200px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 3px var(--grey-400);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.card:hover{
+    transform: translateY(-5px);/* Déplacement vers le haut */
+    box-shadow: 0 4px 6px var(--grey-500);
+}
+.card>img{
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    align-self: self-end;/* Alignement à la fin */
+}
+/* Style pour les titres et paragraphes dans les cartes */
+.card>h2 {
+    font-size: 1.2em; /* Taille de police */
+    color: var(--grey-500); /* Couleur grise foncée */
+    margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.card>p {
+    font-size: 1em; /* Taille de police */
+    color: var(--grey-400); /* Couleur grise */
+}
+#supervisor{/* Styles spécifiques pour chaque carte avec une bordure colorée */
+    border-top: 8px solid var(--cyan);
+}
+#team{
+    border-top: 8px solid var(--red);
+}
+#karma{
+    border-top: 8px solid var(--orange);
+}  
+#calculator{
+    border-top: 8px solid var(--blue);
+}
+.attribution{
+    font-size: 11px;
+    text-align: center;
+}
+.attribution>a{
+    color: hsl(228, 45%, 44%);
+}
+@media (min-width: 780px){
+    #container-grid{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 1440px;
+        padding: 15px;
+    }
+    header{
+        grid-column: 1/4;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header>:last-child{
+        width: 40%;
+    }
+    #supervisor{
+        grid-column: 1/2;
+        grid-row: 2/4;
+        align-self: center;
+    }
+    #team{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    #karma{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    #calculator{
+        grid-column: 3/4;
+        grid-row: 2/4;
+        align-self: center;
+    }
+    
+}

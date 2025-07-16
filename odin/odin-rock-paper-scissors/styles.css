@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3f51b5;
+  color: white;
+  padding: 20px;
+}
+
+.scores {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.choices {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.choices img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.choices img:hover {
+  transform: scale(1.1);
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,101 @@
+:root{
+    --bright-orange:hsl(31, 77%, 52%);
+    --dark-cyan:hsl(184, 100%, 22%);
+    --very-dark-cyan:hsl(179, 100%, 13%);
+    --transparent-white:hsla(0, 0%, 100%, 0.75);
+    --very-light-gray:hsl(0, 0%, 95%);
+}
+body{
+    min-height: 100vh;
+    background-color: var(--very-light-gray);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+#cards{
+    margin: auto;
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 2px 3px 5px;
+}
+.card{
+    max-width: 300px;
+    height: 450px;
+    padding: 20px;
+    color: var(--transparent-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+}
+h2{
+    font-size: 2em;
+    font-weight: 700;
+}
+p{
+    font-size: 1em;
+    font-weight: 400;
+}
+button{
+    height: 50px;
+    width: 250px;
+    font-weight: 700;
+    border-radius: 25px;
+    margin: 0 auto;
+    border: none;
+}
+#sedans{
+    background-color: var(--bright-orange);
+    border-radius: 25px 0 0 25px;
+}
+#sedans>button{
+    background-color: var(--very-light-gray);
+    color: var(--bright-orange);
+}
+#sedans>button:hover{
+    background-color: var(--bright-orange);
+    color: var(--very-light-gray);
+}
+#suvs{
+    background-color: var(--dark-cyan);
+}
+#suvs>button{
+    background-color: var(--very-light-gray);
+    color: var(--dark-cyan);
+}
+#suvs>button:hover{
+    background-color: var(--dark-cyan);
+    color: var(--very-light-gray);
+}
+#luxury{
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 25px 25px 0;
+}
+#luxury>button{
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-cyan);
+}
+#luxury>button:hover{
+    background-color: var(--very-dark-cyan);
+    color: var(--very-light-gray);
+}
+.attribution{
+    font-size: 11px;
+    text-align: center;
+}
+.attribution>a{
+    color: hsl(228, 45%, 44%);
+}
+@media screen and (max-width: 900px) {
+    #cards{
+        display: flex;
+        flex-direction: column;
+    }
+    #sedans{
+        border-radius: 25px 25px 0 0;
+    }
+    #luxury{
+        border-radius: 0 0 25px 25px;
+    }
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/************************************** 
+font-family: "Poppins", sans-serif;   *
+font-family: "Open Sans", sans-serif; *
+**************************************/
+:root{
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+}
+body{
+    min-height: 100vh;
+    max-width: 100vw;
+    background-color: var(--violet);
+    background-image: url(images/bg-desktop.svg);
+    background-position: center;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+main{
+    display: flex;
+    justify-content: space-around;
+}
+.left>img{
+    display: block;
+    max-width: 60vw;
+    
+}
+.right{
+    max-width: 45vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.right>button{
+    height: 55px;
+    width: 250px;
+    border: none;
+    box-shadow: 1px 1px 1px;
+    border-radius: 25px;
+    background-color: white;
+    color: var(--violet);
+}
+.right>button:hover{
+    background-color: var(--soft-magenta);
+    color: white;
+}
+.social>a{
+    align-items: center;
+    float: right;
+    margin: 5px;
+}
+i{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+}
+.social>a>i:hover{
+    border: 1px solid violet;
+    color: violet;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

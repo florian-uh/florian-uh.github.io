@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #eee;
+    min-height: 100vh;
+}
+header{
+    list-style-type: none;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.head-top{
+    display: flex;
+    align-items: center;
+}
+.head-block{
+    padding: 10px;
+}
+.logo>img{
+    display: block;
+    max-width: 190px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 5px;
+}
+nav{
+    width: 80%;
+    margin: auto;
+    background-color: lightslategray;
+    position: sticky;
+    border-radius: 20px;
+    display: flex;
+}
+nav li{
+    flex: 1 1 auto;
+    text-align: center;
+    position: relative;
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+nav a:hover{
+    color: orange;
+    border-bottom: 2px solid gold;
+}
+.sous{
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    width: 100%;
+    z-index: 1000;
+}
+nav li:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous{
+    list-style-type: none;
+}
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous a{
+    text-align: center;
+    padding: 10px;
+    border-bottom: none;
+}
+.sous a:hover{
+    border-bottom: none;
+    background-color: rgba(200, 200, 200, 0.1);
+}
+i{
+    font-size: 12px;
+    font-weight: 200;
+}
+main{
+    margin-top: 150px;
+}
+.centre{
+    width: 75%;
+    margin: 0 auto;
+}
+article{
+    background-color: #FFF;
+    margin-bottom: 10px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.carte:hover{
+    box-sizing: border-box;
+    border: 2px solid #aaa;
+}
+figure{
+    margin: 0;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+figcaption{
+    text-align: center;
+    font-style: italic;
+}
+h2{
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 1em;
+    background-color: #ccc;
+}
+p{
+    padding: 10px;
+    background-color: #FFF;
+}
+@media screen and (min-width: 600px) {
+    .cartes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .carte{
+        flex: 0 0 48%;
+        display: flex;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .carte{
+        flex: 0 0 32%;
+    }
+    
+}

@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+:root{
+    --very-dark-blue:hsl(233, 47%, 7%);/* main background */
+    --dark-desatured-blue:hsl(244, 38%, 16%);/* card background */
+    --soft-violet:hsl(277, 64%, 61%);/* accent*/
+    --white:hsl(0, 0%, 100%);/* main heading, stats*/
+    --slightly-transparent-white-1:hsla(0, 0%, 100%, 0.75);/* main paragraph */
+    --slightly-transparent-white-2:hsla(0, 0%, 100%, 0.6);/* stat headings */
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--very-dark-blue);
+}
+#card{
+    margin: auto;
+    width: 60%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dark-desatured-blue);
+}
+.left{
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+h1{
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    color: var(--white);
+    font-weight: 700;
+}
+
+span{
+    color: var(--soft-violet);
+}
+p{
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--slightly-transparent-white-1);
+}
+.stats{
+    display: flex;
+    justify-content: space-between;
+}
+.stat{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.stat>h3{
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+.stat>p{
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--slightly-transparent-white-2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.right{
+    position: relative;
+}
+.right::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--soft-violet);
+    opacity: 0.5;
+    border-radius: 0 20px 20px 0;
+    pointer-events: none;
+    z-index: 1;
+}
+.right>img{
+    display: block;
+    max-width: 100%;
+    border-radius: 0 20px 20px 0;
+    position: relative;
+    z-index: 0;
+}
+.attribution{
+    font-size: 11px;
+    text-align: center;
+}
+.attribution>a{
+    color: hsl(228, 45%, 44%);
+}
+@media screen and (max-width: 1090px){
+    #card{
+        flex-direction: column-reverse; /* Empile les sections verticalement */
+        width: 90%; /* Réduit la largeur pour s'adapter à l'écran */
+        margin: 20px auto; /* Centrer la carte avec un espacement */
+    }
+    .left{
+        width: 100%; /* Prend toute la largeur */
+        padding: 20px; /* Réduit le padding pour les petits écrans */
+        text-align: center; /* Centre le texte */
+    }
+    .left>h1{
+        font-size: 1.5rem; /* Réduit la taille du titre */
+        line-height: 1.8; /* Améliore la lisibilité */
+    }
+    .stats{
+        flex-direction: column; /* Empile les statistiques verticalement */
+        gap: 15px; /* Ajoute un espacement entre les statistiques */
+    }
+    .stat{
+        align-items: center; /* Centre les statistiques */
+    }
+    .right>img{
+        width: 100%; /* L'image prend toute la largeur */
+        border-radius: 20px 20px 0 0; /* Ajuste les coins arrondis pour le bas */
+    }
+}

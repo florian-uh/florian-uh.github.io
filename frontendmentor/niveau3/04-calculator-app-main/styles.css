@@ -1,0 +1,189 @@
+:root{
+    /* theme 1*/
+    /* background */
+    --very-dark-desatured-blue-1:hsl(222, 26%, 31%);/* main bg */
+    --very-dark-desatured-blue-2:hsl(223, 31%, 20%);/* toogle bg, keypad bg */
+    --very-dark-desatured-blue-3:hsl(224, 36%, 15%);/* screen bg */
+    /* keys */
+    --desaturated-dark-blue-1:hsl(225, 21%, 49%);/* key bg */
+    --desaturated-dark-blue-1:hsl(224, 28%, 35%);/* key shadow */
+    --red:hsl(6, 63%, 50%);/* key bg, toogle */
+    --dark-red:hsl(6, 70%, 34%);/* key shadow */
+    --light-grayish-orange:hsl(30, 25%, 89%);/* key bg*/
+    --grayish-orange:hsl(28, 16%, 65%);/* key shadow */
+    /* text */
+    --very-dark-grayish-blue:hsl(221, 14%, 31%);/* text */
+    --white:hsl(0, 0%, 100%);
+    /* theme 2 */
+    /* background */
+    --light-gray:hsl(0, 0%, 90%);/* main bg*/
+    --grayish-red:hsl(0, 5%, 81%);/* toogle bg, keypad bg*/
+    --very-light-gray:hsl(0, 0%, 93%);/* screen bg*/
+    /* keys */
+    --dark-moderate-cyan:hsl(185, 42%, 37%);/* key background */
+    --very-dark-cyan:hsl(185, 58%, 25%);/* key shadow */
+    --orange: hsl(25, 98%, 40%);/* key bg, toogle*/
+    --dark-orange: hsl(25, 99%, 27%);/* key shadow */
+    --light-grayish-yellow:hsl(45, 7%, 89%);/* key background */
+    --dark-grayish-orange:hsl(35, 11%, 61%);/* key shadow */
+    /* text */
+    --very-dark-grayish-yellow:hsl(60, 10%, 19%);
+    --white:hsl(0, 0%, 100%);
+    /* theme 3 */
+    /* backgrounds */
+    --very-dark-violet:hsl(268, 75%, 9%);/* main bg*/
+    --very-dark-violet2:hsl(268, 71%, 12%);/* toggle bg, keypad bg, screen bg */
+    /* keys */
+    --dark-violet:hsl(281, 89%, 26%);/* key bg */
+    --vivid-magenta: hsl(285, 91%, 52%);/* key shadow */
+    --pure-cyan:hsl(176, 100%, 44%);/* key bg, toggle */
+    --soft-cyan:hsl(177, 92%, 70%);/* key shadow */
+    --very-dark-violet: hsl(268, 47%, 21%);/* key background */
+    --dark-magenta: hsl(290, 70%, 36%);/* key shadow*/
+    /* text */
+    --light-yellow: hsl(52, 100%, 62%);
+    --very-dark-blue: hsl(198, 20%, 13%);
+    --White:hsl(0, 0%, 100%);
+}
+body{
+    min-height: 100vh;
+    background-color: var(--main-bg);
+    display: flex;
+    flex-direction: column;
+}
+body.theme-1{
+    --main-bg: var(--very-dark-desatured-blue-1);
+    --keypad-bg: var(--very-dark-desatured-blue-2);
+    --screen-bg: var(--very-dark-desatured-blue-3);
+} 
+body.theme-2{
+    --main-bg: var(--light-gray);
+    --keypad-bg: var(--grayish-red);
+    --screen-bg: var(--very-light-gray);
+}
+body.theme-3{
+    --main-bg: var(--very-dark-violet);
+    --keypad-bg: var(--very-dark-violet2);
+    --screen-bg: var(--very-dark-violet2);
+}
+.header-calc{
+    height: 5vh;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.theme{
+    display: flex;
+}
+#theme-toggle{
+    max-width: 120px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.theme-toggle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    position: relative;
+}
+.toggle-label{
+    display: flex;
+    justify-content: space-between;
+    color: var(--White);
+}
+.toggle-label-color{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--very-dark-grayish-blue);
+    cursor: pointer;
+}  
+#theme-toggle::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--red);
+    border-radius: 50%;
+    cursor: pointer;
+}  
+#theme-toggle::-moz-range-thumb{
+    width: 20px;
+    height: 20px;
+    background: var(--red);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container{
+    padding: 10px;
+    margin: auto;
+    width: 450px;
+    height: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.calculator{
+    width: 100%;
+}
+.display{
+    min-height: 10vh;
+    margin: auto;
+    padding-left: 8px;
+    width: 80%;
+    background-color: var(--very-dark-desatured-blue-3);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.result{
+    font-size: 28px;
+}
+.input{
+    font-size: 32px;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    margin: 10px;
+    border-radius: 15px;
+}
+.btn-group{
+    margin: auto;
+    display: flex;
+}
+.btn-number, 
+.btn-operator,
+.btn-dot, 
+.btn_delete{
+    height: 50px;
+    width: 85px;
+}
+.btn_clear,
+.btn-equal{
+    height: 55px;
+    width: 200px;
+}
+.btn_clear {
+    background-color: var(--red);
+    color: var(--white);
+  }
+  
+  .btn_delete {
+    background-color: var(--dark-red);
+    color: var(--white);
+  }
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

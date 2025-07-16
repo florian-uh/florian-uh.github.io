@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pierre Feuille Ciseaux</title>
+</head>
+<body>
+    <header>
+        <h1>Pierre - Feuille - Ciseaux</h1>
+        <div class="scores">
+      <span>Joueur: <span id="player-score">0</span></span>
+      <span>Ordinateur: <span id="computer-score">0</span></span>
+        </div>
+    </header>
+    <main>
+        <div class="choices">
+            <img src="img/icon-paper.svg" alt="icon-paper" data-choice="feuille">
+            <img src="img/icon-rock.svg" alt="icon-rock" data-choice="pierre">
+            <img src="img/icon-scissors.svg" alt="icon-scissors" data-choice="ciseaux">
+        </div>
+        <div class="result">
+      <p id="result-text">Faites votre choix !</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

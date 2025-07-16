@@ -1,0 +1,302 @@
+:root {
+  --scissors: hsl(39, 89%, 49%);
+  --paper: hsl(230, 89%, 62%);
+  --rock: hsl(349, 71%, 52%);
+  --lizard: hsl(261, 73%, 60%);
+  --spock: hsl(189, 59%, 53%);
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+  --white: #fff;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: 'Barlow Semi Condensed', Arial, sans-serif;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.display {
+  border: 3px solid var(--header-outline);
+  border-radius: 16px;
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  background: rgba(0,0,0,0.1);
+}
+
+.info h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+.score {
+  background: var(--white);
+  color: var(--score-text);
+  border-radius: 8px;
+  padding: 12px 24px;
+  text-align: center;
+  min-width: 80px;
+  margin-left: 32px;
+}
+
+.score span {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.score-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 4px;
+  color: var(--dark-text);
+}
+
+main {
+  width: 100vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  position: relative;
+}
+
+.game-options {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-options.triangle {
+  background: url('images/bg-triangle.svg') center/contain no-repeat;
+}
+
+.game-options.pentagon {
+  background: url('images/bg-pentagon.svg') center/contain no-repeat;
+  display: none;
+}
+
+body.sheldon .game-options.triangle {
+  display: none;
+}
+body.sheldon .game-options.pentagon {
+  display: flex;
+}
+
+.option {
+  background: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  margin: 0;
+  box-shadow: 0 6px 0 0 rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.1s;
+}
+.option img {
+  width: 48px;
+  height: 48px;
+}
+
+.game-options.triangle .option[data-choice="rock"] {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  border: 12px solid var(--rock);
+}
+.game-options.triangle .option[data-choice="paper"] {
+  left: 0;
+  top: 0;
+  border: 12px solid var(--paper);
+}
+.game-options.triangle .option[data-choice="scissors"] {
+  right: 0;
+  top: 0;
+  border: 12px solid var(--scissors);
+}
+
+.game-options.pentagon .option[data-choice="scissors"] {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  border: 12px solid var(--scissors);
+}
+.game-options.pentagon .option[data-choice="spock"] {
+  left: 85%;
+  top: 28%;
+  transform: translate(-50%, 0);
+  border: 12px solid var(--spock);
+}
+.game-options.pentagon .option[data-choice="paper"] {
+  left: 70%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  border: 12px solid var(--paper);
+}
+.game-options.pentagon .option[data-choice="lizard"] {
+  left: 30%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  border: 12px solid var(--lizard);
+}
+.game-options.pentagon .option[data-choice="rock"] {
+  left: 15%;
+  top: 28%;
+  transform: translate(-50%, 0);
+  border: 12px solid var(--rock);
+}
+
+.results {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.results.active {
+  display: flex;
+}
+
+.picked {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.picked > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picked-option {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--white);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 14px solid transparent;
+  box-shadow: 0 6px 0 0 rgba(0,0,0,0.2);
+}
+.picked-option img {
+  width: 60px;
+  height: 60px;
+}
+
+.result-message {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--white);
+  text-align: center;
+}
+
+.play-again {
+  background: var(--white);
+  color: var(--dark-text);
+  border: none;
+  border-radius: 24px;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+}
+.play-again:hover {
+  background: #eee;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.actions button {
+  background: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+.actions button:hover {
+  background: var(--white);
+  color: var(--dark-text);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 40px;
+  color: #bbb;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (max-width: 600px) {
+  .display {
+    width: 95vw;
+    padding: 12px 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .game-options, .game-options.triangle, .game-options.pentagon {
+    width: 220px;
+    height: 220px;
+  }
+  .option, .picked-option {
+    width: 60px;
+    height: 60px;
+    border-width: 8px;
+  }
+  .picked-option img, .option img {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -1,0 +1,108 @@
+:root{
+    --orange-500:hsl(25, 97%, 53%);
+    --white:hsl(0, 100%, 100%);
+    --grey-500:hsl(217, 12%, 63%);
+    --grey-900:hsl(213, 19%, 18%);
+    --grey-950:hsl(216, 12%, 8%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--grey-950);
+    min-height: 100vh;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    margin: auto;
+    background-color: var(--grey-900);
+    width: 350px;
+    height: 450px;
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.image>img{
+    padding: 10px;
+    background-color: var(--grey-900);
+    display: block;
+    border: 1px solid;
+    border-radius: 50%;
+}
+#rating{
+    align-items: flex-start;
+}
+#rating>h1{
+    color: var(--white);
+}
+#rating>p{
+    color: var(--grey-500);
+}
+.image>img{
+    padding: 10px;
+    background-color: var(--grey-900);
+    display: block;
+    border-radius: 50%;
+}
+.rating-buttons, button{
+    margin: 0 auto;
+}
+.rating-buttons>button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.rating-button{
+    cursor: grab;
+    background-color: var(--grey-900);
+    color: var(--grey-500);
+}
+.rating-button:hover{
+    background-color: var(--white);
+}
+/* Ajouter un style pour le bouton actif */
+.rating-button.active{
+    cursor: grabbing;
+  background-color: var(--orange-500);
+  color: var(--white);
+}
+.submit{
+    height: 50px;
+    width: 80%;
+    border-radius: 25px;
+    background-color: var(--orange-500);
+    color: var(--grey-950);
+    font-weight: 700;
+}
+.submit.active{
+    background-color: var(--white);
+}
+#thank{
+    display: none;
+    align-items: center;
+}
+#thank>img{
+    margin: 0 auto;
+    display: block;
+    max-width: 75%;
+}
+#thank>p:nth-child(2){
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--grey-950);
+    border-radius: 25px;
+    color: var(--orange-500);
+}
+#thank>p:nth-child(4){
+    color: var(--grey-500);
+    text-align: center;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

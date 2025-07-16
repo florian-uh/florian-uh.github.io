@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style/contact.css">
+  <title>Formulaire de Mise en Relation</title>
+  <style>
+
+  </style>
+</head>
+<body>
+    <header>
+        <h1>Le p'tit dev</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+  <div class="container">
+    <h2>Formulaire de Mise en Relation</h2>
+    <form id="relationForm">
+      <fieldset>
+        <legend><strong>1. Vos Informations</strong></legend>
+        <label>Nom et Prénom *</label>
+        <input type="text" name="nom" required>
+
+        <label>Entreprise / Organisation</label>
+        <input type="text" name="entreprise">
+
+        <label>Fonction / Poste</label>
+        <input type="text" name="poste">
+
+        <label>Email *</label>
+        <input type="email" name="email" required>
+
+        <label>Téléphone</label>
+        <input type="tel" name="telephone">
+
+        <label>Adresse postale</label>
+        <input type="text" name="adresse">
+
+        <label>Site web / Réseaux sociaux</label>
+        <input type="text" name="reseaux">
+      </fieldset>
+      <fieldset>
+        <legend><strong>2. Contexte de la Demande</strong></legend>
+        <label>Résumé / Contexte *</label>
+        <textarea name="contexte" rows="4" required></textarea>
+
+        <label>Urgence / Délai souhaité</label>
+        <select name="delai">
+          <option value="immédiat">Immédiat</option>
+          <option value="1_semaine">Sous 1 semaine</option>
+          <option value="1_mois">Sous 1 mois</option>
+          <option value="plus_long_terme">À plus long terme</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend><strong>3. Préférences de Contact</strong></legend>
+        <label>Canal préféré</label>
+        <select name="canal">
+          <option value="email">Email</option>
+          <option value="tel">Téléphone</option>
+          <option value="presentiel">Réunion en présentiel</option>
+          <option value="visio">Visio-conférence</option>
+          <option value="autre">Autre</option>
+        </select>
+
+        <label>Plages horaires disponibles</label>
+        <input type="text" name="disponibilite">
+      </fieldset>
+
+      <fieldset>
+        <legend><strong>4. Consentement</strong></legend>
+        <label><input type="checkbox" required> J’autorise l’utilisation de mes informations pour cette mise en relation</label>
+        <label><input type="checkbox" required> Je comprends que mes données seront traitées de manière confidentielle</label>
+      </fieldset>
+
+      <button type="submit">Envoyer la Demande</button>
+      <div class="success-message" id="successMessage">Votre demande a été envoyée avec succès !</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('relationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // ajouter un appel API, envoyer par email, etc.
+      document.getElementById('successMessage').style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="display">
+      <div class="info">
+        <h1 id="game-title">ROCK<br>PAPER<br>SCISSORS</h1>
+      </div>
+      <div class="score">
+        <span>SCORE</span>
+        <div class="score-number">0</div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Choix -->
+    <section class="game" id="game-section">
+      <div class="game-options triangle" id="options-triangle">
+        <button class="option" data-choice="rock"><img src="images/icon-rock.svg" alt="Rock"/></button>
+        <button class="option" data-choice="paper"><img src="images/icon-paper.svg" alt="Paper"/></button>
+        <button class="option" data-choice="scissors"><img src="images/icon-scissors.svg" alt="Scissors"/></button>
+      </div>
+      <div class="game-options pentagon" id="options-pentagon">
+        <button class="option" data-choice="scissors"><img src="images/icon-scissors.svg" alt="Scissors"/></button>
+        <button class="option" data-choice="spock"><img src="images/icon-spock.svg" alt="Spock"/></button>
+        <button class="option" data-choice="paper"><img src="images/icon-paper.svg" alt="Paper"/></button>
+        <button class="option" data-choice="lizard"><img src="images/icon-lizard.svg" alt="Lizard"/></button>
+        <button class="option" data-choice="rock"><img src="images/icon-rock.svg" alt="Rock"/></button>
+      </div>
+    </section>
+    <!-- Résultat -->
+    <section class="results" id="result-section">
+      <div class="picked">
+        <div>
+          <span>YOU PICKED</span>
+          <div class="picked-option" id="player-picked"></div>
+        </div>
+        <div>
+          <span>THE HOUSE PICKED</span>
+          <div class="picked-option" id="house-picked"></div>
+        </div>
+      </div>
+      <div class="result-message" id="result-message"></div>
+      <button id="play-again" class="play-again">PLAY AGAIN</button>
+    </section>
+    <div class="actions">
+      <button id="rules">RULES</button>
+      <button id="toggle-sheldon">SHELDON VERSION</button>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* Variables pour les thèmes */
+:root {
+  --bg: hsl(0, 0%, 100%);
+  --card-bg: hsl(227, 47%, 96%);
+  --text: hsl(228, 12%, 44%);
+  --text-dark: hsl(230, 17%, 14%);
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+}
+
+body.dark-mode {
+  --bg: hsl(230, 17%, 14%);
+  --card-bg: hsl(228, 28%, 20%);
+  --text: hsl(228, 34%, 66%);
+  --text-dark: hsl(0, 0%, 100%);
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+header{
+  min-height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1{
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+header p{
+  color: var(--text);
+}
+.theme-switch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+.switch input{
+  display: none;
+}
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--card-bg);
+  border-radius: 25px;
+  transition: 0.4s;
+}
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--text-dark);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+input:checked + .slider{
+  background-color: var(--lime-green);
+}
+input:checked + .slider:before{
+  transform: translateX(25px);
+}
+.cards{
+  display: flex;
+  justify-content: space-evenly;
+}
+.card{
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.overview{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+.card h3{
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+.card .followers{
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.card .today{
+  color: var(--lime-green);
+  font-size: 0.9rem;
+}
+.card .today.negative{
+  color: var(--bright-red);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}

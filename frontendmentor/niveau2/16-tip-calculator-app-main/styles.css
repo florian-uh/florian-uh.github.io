@@ -1,0 +1,178 @@
+/* Définition des couleurs principales utilisées dans le projet */
+:root {
+  --green-400: hsl(172, 67%, 45%); /* Vert vif pour les boutons actifs et les valeurs */
+  --green-900: hsl(183, 100%, 15%); /* Vert foncé pour le texte principal */
+  --grey-500: hsl(186, 14%, 43%); /* Gris moyen pour les textes secondaires */
+  --grey-400: hsl(184, 14%, 56%); /* Gris clair pour les bordures */
+  --grey-200: hsl(185, 41%, 84%); /* Gris très clair pour les arrière-plans */
+  --grey-50: hsl(189, 47%, 97%); /* Gris presque blanc pour le fond principal */
+  --white: hsl(0, 100%, 100%); /* Blanc pur */
+}
+
+/* Réinitialisation des marges et paddings pour tous les éléments */
+* {
+  box-sizing: border-box; /* Inclut les bordures et paddings dans les dimensions */
+  margin: 0;
+  padding: 0;
+}
+
+/* Style global du corps de la page */
+body {
+  font-family: 'Space Mono', monospace; /* Police monospace pour un style moderne */
+  background-color: var(--grey-50); /* Fond gris clair */
+  color: var(--green-900); /* Texte principal en vert foncé */
+  display: flex; /* Centrage horizontal et vertical */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Hauteur de la fenêtre */
+}
+
+/* Conteneur principal */
+.container {
+  width: 90%; /* Largeur relative pour s'adapter aux écrans */
+  max-width: 920px; /* Largeur maximale pour les grands écrans */
+}
+
+/* Logo centré avec un espacement en bas */
+.logo {
+  text-align: center;
+  margin-bottom: 2rem; /* Espacement sous le logo */
+}
+
+/* Section principale de la calculatrice */
+.calculator {
+  display: flex; /* Disposition en flexbox */
+  flex-wrap: wrap; /* Permet le retour à la ligne pour les petits écrans */
+  background-color: var(--white); /* Fond blanc */
+  border-radius: 15px; /* Coins arrondis */
+  padding: 2rem; /* Espacement interne */
+  gap: 2rem; /* Espacement entre les sections */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Sections d'entrée et de sortie */
+.input-section,
+.output-section {
+  flex: 1 1 300px; /* Largeur flexible avec un minimum de 300px */
+}
+
+/* Section de sortie avec espacement uniforme */
+.output-section{
+  background-color: var(--green-900);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column; /* Disposition verticale */
+  justify-content: space-around; /* Espacement uniforme entre les éléments */
+  align-items: center; /* Centrage horizontal */
+  gap: 1.5rem; /* Espacement vertical entre les blocs */
+}
+
+/* Style des étiquettes */
+label {
+  display: block; /* Chaque label occupe une ligne */
+  font-size: 0.9rem; /* Taille de police réduite */
+  margin-bottom: 0.5rem; /* Espacement sous le label */
+}
+
+/* Style des champs de saisie */
+input[type="number"] {
+  width: 100%; /* Prend toute la largeur disponible */
+  padding: 0.5rem; /* Espacement interne */
+  font-size: 1rem; /* Taille de police */
+  border: 2px solid var(--grey-200); /* Bordure grise claire */
+  border-radius: 5px; /* Coins arrondis */
+  text-align: right; /* Texte aligné à droite */
+  margin-bottom: 1.5rem; /* Espacement sous le champ */
+}
+
+/* Conteneur des boutons de pourboire */
+.tip-buttons {
+  display: grid; /* Disposition en grille */
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de largeur égale */
+  gap: 1rem; /* Espacement entre les boutons */
+  margin-bottom: 1.5rem; /* Espacement sous les boutons */
+}
+
+/* Style des boutons de pourboire et du champ personnalisé */
+.tip-btn, #custom-tip {
+  width: 100%; /* Prend toute la largeur de la colonne */
+  height: 50px; /* Hauteur uniforme */
+  font-size: 1rem; /* Taille de police */
+  text-align: center; /* Texte centré */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  background-color: var(--green-900);
+  color: var(--white); /* Texte vert foncé */
+  cursor: pointer; /* Curseur pointeur */
+}
+
+/* Style pour le bouton actif */
+.tip-btn.active {
+  background-color: var(--green-400); /* Fond vert vif */
+  color: var(--white); /* Texte blanc */
+}
+
+/* Champ personnalisé avec un fond blanc */
+#custom-tip {
+  background-color: var(--white); /* Fond blanc */
+  border: 1px solid var(--green-900);
+  color: var(--green-900);
+}
+
+/* Effet au survol des boutons */
+.tip-btn:hover, #custom-tip:focus {
+  background-color: var(--green-400); /* Fond vert vif */
+  color: var(--white); /* Texte blanc */
+}
+
+/* Style des blocs de sortie */
+.output {
+  display: flex; /* Disposition en ligne */
+  justify-content: space-between; /* Espacement entre le label et la valeur */
+  align-items: center; /* Centrage vertical */
+  width: 100%; /* Prend toute la largeur */
+  padding: 0 1rem; /* Espacement horizontal */
+  margin-bottom: 1.5rem; /* Espacement sous le bloc */
+}
+
+/* Style des valeurs de sortie */
+.output-value {
+  font-size: 1.5rem; /* Taille de police plus grande */
+  font-weight: bold; /* Texte en gras */
+  color: var(--green-400); /* Texte vert vif */
+}
+.output-label>p{
+  color: var(--white);
+  font-weight: 700;
+}
+.output-label>span{
+  color: var(--grey-400);
+}
+/* Bouton de réinitialisation */
+.reset-btn {
+  width: 80%; /* Prend toute la largeur */
+  height: 50px; /* Hauteur uniforme */
+  font-size: 1rem; /* Taille de police */
+  background-color: var(--grey-500); /* Fond vert vif */
+  color: var(--green-900); /* Texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur */
+}
+
+/* Bouton désactivé */
+.reset-btn:disabled {
+  background-color: var(--grey-200); /* Fond gris clair */
+  cursor: not-allowed; /* Curseur interdit */
+}
+
+/* Attribution en bas de page */
+.attribution {
+  font-size: 11px; /* Taille de police réduite */
+  text-align: center; /* Texte centré */
+}
+
+.attribution > a {
+  color: hsl(228, 45%, 44%); /* Lien bleu */
+}
