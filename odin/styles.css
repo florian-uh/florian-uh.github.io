@@ -9,7 +9,16 @@ body{
 .top-header{
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
 }
-.top-header>nav{
+.top-header>nav>ul{
     display: flex;
+}
+nav>ul>li{
+    list-style-type: none;
+    padding: 5px;
+}
+nav ul a{
+    text-decoration: none;
+    color: black;
 }
