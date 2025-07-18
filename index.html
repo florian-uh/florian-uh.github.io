@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://florian-uh.github.io/">
     <meta property="og:image" content="https://florian-uh.github.io/assets/preview.png">
     <link rel="canonical" href="https://florian-uh.github.io/">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
     <script src="https://kit.fontawesome.com/132c2773b1.js" crossorigin="anonymous"></script>
     <title>Le petit dev - Portfolio Florian Uhlinger</title>
 </head>
@@ -24,7 +24,10 @@
             <div class="logo">
                 <img src="assets/logo.png" alt="Logo Flo-uh" width="48" height="48">
             </div>
-            <nav id="navbar" aria-label="Navigation principale">
+            <h1>Le p'tit dev</h1>
+            <button id="toggle-dark-mode" aria-pressed="false" aria-label="Activer le mode sombre">Mode sombre</button>
+        </div>
+        <nav id="navbar" aria-label="Navigation principale">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="frontendmentor/index.html">Front-end Mentor</a></li>
@@ -33,29 +36,79 @@
                     <li><a href="autres/html/contact.html">Contact</a></li>
                     <li><a href="#">Autres</a></li>
                 </ul>
-            </nav>
-        </div>
-        <div class="bottom-header">
-            <h1>Bienvenue sur le p'tit dev</h1>
-            <button id="toggle-dark-mode" aria-pressed="false" aria-label="Activer le mode sombre">Mode sombre</button>
-        </div>
+        </nav>
     </header>
     <main>
-        <div class="main-flex">
-            <article id="skills">
-                <h2>Compétences techniques</h2>
-                <ul>
-                    <li><strong>HTML5</strong> — structure sémantique, accessibilité</li>
-                    <li><strong>CSS3</strong> — flexbox, grid, responsive, animations</li>
-                    <li><strong>JavaScript</strong> — DOM, ES6+, fetch API, modules</li>
-                    <li><strong>Git / GitHub</strong> — versioning, branches, collaboration</li>
-                    <li><strong>Frameworks</strong> — Tailwind CSS, React (bases)</li>
-                </ul>
-            </article>
-            <section id="articles">
+        <section id="info">
+            <div class="block-competence1">
+                <div class="partie1">
+                    <h2>Mes compétences techniques :</h2>
+                    <ul>
+                        <li><strong>HTML5</strong> — structure sémantique, accessibilité</li>
+                        <li><strong>CSS3</strong> — flexbox, grid, responsive, animations</li>
+                        <li><strong>JavaScript</strong> — DOM, ES6+, fetch API, modules</li>
+                        <li><strong>Git / GitHub</strong> — versioning, branches, collaboration</li>
+                        <li><strong>Frameworks</strong> — Tailwind CSS, React (bases)</li>
+                    </ul>
+                </div>
+                <div class="partie2">
+                    <h2>Si besoin :</h2>
+                    <ul>
+                        <li>Installation os : Windows Linux</li>
+                        <li>Initiation outils bureautique : Word, Powerpoint.</li>
+                        <li>Initiation recherche Web.</li>
+                        <li>Aide création cv, lettre de motivation.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block-competence">
+                <h2>Quelques réalisations</h2>
+                <div class="cartes">
+                    <article class="carte">
+                        <a href="frontendmentor/niveau2/04-product-list-with-cart-main/index.html">
+                            <figure>
+                                <img src="frontendmentor/niveau2/04-product-list-with-cart-main/preview.jpg" alt="16-tip-calculator">
+                                <figcaption>Product list</figcaption>
+                            </figure>
+                        </a>
+                        <div class="contenu">
+                            <h2>Product list with cart main</h2>
+                            <p>Page d'acceuil d'appli mettant en scene différents produits, ces produits vont ensuite dans le panier, sont comptabilisés. <br>
+                            Cet exercice est un excellent moyen de travailler sur le DOM.</p>
+                        </div>
+                    </article>
+                    <article class="carte">
+                        <a href="frontendmentor/niveau2/09-news-homepage-main/index.html">
+                            <figure>
+                                <img src="frontendmentor/niveau2/09-news-homepage-main/design/desktop-preview.jpg" alt="#">
+                                <figcaption>News homepage</figcaption>
+                            </figure>
+                        </a>
+                        <div class="contenu">
+                            <h2>News Homepage</h2>
+                            <p>Exemple de page de garde d'un site d'information concernant l'univers de la tech. <br>
+                            Cette exemple permet de travailler sur la mise en page avec grid.</p>
+                        </div>
+                    </article>
+                    <article class="carte">
+                        <a href="frontendmentor/niveau2/15-time-tracking-dashboard-main/index.html">
+                            <figure>
+                                <img src="frontendmentor/niveau2/15-time-tracking-dashboard-main/preview.jpg" alt="#">
+                                <figcaption>Time tracking dasboard</figcaption>
+                            </figure>
+                        </a>
+                        <div class="contenu">
+                                <h2>Time tracking dasboard</h2>
+                                <p>Tableau de bord, permettant de connaitre so temps d'utilisation de differents reseaux</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="articles">
                 <h2>Articles & Tutos</h2>
                 <article class="post" aria-label="Article 1">
-					<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+					<h3>Article 1</h3>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laudantium maxime officiis tempore! 
 						Tempora, suscipit voluptate quia adipisci sint praesentium fugiat enim nulla vitae nesciunt amet, 
@@ -69,7 +122,7 @@
 					</p>
 				</article>
                 <article class="post" aria-label="Article 2">
-					<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+					<h3>Article 2</h3>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laudantium maxime officiis tempore! 
 						Tempora, suscipit voluptate quia adipisci sint praesentium fugiat enim nulla vitae nesciunt amet, 
@@ -83,7 +136,7 @@
 					</p>
 				</article>
                 <article class="post" aria-label="Article 3">
-					<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+					<h3>Article 3</h3>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laudantium maxime officiis tempore! 
 						Tempora, suscipit voluptate quia adipisci sint praesentium fugiat enim nulla vitae nesciunt amet, 
@@ -97,7 +150,7 @@
 					</p>
 				</article>
                 <article class="post" aria-label="Article 4">
-					<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+					<h3>Article 4</h3>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laudantium maxime officiis tempore! 
 						Tempora, suscipit voluptate quia adipisci sint praesentium fugiat enim nulla vitae nesciunt amet, 
@@ -111,7 +164,21 @@
 					</p>
 				</article>
                 <article class="post" aria-label="Article 5">
-					<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+					<h3>Article 5</h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laudantium maxime officiis tempore! 
+						Tempora, suscipit voluptate quia adipisci sint praesentium fugiat enim nulla vitae nesciunt amet, 
+						numquam fuga eveniet deserunt?
+						Maxime dignissimos, provident dolorum consequatur aperiam at id sit dolore vel molestias necessitatibus 
+						voluptatum consectetur tempore quod autem rem dolores nisi magnam? Nisi delectus soluta iusto dolore cumque 
+						qui eos.
+						Illo, ipsum vel omnis reprehenderit accusamus quisquam quo, fugiat nemo ipsa voluptas odio! 
+						Quaerat aspernatur omnis eligendi, iusto laborum exercitationem inventore obcaecati fugiat minima iste 
+						unde consequatur eaque animi cupiditate.
+					</p>
+				</article>
+                <article class="post" aria-label="Article 6">
+					<h3>Article 6</h3>
 					<p>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laudantium maxime officiis tempore! 
 						Tempora, suscipit voluptate quia adipisci sint praesentium fugiat enim nulla vitae nesciunt amet, 
@@ -129,43 +196,42 @@
                     <span id="pageInfo" aria-live="polite">Page 1</span>
                     <button id="nextBtn" aria-label="Page suivante">Suivant</button>
                 </nav>
-            </section>
-            <aside>
-                <h3>Ressources utiles</h3>
-                <ul>
-                    <li><a href="https://developer.mozilla.org/fr/" target="_blank" rel="noopener">MDN Web Docs</a></li>
-                    <li><a href="https://www.frontendmentor.io/" target="_blank" rel="noopener">Frontend Mentor</a></li>
-                    <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">FreeCodeCamp</a></li>
-                </ul>
-                <h3>
-                    Actualités en direct
-                    <button id="toggle-rss" aria-expanded="true" aria-controls="flux-rss" title="Afficher/Masquer le flux RSS">Masquer</button>
-                </h3>
-                <div id="flux-rss">
-                    <section>
-                        <h4>📰 Le Monde</h4>
-                        <ul id="feed-lemonde"><li>Chargement...</li></ul>
-                    </section>
-                    <section>
-                        <h4>📻 France Info</h4>
-                        <ul id="feed-franceinfo"><li>Chargement...</li></ul>
-                    </section>
-                    <section>
-                        <h4>🌍 France 24</h4>
-                        <ul id="feed-france24"><li>Chargement...</li></ul>
-                    </section>
-                    <section>
-                        <h4>🔬 Sciences</h4>
-                        <ul id="feed-sciences"><li>Chargement...</li></ul>
-                    </section>
-                    <section>
-                        <h4>💻 Tech</h4>
-                        <ul id="feed-tech"><li>Chargement...</li></ul>
-                    </section>
-                </div>
-            </aside>
-        </div>
+        </section>
     </main>
+    <aside>
+        <div class="info-sites">
+            <h3>Ressources utiles</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/fr/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+                <li><a href="https://www.frontendmentor.io/" target="_blank" rel="noopener">Frontend Mentor</a></li>
+                <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">FreeCodeCamp</a></li>
+            </ul>
+        </div>
+        <div id="flux-rss">
+            <h3>Actualités en direct</h3>
+            <button id="toggle-rss" aria-expanded="true" aria-controls="flux-rss" title="Afficher/Masquer le flux RSS">Masquer</button>
+            <div>
+                <h4>📰 Le Monde</h4>
+                <ul id="feed-lemonde"><li>Chargement...</li></ul>
+            </div>
+            <div>
+                <h4>📻 France Info</h4>
+                <ul id="feed-franceinfo"><li>Chargement...</li></ul>
+            </div>
+            <div>
+                <h4>🌍 France 24</h4>
+                <ul id="feed-france24"><li>Chargement...</li></ul>
+            </div>
+            <div>
+                <h4>🔬 Sciences</h4>
+                <ul id="feed-sciences"><li>Chargement...</li></ul>
+            </div>
+            <div>
+                <h4>💻 Tech</h4>
+                <ul id="feed-tech"><li>Chargement...</li></ul>
+            </div>
+        </div>
+    </aside>
     <footer>
         <p>&copy; 2025 Florian Uhlinger. Tous droits réservés.</p>
         <div class="social">
