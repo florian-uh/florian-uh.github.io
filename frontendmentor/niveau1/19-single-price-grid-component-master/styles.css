@@ -12,7 +12,7 @@
 }
 body{
     min-height: 100vh;
-    background-color: var(--grayish-blue);
+    background-color: var(--light-gray);
     font-family: "Karla", sans-serif;
     font-size: 16px;
     display: flex;
@@ -27,7 +27,7 @@ body{
     grid-template-areas: 
     "top top"
     "left right";
-    box-shadow: 0px 2px 10px var(--light-gray);
+    box-shadow: 0px 2px 20px;
 }
 .top, .left, .right{
     padding: 1.5em;
@@ -75,18 +75,23 @@ body{
     opacity: 0.6;
     border-radius: 0 0 10px 0;
 }
-.right>h2{
+.block-right{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.block-right>h2{
     color: white;
     font-size: 1.5em;
-    margin-left: 3.2em;
+   
     
 }
-.right>ul{
-    margin-left: 5.5em;
+.block-right>ul{
     list-style: none;
     padding: 0;
 }
-.right>ul>li{
+.block-right>ul>li{
     display: flex;
     justify-content: space-between;
     padding: 0.5em 0;

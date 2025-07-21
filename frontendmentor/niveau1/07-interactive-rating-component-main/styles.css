@@ -33,7 +33,7 @@ body{
     padding: 10px;
     background-color: var(--grey-900);
     display: block;
-    border: 1px solid;
+    border: 1px solid transparent;
     border-radius: 50%;
 }
 #rating{
@@ -41,9 +41,11 @@ body{
 }
 #rating>h1{
     color: var(--white);
+    font-size: 2rem;
 }
 #rating>p{
     color: var(--grey-500);
+    font-size: 0.8rem;
 }
 .image>img{
     padding: 10px;
@@ -57,7 +59,10 @@ body{
 .rating-buttons>button{
     height: 50px;
     width: 50px;
+    background-color: var(--grey-500);
+    border: none;
     border-radius: 50%;
+    color: var(--white);
 }
 .rating-button{
     cursor: grab;
@@ -66,12 +71,13 @@ body{
 }
 .rating-button:hover{
     background-color: var(--white);
+    color: var(--grey-950);
 }
 /* Ajouter un style pour le bouton actif */
 .rating-button.active{
     cursor: grabbing;
-  background-color: var(--orange-500);
-  color: var(--white);
+    background-color: var(--orange-500);
+    color: var(--white);
 }
 .submit{
     height: 50px;
@@ -87,6 +93,7 @@ body{
 #thank{
     display: none;
     align-items: center;
+    background-color: var(--grey-900);
 }
 #thank>img{
     margin: 0 auto;
@@ -96,7 +103,8 @@ body{
 #thank>p:nth-child(2){
     padding: 10px;
     text-align: center;
-    border: 1px solid var(--grey-950);
+    background-color: var(--grey-500);
+    border: 1px solid transparent;
     border-radius: 25px;
     color: var(--orange-500);
 }

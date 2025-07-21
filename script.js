@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         const isDark = document.body.classList.contains("dark-mode");
-        toggle.textContent = isDark ? "☀️ Mode clair" : "🌙 Mode sombre";
+        toggle.textContent = isDark ? "Mode clair" : "Mode sombre";
         toggle.setAttribute("aria-pressed", isDark);
       });
     }

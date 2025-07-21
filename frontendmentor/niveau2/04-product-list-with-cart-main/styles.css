@@ -34,7 +34,7 @@ main{
   margin-left: 125px;
   display: grid;
   grid-template-areas: 
-    "header header cart"
+    "header header header"
     "products products cart"
     "products products none"
     "products products none";

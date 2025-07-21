@@ -67,7 +67,6 @@ body.theme-3{
     --screen-bg: var(--very-dark-violet2);
 }
 .header-calc{
-    height: 5vh;
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -75,19 +74,16 @@ body.theme-3{
 }
 .theme{
     display: flex;
+    align-items: center;
 }
 #theme-toggle{
-    max-width: 120px;
+    max-width: 80px;
+    margin-top: 25px;
     border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
 }
 .theme-toggle{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 120px;
     position: relative;
 }
 .toggle-label{
@@ -176,14 +172,13 @@ button{
     height: 55px;
     width: 200px;
 }
-.btn_clear {
+.btn_clear{
     background-color: var(--red);
     color: var(--white);
-  }
-  
-  .btn_delete {
+}  
+.btn_delete{
     background-color: var(--dark-red);
     color: var(--white);
-  }
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }

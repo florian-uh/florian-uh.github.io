@@ -1,0 +1,95 @@
+:root{
+    --gradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+    --very-light-grayish-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-blue: hsl(232, 13%, 33%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-color: var(--very-light-grayish-blue);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.block{
+    display: flex;
+    align-items: center;
+}
+.switch{
+    width: 90px;
+    height: 30px;
+    background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border-radius: 15px;
+    position: relative;/*Permet de positionner l'icône en absolute*/
+    border: 1px solid #1E2939;
+    padding: 1rem;
+}
+.switch-change{
+    background-color: var(--grayish-blue);
+    border: 1px solid #61b3ff;
+}
+.btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;/*par rapport à la DIV switch*/
+    top: 1px;
+    left: 1px;
+}
+.price-annually{
+    display: none;
+}
+#cards{
+    display: flex;
+    justify-content: center;
+}
+.card {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+    cursor: pointer;
+}
+.card.active,
+#professional {
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 0 10px 40px 0 rgba(80,100,255,0.15);
+}
+/* Pour éviter que toutes les cartes soient grossies au départ */
+#professional:not(.active) {
+    transform: scale(1.1);
+}
+.card ul{
+    list-style: none;
+}
+ul li{
+    margin: 1rem 0;
+    text-align: center;
+}
+button{
+    width: 80%;
+    height: 45px;
+    background: none;
+}
+#professionnal{
+    transform: scale(2);
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

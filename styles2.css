@@ -51,6 +51,11 @@ header{
   display: flex;
   justify-content: space-around;
 }
+.top-header button{
+  height: 50px;
+  width: 150px;
+  border-radius: 15px;
+}
 #navbar>ul{
   list-style: none;
   display: flex;
