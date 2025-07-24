@@ -69,6 +69,7 @@ header{
     outline: none;
 }
 .dropdown .submenu {
+    list-style: none;
     display: none;
     position: absolute;
     left: 0;
@@ -134,16 +135,24 @@ figcaption{
     text-align: center;
     font-style: italic;
 }
-h2{
+.contenu h2{
     margin-top: 5px;
     padding: 5px;
     text-align: center;
     font-size: 1em;
     background-color: #ccc;
 }
-p{
+.contenu p{
     padding: 10px;
     background-color: #FFF;
+}
+footer{
+    min-height: 15vh;
+    display: flex;
+}
+.foot-left{
+    display: flex;
+    
 }
 @media (max-width: 900px) {
     .menu {

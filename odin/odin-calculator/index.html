@@ -7,39 +7,85 @@
     <title>calculator</title>
 </head>
 <body>
-    <div class="theme-switcher">
-        <label for="theme-select">Thème :</label>
-        <select id="theme-select">
+    <header>
+        <h1>Calculator</h1>
+        <div class="theme-switcher">
+            <label for="theme-select">Thème :</label>
+            <select id="theme-select">
             <option value="light">Clair</option>
             <option value="dark">Sombre</option>
             <option value="retro">Rétro</option>
-        </select>
-    </div>
+            </select>
+        </div>
+    </header>
     <div class="calculator">
     <div class="display" id="display">0</div>
     <div class="buttons">
-      <button class="btn operator" data-op="clear">C</button>
-      <button class="btn operator" data-op="backspace">←</button>
-      <button class="btn operator" data-op="/">÷</button>
-      <button class="btn operator" data-op="*">×</button>
+        <div class="btn-group">
+          <button class="btn" data-num="7">7</button>
+          <button class="btn" data-num="8">8</button>
+          <button class="btn" data-num="9">9</button>
+          <button class="btn del" data-op="backspace">DEL</button>
+        </div>
+        <div class="btn-group">
+          <button class="btn" data-num="4">4</button>
+          <button class="btn" data-num="5">5</button>
+          <button class="btn" data-num="6">6</button>
+          <button class="btn operator" data-op="+">+</button>
+        </div>
+        <div class="btn-group">
+          <button class="btn" data-num="1">1</button>
+          <button class="btn" data-num="2">2</button>
+          <button class="btn" data-num="3">3</button>
+          <button class="btn operator" data-op="-">-</button>
+        </div>
+        <div class="btn-group">
+          <button class="btn dot" data-num=".">.</button>
+          <button class="btn" data-num="0">0</button>
+          <button class="btn operator" data-op="/">/</button>
+          <button class="btn operator" data-op="*">X</button>
+        </div>
+        <div class="btn-group">
+          <button class="btn reset" data-op="clear">Reset</button>
+          <button class="btn equals" data-op="=">=</button>
+        </div>
+    </div>
+    <!--
+        <div class="btn-group">
+            <button class="btn" data-num="7">7</button>
+            <button class="btn" data-num="8">8</button>
+            <button class="btn" data-num="9">9</button>
+            <button class="btn operator" data-op="backspace">←</button>
+        </div>
+        <div class="btn-goup">
+            <button class="btn" data-num="4">4</button>
+            <button class="btn" data-num="5">5</button>
+            <button class="btn" data-num="6">6</button>
+            <button class="btn operator" data-op="*">X</button>
+            
+        </div>
+        <div class="btn-group">
+            <button class="btn" data-num="1">1</button>
+            <button class="btn" data-num="2">2</button>
+            <button class="btn" data-num="3">3</button>
+            <button class="btn operator" data-op="+">+</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn" data-num="0">0</button>
+            <button class="btn" data-num=".">.</button>
+            <button class="btn operator" data-op="+">+</button>
+            <button class="btn operator" data-op="/">÷</button>
+        </div>
+        <div class="btn-group">
+            <button class="btn operator" data-op="clear">Clear</button>
+            <button class="btn equals" data-op="=">=</button>
+            <button class="btn operator" data-op="-">-</button>
+            <button class="btn operator" data-op="+">+</button>
+        </div>
+    -->
 
-      <button class="btn" data-num="7">7</button>
-      <button class="btn" data-num="8">8</button>
-      <button class="btn" data-num="9">9</button>
-      <button class="btn operator" data-op="-">−</button>
 
-      <button class="btn" data-num="4">4</button>
-      <button class="btn" data-num="5">5</button>
-      <button class="btn" data-num="6">6</button>
-      <button class="btn operator" data-op="+">+</button>
-
-      <button class="btn" data-num="1">1</button>
-      <button class="btn" data-num="2">2</button>
-      <button class="btn" data-num="3">3</button>
-      <button class="btn equals" data-op="=">=</button>
-
-      <button class="btn" data-num="0">0</button>
-      <button class="btn" data-num=".">.</button>
+      
     </div>
     </div>
     
