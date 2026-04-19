@@ -39,17 +39,17 @@ function renderProducts() {
           </picture>
           <div class="product-card__btn-container">
             ${quantity === 0 ? `
-              <button class="btn-add-cart" onclick="addToCart(${index})">
+              <button class="btn-add-cart" data-index="${index}">
                 <img src="./assets/images/icon-add-to-cart.svg" alt="">
                 Add to Cart
               </button>
             ` : `
               <div class="btn-quantity">
-                <button class="qty-control" onclick="updateQuantity('${product.name}', -1)">
+                <button class="qty-control" data-name="${product.name}" data-action="decrease">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>
                 </button>
                 <span>${quantity}</span>
-                <button class="qty-control" onclick="updateQuantity('${product.name}', 1)">
+                <button class="qty-control" data-name="${product.name}" data-action="increase">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
                 </button>
               </div>
@@ -65,6 +65,31 @@ function renderProducts() {
     `;
   }).join('');
 }
+
+// Add event listeners for product interactions
+productsGrid.addEventListener('click', (e) => {
+  const target = e.target.closest('button');
+  if (!target) return;
+
+  if (target.classList.contains('btn-add-cart')) {
+    const index = target.dataset.index;
+    addToCart(index);
+  } else if (target.classList.contains('qty-control')) {
+    const name = target.dataset.name;
+    const action = target.dataset.action;
+    const delta = action === 'increase' ? 1 : -1;
+    updateQuantity(name, delta);
+  }
+});
+
+// Add event listener for cart remove buttons
+cartItems.addEventListener('click', (e) => {
+  const target = e.target.closest('button');
+  if (target && target.classList.contains('btn-remove')) {
+    const name = target.dataset.name;
+    removeFromCart(name);
+  }
+});
 
 function addToCart(index) {
   const product = products[index];
@@ -121,7 +146,7 @@ function renderCart() {
           <span class="cart-item__total-price">$${(item.price * item.quantity).toFixed(2)}</span>
         </div>
       </div>
-      <button class="btn-remove" onclick="removeFromCart('${item.name}')">
+      <button class="btn-remove" data-name="${item.name}">
         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg>
       </button>
     </div>

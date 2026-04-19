@@ -65,8 +65,9 @@ submitButton.addEventListener("click", () => {
         if (currentQuiz < quizData.length) loadQuiz();
         else {
             quiz.innerHTML = ` <h2>You answered ${score}/${quizData.length} questions correctly</h2> 
-                <button onclick="history.go(0)">Play Again</button> `
+                <button id="play-again-btn">Play Again</button> `
                 // location.reload() won't work in CodePen for security reasons; } } });
+            document.getElementById('play-again-btn').addEventListener('click', () => location.reload());
         }
     }
 });

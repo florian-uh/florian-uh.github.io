@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <div class="extension-footer">
-                    <button class="remove-btn" onclick="removeExtension('${ext.name}')">Remove</button>
+                    <button class="remove-btn" data-name="${ext.name}">Remove</button>
                     <label class="toggle-switch">
-                        <input type="checkbox" ${ext.isActive ? 'checked' : ''} onchange="toggleExtension('${ext.name}')">
+                        <input type="checkbox" data-name="${ext.name}" ${ext.isActive ? 'checked' : ''}>
                         <span class="slider"></span>
                     </label>
                 </div>
@@ -68,8 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Window functions for global access (from HTML strings)
-    window.toggleExtension = (name) => {
+    function toggleExtension(name) {
         const ext = extensionsData.find(e => e.name === name);
         if (ext) {
             ext.isActive = !ext.isActive;
@@ -80,8 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.removeExtension = (name) => {
+    function removeExtension(name) {
         extensionsData = extensionsData.filter(e => e.name !== name);
         renderExtensions();
     };
+
+    // Add event listeners
+    extensionsGrid.addEventListener('click', (e) => {
+        const target = e.target.closest('button');
+        if (target && target.classList.contains('remove-btn')) {
+            const name = target.dataset.name;
+            removeExtension(name);
+        }
+    });
+
+    extensionsGrid.addEventListener('change', (e) => {
+        if (e.target.type === 'checkbox') {
+            const name = e.target.dataset.name;
+            toggleExtension(name);
+        }
+    });
 });

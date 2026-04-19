@@ -67,3 +67,44 @@ function clearInputs(){
     amountInput.value = '';
     categoryInput.value = 'Expense';
 }
+
+// Income and Expense buttons
+document.getElementById('add-income-btn').addEventListener('click', addIncome);
+document.getElementById('add-expense-btn').addEventListener('click', addExpense);
+document.getElementById('clear-all-btn').addEventListener('click', clearAll);
+
+function addIncome() {
+    const description = document.getElementById('income-description').value.trim();
+    const amount = parseFloat(document.getElementById('income-amount').value.trim());
+    
+    if (description === '' || isNaN(amount) || amount <= 0) {
+        alert("Please enter a valid income description and amount.");
+        return;
+    }
+    
+    addTransaction(description, amount, 'Income');
+    updateSummary();
+    document.getElementById('income-description').value = '';
+    document.getElementById('income-amount').value = '';
+}
+
+function addExpense() {
+    const description = document.getElementById('expense-description').value.trim();
+    const amount = parseFloat(document.getElementById('expense-amount').value.trim());
+    const category = document.getElementById('expense-category').value;
+    
+    if (description === '' || isNaN(amount) || amount <= 0) {
+        alert("Please enter a valid expense description and amount.");
+        return;
+    }
+    
+    addTransaction(description, -amount, category); // Negative for expense
+    updateSummary();
+    document.getElementById('expense-description').value = '';
+    document.getElementById('expense-amount').value = '';
+}
+
+function clearAll() {
+    transactionList.innerHTML = '';
+    updateSummary();
+}

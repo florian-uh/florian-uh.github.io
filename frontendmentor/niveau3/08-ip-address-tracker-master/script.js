@@ -47,9 +47,9 @@ function updateMap(lat, lng) {
  */
 async function getIPData(query = '') {
   // NOTE: En situation réelle, on utiliserait une clé d'API valide stockée en variable d'environnement.
-  // L'API IPify nécessite une clé. Je vais essayer d'appeler l'API et gérer l'erreur si la clé est absente.
+  // L'API IPify permet des requêtes gratuites limitées sans clé.
   
-  let url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_WpX7qV8v8pX7qV8v8pX7qV8v8pX7q`; // Clé factice par défaut
+  let url = `https://geo.ipify.org/api/v2/country,city?`; // Pas de clé API pour la version gratuite
   
   if (query) {
     const ipPattern = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
