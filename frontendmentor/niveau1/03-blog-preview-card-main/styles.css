@@ -1,79 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
-:root{
-    --yellow:hsl(47, 88%, 63%);
-    --white:hsl(0, 0%, 100%);
-    --gray-500:hsl(0, 0%, 42%);
-    --gray-900:hsl(0, 0%, 7%);
+@font-face {
+  font-family: 'Figtree';
+  src: url('./assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+  
+  --font-family: 'Figtree', sans-serif;
 }
-body{
-    min-height: 100vh;
-    background-color: var(--yellow);
-    font-family: "Figtree", sans-serif;
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-#card{
-    max-width: 375px;
-    margin: auto;
-    padding: 20px;
-    background-color: var(--white);
-    box-shadow: 3px 4px 10px var(--gray-900);
-    border: 1px solid;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  background-color: var(--yellow);
+  color: var(--gray-950);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
 }
-h2{
-    font-size: 1.3rem;
-    font-weight: 800;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: var(--yellow);
-    color: var(--gray-900);
+
+.card {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 384px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--gray-950);
+  box-shadow: 8px 8px 0px 0px var(--gray-950);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
-h3{
-    margin-top: 10px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--gray-900);
+
+.hero-image {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
 }
-h1{
-    margin-top: 10px;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--gray-900);
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-.texte{
-    font-size: 0.9rem;
-    color: var(--gray-500);
-    margin-top: 10px;
+
+.category {
+  background-color: var(--yellow);
+  width: fit-content;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 14px;
 }
-.image>img{
-    display: block;
-    max-width: 100%;
-    border-radius: 25px;
+
+.publish-date {
+  font-size: 14px;
+  font-weight: 500;
 }
-.info{
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
+
+.title {
+  font-size: 24px;
+  font-weight: 800;
 }
-.info>img{
-    margin-right: 15px;
+
+.title a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.25s ease;
 }
-.info>p{
-    font-size: 0.9rem;
-    color: var(--gray-900);
-    font-weight: 800;
+
+.title a:hover {
+  color: var(--yellow);
 }
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+
+.description {
+  color: var(--gray-500);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.author-name {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.attribution a {
+  color: var(--gray-950);
+  font-weight: 800;
+}
+
+@media (max-width: 375px) {
+  .card {
+    max-width: 327px;
+  }
+}

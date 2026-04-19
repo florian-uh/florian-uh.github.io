@@ -5,17 +5,12 @@
   --font-body: 'Segoe UI', Roboto, sans-serif;
   --font-title: 'Poppins', sans-serif;
 
-  --color-bg: #f9f9f9;
+  --white: hsl(0, 0%, 100%);
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%,58%);
   --slate-500: hsl(216, 15%, 48%);
   --slate-900: hsl(218, 44%, 22%);
-  --color-text: #222;
-  --color-accent: #0066ff;
-  --color-muted: #666;
-
-  --color-bg-dark: #181818;
-  --color-text-dark: #f2f2f2;
-  --color-muted-dark: #999;
-
   --transition: 0.3s ease;
 }
 *{
@@ -28,24 +23,29 @@ html{
 }
 body{
   font-family: var(--font-body);
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--white);
+  color: var(--blue-800);
   line-height: 1.6;
   transition: background var(--transition), color var(--transition);
+  display: grid;
+  grid-template-areas: 
+  "header header"
+  "main aside"
+  "footer footer";
 }
 body.dark-mode{
-  background: var(--color-bg-dark);
-  color: var(--color-text-dark);
+  background: var(--slate-500);
+  color: var(--grey);
 }
 /* ---------------------------
    Header
 --------------------------- */
 header{
+  grid-area: header;
   background-color: var(--slate-900);
   color: #fff;
   padding: 1rem;
 }
-
 .top-header{
   display: flex;
   align-items: center;
@@ -61,16 +61,16 @@ h1{
 #toggle-dark-mode{
   background: transparent;
   border: 2px solid #fff;
-  color: #fff;
+  color: var(--white);
   font-size: 1.2rem;
-  border-radius: 50%;
-  width: 2.2rem;
+  border-radius: 25%;
+  width: 5.2rem;
   height: 2.2rem;
   cursor: pointer;
   transition: background var(--transition);
 }
 #toggle-dark-mode:hover{
-  background: rgba(255, 255, 255, 0.2);
+  background-color: var(--slate-900);
 }
 /* ---------------------------
    Navigation
@@ -85,7 +85,7 @@ nav ul{
 }
 nav a{
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   font-weight: 500;
   transition: opacity var(--transition);
 }
@@ -98,7 +98,8 @@ nav a[aria-current="page"]{
    Sections principales
 --------------------------- */
 main{
-  max-width: 1200px;
+  grid-area: main;
+  max-width: 90vw;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -111,34 +112,38 @@ h2{
   margin-bottom: 1rem;
 }
 /* Compétences */
-#competences ul{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+#competences h2{
+  text-align: center;
+}
+.block-comps{
+  display: flex;
+  justify-content: center;
   gap: 0.5rem;
-  list-style: none;
-  padding-left: 0;
 }
-#competences li{
-  padding: 0.5rem;
-  background: rgba(0,0,0,0.02);
-  transition: background var(--transition);
+.block-comp{
+  padding: 1.5rem;
+  background-color: var(--grey);
+  color: var(--blue-800);
+  box-shadow: 5px 8px 25px;
+  text-align: center;
 }
-body.dark-mode #competences li{
-  background: rgba(255,255,255,0.05);
+body.dark-mode #competences .block-comp{
+  background: var(--blue-800);
+  color: var(--grey);
 }
 /* ---------------------------
    Cartes Projets
 --------------------------- */
 .cartes{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr 1fr 1fr));
   gap: 1.5rem;
 }
 .carte{
-  background: #fff;
+  background: var(--white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 10px var(--slate-900);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 body.dark-mode .carte{
@@ -158,6 +163,9 @@ body.dark-mode .carte{
   color: var(--color-muted);
   margin: 0 0.8rem 1rem;
 }
+.carte a{
+  text-decoration: none;
+}
 body.dark-mode .carte p{
   color: var(--color-muted-dark);
 }
@@ -166,15 +174,37 @@ body.dark-mode .carte p{
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 /* ---------------------------
+   Aside
+--------------------------- */
+aside{
+  grid-area: aside;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+aside ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+aside a{
+  text-decoration: none;
+  color: var(--color-accent);
+}
+/* ---------------------------
    Articles
 --------------------------- */
 .post{
+  max-width: 450px;
   margin-bottom: 1.5rem;
   padding: 1rem;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition: background var(--transition);
+}
+.post a{
+  text-decoration: none;
 }
 body.dark-mode .post{
   background: #242424;
@@ -192,51 +222,26 @@ body.dark-mode .post p{
 .lire-suite{
   display: inline-block;
   margin-top: 0.5rem;
-  color: var(--color-accent);
+  color: var(--slate-900);
   font-weight: 600;
   text-decoration: none;
 }
 .lire-suite:hover{
   text-decoration: underline;
 }
-/* ---------------------------
-   Boutons
---------------------------- */
+/*----------------------------
+Buttons
+----------------------------*/
 .btn{
-  display: inline-block;
-  background: var(--color-accent);
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background var(--transition);
-  font-weight: 600;
-}
-.btn:hover{
-  background: #004dcc;
-}
-/* ---------------------------
-   Aside
---------------------------- */
-aside{
-  max-width: 1200px;
-  margin: 0 auto 2rem;
-  padding: 0 1rem;
-}
-.info-sites ul{
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.info-sites a{
-  text-decoration: none;
-  color: var(--color-accent);
+  width: 3em;
+  height: 1.5em;
+  background-color: var(--color-muted);
 }
 /* ---------------------------
    Footer
 --------------------------- */
 footer{
+  grid-area: footer;
   background: var(--color-accent);
   color: #fff;
   text-align: center;

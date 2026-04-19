@@ -1,0 +1,375 @@
+:root {
+  /* Primary Colors */
+  --lime: hsl(61, 70%, 52%);
+  --red: hsl(4, 69%, 50%);
+
+  /* Neutral Colors */
+  --white: hsl(0, 0%, 100%);
+  --slate-100: hsl(202, 86%, 94%);
+  --slate-300: hsl(203, 41%, 72%);
+  --slate-500: hsl(200, 26%, 54%);
+  --slate-700: hsl(200, 24%, 40%);
+  --slate-900: hsl(202, 55%, 16%);
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 500 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  background-color: var(--slate-100);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator-container {
+  background-color: var(--white);
+  max-width: 1000px;
+  width: 95%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  margin: 20px;
+}
+
+.calculator-card {
+  padding: 40px;
+  background-color: var(--white);
+}
+
+.calculator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.calculator-header h1 {
+  font-size: 24px;
+  color: var(--slate-900);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--slate-700);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-link:hover {
+  color: var(--slate-900);
+}
+
+.mortgage-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group label {
+  color: var(--slate-700);
+  font-weight: 500;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  border: 1px solid var(--slate-500);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper:hover {
+  border-color: var(--slate-900);
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--lime);
+}
+
+.input-wrapper::before,
+.input-wrapper.suffix::after {
+  content: attr(data-symbol);
+  background-color: var(--slate-100);
+  color: var(--slate-700);
+  padding: 12px 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.input-wrapper:focus-within::before,
+.input-wrapper.suffix:focus-within::after {
+  background-color: var(--lime);
+  color: var(--slate-900);
+}
+
+.input-wrapper input {
+  border: none;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-900);
+  width: 100%;
+  outline: none;
+}
+
+.input-wrapper.suffix {
+  flex-direction: row-reverse;
+}
+
+.input-wrapper.error {
+  border-color: var(--red);
+}
+
+.input-wrapper.error::before,
+.input-wrapper.error.suffix::after {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.error-msg {
+  color: var(--red);
+  font-size: 14px;
+  display: none;
+}
+
+.form-group.has-error .error-msg {
+  display: block;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--slate-500);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--slate-900);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.radio-label:hover {
+  border-color: var(--lime);
+}
+
+.radio-label:has(input:checked) {
+  border-color: var(--lime);
+  background-color: hsla(61, 70%, 52%, 0.1);
+}
+
+.radio-label input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--slate-500);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-label input[type="radio"]:checked {
+  border-color: var(--lime);
+}
+
+.radio-label input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--lime);
+  border-radius: 50%;
+}
+
+.submit-btn {
+  background-color: var(--lime);
+  color: var(--slate-900);
+  border: none;
+  padding: 16px 40px;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+/* Results Section */
+.results-container {
+  background-color: var(--slate-900);
+  padding: 40px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom-left-radius: 80px;
+}
+
+.results-empty {
+  text-align: center;
+}
+
+.results-empty img {
+  margin-bottom: 24px;
+}
+
+.results-empty h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.results-empty p {
+  color: var(--slate-300);
+  line-height: 1.5;
+}
+
+.results-completed h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.results-completed p {
+  color: var(--slate-300);
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.results-card {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-top: 4px solid var(--lime);
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-label {
+  color: var(--slate-300);
+}
+
+.result-value {
+  color: var(--lime);
+  font-size: 56px;
+  font-weight: 700;
+}
+
+.result-value.total {
+  color: var(--white);
+  font-size: 24px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--slate-700);
+  margin: 32px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Footer */
+.attribution {
+  margin-top: 20px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calculator-container {
+    grid-template-columns: 1fr;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .results-container {
+    border-bottom-left-radius: 0;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .calculator-card {
+    padding: 24px;
+  }
+
+  .calculator-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .result-value {
+    font-size: 40px;
+  }
+}

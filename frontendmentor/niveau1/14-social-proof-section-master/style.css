@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  
+  --font-family: 'League Spartan', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 15px;
+  background-color: var(--white);
+  background-image: url('images/bg-pattern-top-desktop.svg'), url('images/bg-pattern-bottom-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url('images/bg-pattern-top-mobile.svg'), url('images/bg-pattern-bottom-mobile.svg');
+  }
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+}
+
+.top-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 70px;
+}
+
+@media (min-width: 1110px) {
+  .top-section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.intro {
+  max-width: 450px;
+  text-align: center;
+}
+
+@media (min-width: 1110px) {
+  .intro {
+    text-align: left;
+  }
+}
+
+.title {
+  color: var(--very-dark-magenta);
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.description {
+  color: var(--dark-grayish-magenta);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 540px;
+}
+
+.rating-card {
+  background-color: var(--light-grayish-magenta);
+  padding: 20px 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (min-width: 600px) {
+  .rating-card {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1110px) {
+  .rating-card:nth-child(1) { align-self: flex-start; }
+  .rating-card:nth-child(2) { align-self: center; }
+  .rating-card:nth-child(3) { align-self: flex-end; }
+}
+
+.stars {
+  display: flex;
+  gap: 8px;
+}
+
+.rating-card p {
+  color: var(--very-dark-magenta);
+  font-weight: 700;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 1110px) {
+  .testimonials {
+    flex-direction: row;
+    height: 300px;
+    align-items: flex-start;
+  }
+}
+
+.testimonial-card {
+  background-color: var(--very-dark-magenta);
+  padding: 40px;
+  border-radius: 8px;
+  color: var(--white);
+  flex: 1;
+}
+
+@media (min-width: 1110px) {
+  .testimonial-card:nth-child(2) { margin-top: 20px; }
+  .testimonial-card:nth-child(3) { margin-top: 40px; }
+}
+
+.testimonial-card header {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.status {
+  color: var(--soft-pink);
+  margin-top: 4px;
+}
+
+.quote {
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 50px;
+  color: var(--very-dark-magenta);
+}
+
+.attribution a {
+  color: var(--soft-pink);
+}

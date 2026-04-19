@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(212, 6%, 44%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  
+  --font-family: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 15px;
+  background-color: var(--very-light-gray);
+  color: var(--grayish-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 30px 40px;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.header-subtitle {
+  font-size: 24px;
+  font-weight: 200;
+  color: var(--grayish-blue);
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .header-subtitle, .header-title {
+    font-size: 36px;
+  }
+}
+
+.header-description {
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+@media (min-width: 1110px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  height: 250px;
+}
+
+.card-cyan { border-color: var(--cyan); }
+.card-red { border-color: var(--red); }
+.card-orange { border-color: var(--orange); }
+.card-blue { border-color: var(--blue); }
+
+.card-title {
+  color: var(--very-dark-blue);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.card-icon {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.center-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.attribution a {
+  color: var(--blue);
+}

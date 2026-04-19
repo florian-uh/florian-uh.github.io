@@ -1,24 +1,49 @@
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.navbar');
-toggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
-  // Change burger to close icon if needed
-  toggle.querySelector('img').src = nav.classList.contains('open')
-    ? 'images/icon-close.svg'
-    : 'images/icon-hamburger.svg';
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.querySelector('.nav__toggle');
+  const navMenu = document.querySelector('.nav__menu');
+  const navToggleOpen = document.querySelector('.nav__toggle-open');
+  const navToggleClose = document.querySelector('.nav__toggle-close');
+  const dropdowns = document.querySelectorAll('.dropdown');
 
-// Dropdowns for mobile
-document.querySelectorAll('.navbar > li > a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    if (window.innerWidth <= 700) {
-      e.preventDefault();
-      const parent = this.parentElement;
-      parent.classList.toggle('open');
-      // Ferme les autres dropdowns
-      document.querySelectorAll('.navbar > li').forEach(li => {
-        if (li !== parent) li.classList.remove('open');
-      });
+  // Toggle mobile menu
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    navToggleOpen.classList.toggle('hidden');
+    navToggleClose.classList.toggle('hidden');
+  });
+
+  // Handle dropdowns
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    
+    toggle.addEventListener('click', (e) => {
+      // For mobile, we want to toggle. For desktop, it might be hover or click.
+      // Frontend Mentor challenges usually expect click for these dropdowns.
+      
+      const isActive = dropdown.classList.contains('active');
+      
+      // Close all other dropdowns
+      dropdowns.forEach(d => d.classList.remove('active'));
+      
+      // Toggle current
+      if (!isActive) {
+        dropdown.classList.add('active');
+      }
+      
+      e.stopPropagation();
+    });
+  });
+
+  // Close menu/dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+      navMenu.classList.remove('active');
+      navToggleOpen.classList.remove('hidden');
+      navToggleClose.classList.add('hidden');
+    }
+    
+    if (!e.target.closest('.dropdown')) {
+      dropdowns.forEach(d => d.classList.remove('active'));
     }
   });
 });

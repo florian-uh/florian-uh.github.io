@@ -1,51 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-:root{
-    --white:hsl(0, 0%, 100%);
-    --slate-300:hsl(212, 45%, 89%);
-    --slate-500:hsl(216, 15%, 48%);
-    --slate-900:hsl(218, 44%, 22%);
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --slate-300: hsl(212, 45%, 89%);
+  --slate-500: hsl(216, 15%, 48%);
+  --slate-900: hsl(218, 44%, 22%);
+  
+  --font-family: 'Outfit', sans-serif;
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-body{
-    height: 100vh;
-    font-family: "Outfit", sans-serif;
-    font-size: 15px;
-    background-color: var(--slate-300);
-    display: flex;
-    flex-direction: column;
+
+body {
+  font-family: var(--font-family);
+  font-size: 15px;
+  background-color: var(--slate-300);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
 }
-#card{
-    max-width: 375px;
-    margin: auto;
-    padding: 15px;
-    background-color: var(--white);
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+.qr-card {
+  background-color: var(--white);
+  max-width: 320px;
+  padding: 16px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
-.image>img{
-    display: block;
-    max-width: 100%;
-    border-radius: 8px;
+
+.qr-image {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 24px;
 }
-h2{
-    margin: 10px 0px;
-    color: var(--slate-900);
-    font-size: 1.8rem;
+
+.qr-content {
+  padding: 0 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-p{
-    color: var(--slate-500);
-    font-size: 1.5rem;
-    line-height: 1.6;
+
+.qr-title {
+  color: var(--slate-900);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
 }
-.attribution{
-    font-size: 11px;
-    text-align: center;
+
+.qr-description {
+  color: var(--slate-500);
+  line-height: 1.4;
+  font-weight: 400;
 }
-.attribution>a{
-    color: hsl(228, 45%, 44%);
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.attribution a {
+  color: var(--slate-900);
 }

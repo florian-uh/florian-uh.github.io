@@ -1,52 +1,39 @@
-let days = document.getElementById("days");
-let hours = document.getElementById("hours");
-let minutes = document.getElementById("minutes");
-let seconds = document.getElementById("secondes");
-
-let daysTop = document.getElementById("days-top");
-let daysBottom = document.getElementById("days-bottom");
-let hoursTop = document.getElementById("hours-top");
-let hoursBottom = document.getElementById("hours-bottom");
-let minutesTop = document.getElementById("minutes-top");
-let minutesBottom = document.getElementById("minutes-bottom");
-let secondsTop = document.getElementById("seconds-top");
-let secondsBottom = document.getElementById("seconds-bottom");
+// Set countdown date (9 days from now for demo)
+const countdownDate = new Date();
+countdownDate.setDate(countdownDate.getDate() + 9);
 
 function updateCountdown() {
-    const now = new Date();
-    const launchDate = new Date("2025-05-15T00:00:00");
-    const diff = launchDate - now;
+  const now = new Date();
+  const distance = countdownDate - now;
 
-    if (diff <= 0) {
-        clearInterval(interval);
-        return;
-    }
+  if (distance < 0) {
+    clearInterval(timerInterval);
+    return;
+  }
 
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((diff / (1000 * 60)) % 60);
-    const s = Math.floor((diff / 1000) % 60);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    animateFlip(daysTop, daysBottom, d);
-    animateFlip(hoursTop, hoursBottom, h);
-    animateFlip(minutesTop, minutesBottom, m);
-    animateFlip(secondsTop, secondsBottom, s);
+  updateElement('days', days);
+  updateElement('hours', hours);
+  updateElement('minutes', minutes);
+  updateElement('seconds', seconds);
 }
 
-function animateFlip(topElement, bottomElement, newValue) {
-    const currentValue = topElement.textContent;
+function updateElement(id, value) {
+  const formattedValue = value.toString().padStart(2, '0');
+  const card = document.getElementById(id);
+  const top = card.querySelector('.top');
+  const bottom = card.querySelector('.bottom');
 
-    if (currentValue !== String(newValue)) {
-        topElement.textContent = newValue;
-        bottomElement.textContent = newValue;
-
-        const parent = topElement.parentElement;
-        parent.classList.remove("animate");
-        void parent.offsetWidth; // Trigger reflow
-        parent.classList.add("animate");
-    }
+  if (top.textContent !== formattedValue) {
+    // Add simple flip animation class if desired
+    top.textContent = formattedValue;
+    bottom.textContent = formattedValue;
+  }
 }
 
-const interval = setInterval(updateCountdown, 1000);
+const timerInterval = setInterval(updateCountdown, 1000);
 updateCountdown();
-

@@ -1,71 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
   <title>Frontend Mentor | Calculator app</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
-<body>
-  <div class="container">
-    <div class="header-calc">
-      <h2>CALC</h2>
-      <div class="theme">
-        <h3>Theme</h3>
-        <div class="theme-toggle">
-          <input type="range" min="1" max="3" value="1" id="theme-toggle"/>
-          <label for="theme-toggle" class="toggle-label">
-            <span class="toggle-label-color theme-1">1</span>
-            <span class="toggle-label-color theme-2">2</span>
-            <span class="toggle-label-color theme-3">3</span>
-          </label>
+<body data-theme="1">
+  <main class="calc-wrapper">
+    <header class="calc-header">
+      <h1 class="brand" aria-label="Calculator">calc</h1>
+      <div class="theme-switcher" aria-label="Sélecteur de thème">
+        <div class="labels" aria-hidden="true">
+          <span>THEME</span>
+          <div class="nums"><label for="theme-1">1</label><label for="theme-2">2</label><label for="theme-3">3</label></div>
+        </div>
+        <div class="toggle">
+          <input type="radio" id="theme-1" name="theme" value="1" checked>
+          <input type="radio" id="theme-2" name="theme" value="2">
+          <input type="radio" id="theme-3" name="theme" value="3">
+          <div class="knob" aria-hidden="true"></div>
         </div>
       </div>
-    </div>
-    <div class="calculator">
-      <div class="display">
-        <div class="input">0</div>
-        <div class="result">0</div>
-      </div>
-      <div class="buttons">
-        <div class="btn-group">
-          <button class="btn btn-number">7</button>
-          <button class="btn btn-number">8</button>
-          <button class="btn btn-number">9</button>
-          <button class="btn btn_delete">DEL</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-number">4</button>
-          <button class="btn btn-number">5</button>
-          <button class="btn btn-number">6</button>
-          <button class="btn btn-operator">+</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-number">1</button>
-          <button class="btn btn-number">2</button>
-          <button class="btn btn-number">3</button>
-          <button class="btn btn-operator">-</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn-dot">.</button>
-          <button class="btn btn-number zero">0</button>
-          <button class="btn btn-operator">/</button>
-          <button class="btn btn-operator">*</button>
-        </div>
-        <div class="btn-group">
-          <button class="btn btn_clear">Reset</button>
-          <button class="btn btn-equal">=</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  <script src="script.js"></script>
+    </header>
+
+    <output id="display" class="display" role="status" aria-live="polite">0</output>
+
+    <section class="keypad" role="group" aria-label="Touches de la calculatrice">
+      <button data-key="7" class="key">7</button>
+      <button data-key="8" class="key">8</button>
+      <button data-key="9" class="key">9</button>
+      <button data-action="del" class="key key-func key-del">DEL</button>
+
+      <button data-key="4" class="key">4</button>
+      <button data-key="5" class="key">5</button>
+      <button data-key="6" class="key">6</button>
+      <button data-op="+" class="key key-op">+</button>
+
+      <button data-key="1" class="key">1</button>
+      <button data-key="2" class="key">2</button>
+      <button data-key="3" class="key">3</button>
+      <button data-op="-" class="key key-op">-</button>
+
+      <button data-key="." class="key">.</button>
+      <button data-key="0" class="key">0</button>
+      <button data-op="/" class="key key-op">/</button>
+      <button data-op="*" class="key key-op">x</button>
+
+      <button data-action="reset" class="key key-wide key-reset">RESET</button>
+      <button data-action="equals" class="key key-wide key-equals">=</button>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>

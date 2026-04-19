@@ -1,32 +1,35 @@
-const menuBurger = document.getElementById('menu-burger');
-const mobileMenu = document.getElementById('mobile-menu');
-const closeMenu = document.querySelector('.close-menu img');
+document.addEventListener('DOMContentLoaded', () => {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navClose = document.querySelector('.nav-close');
+  const nav = document.querySelector('.nav');
+  const overlay = document.querySelector('.nav-overlay');
 
-console.log(menuBurger); // Vérifie si le bouton menu est bien sélectionné
-console.log(mobileMenu); // Vérifie si le menu mobile est bien sélectionné
-console.log(closeMenu);  // Vérifie si le bouton de fermeture est bien sélectionné
+  const openMenu = () => {
+    nav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
 
-// Vérifiez que les éléments existent avant d'ajouter des écouteurs d'événements
-if (menuBurger && mobileMenu && closeMenu) {
-  // Ouvrir le menu mobile
-  menuBurger.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
-    document.body.style.overflow = 'hidden'; // Empêche le défilement en arrière-plan
+  const closeMenu = () => {
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  };
+
+  navToggle.addEventListener('click', openMenu);
+  navClose.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // Close menu on link click (important for mobile)
+  const navLinks = document.querySelectorAll('.nav__link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
-  // Fermer le menu mobile
-  closeMenu.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    document.body.style.overflow = 'auto'; // Réactive le défilement
-  });
-
-  // Fermer le menu en cliquant en dehors
-  document.addEventListener('click', (event) => {
-    if (!mobileMenu.contains(event.target) && !menuBurger.contains(event.target)) {
-      mobileMenu.classList.add('hidden');
-      document.body.style.overflow = 'auto';
+  // Handle resize (if window becomes large while menu is open)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      closeMenu();
     }
   });
-} else {
-  console.error('Un ou plusieurs éléments du menu burger sont introuvables.');
-}
+});

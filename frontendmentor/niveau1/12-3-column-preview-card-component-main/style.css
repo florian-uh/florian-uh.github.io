@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+  
+  --font-body: 'Lexend Deca', sans-serif;
+  --font-heading: 'Big Shoulders Display', cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  background-color: var(--very-light-gray);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+.container {
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 920px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.card {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+.card-sedans {
+  background-color: var(--bright-orange);
+}
+
+.card-suvs {
+  background-color: var(--dark-cyan);
+}
+
+.card-luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  color: var(--very-light-gray);
+  text-transform: uppercase;
+}
+
+.card-description {
+  color: var(--transparent-white);
+  line-height: 1.6;
+  min-height: 120px;
+}
+
+.card-btn {
+  background-color: var(--very-light-gray);
+  border: 2px solid var(--very-light-gray);
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-sedans .card-btn {
+  color: var(--bright-orange);
+}
+
+.card-suvs .card-btn {
+  color: var(--dark-cyan);
+}
+
+.card-luxury .card-btn {
+  color: var(--very-dark-cyan);
+}
+
+.card-btn:hover {
+  background-color: transparent;
+  color: var(--very-light-gray) !important;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 24px;
+  color: var(--very-dark-cyan);
+}
+
+.attribution a {
+  color: var(--dark-cyan);
+}

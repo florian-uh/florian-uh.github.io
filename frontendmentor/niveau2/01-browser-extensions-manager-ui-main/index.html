@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="./assets/images/logo.svg" alt="Extensions Logo">
+        <span>Extensions</span>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <img id="theme-icon" src="./assets/images/icon-sun.svg" alt="Theme Icon">
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="top-bar">
+      <h1>Extensions List</h1>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="inactive">Inactive</button>
+      </div>
+    </div>
+
+    <div id="extensions-grid" class="extensions-grid">
+      <!-- Extensions will be loaded here dynamically -->
+    </div>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Junie</a>.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

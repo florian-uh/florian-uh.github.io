@@ -1,0 +1,126 @@
+:root {
+    --purple-100: hsl(254, 88%, 90%);
+    --purple-500: hsl(256, 67%, 59%);
+    --yellow-100: hsl(31, 66%, 93%);
+    --yellow-500: hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 7%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    background-color: #f5f5f5;
+    color: var(--black);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bento-container {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.card {
+    border-radius: 0.75rem;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.card h1, .card h2 {
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.card h1 { font-size: 2.5rem; }
+.card h2 { font-size: 1.75rem; }
+
+/* Mobile Layout (Default) */
+.bento-container {
+    grid-template-columns: 1fr;
+}
+
+.card-social-media {
+    background-color: var(--purple-500);
+    color: var(--white);
+    text-align: center;
+}
+.card-social-media h1 span { color: var(--yellow-500); }
+.card-social-media img { width: 150px; margin: 1rem 0; }
+
+.card-manage-accounts { background-color: var(--white); }
+.card-posting-schedule { background-color: var(--yellow-500); }
+.card-schedule-social { background-color: var(--purple-100); }
+.card-grow-followers { 
+    background-color: var(--purple-500); 
+    color: var(--white);
+}
+.card-audience-growth { background-color: var(--white); }
+.card-audience-growth .stat { font-size: 3rem; font-weight: 500; }
+
+.card-create-schedule { background-color: var(--yellow-100); }
+.card-write-content { background-color: var(--yellow-500); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+    .bento-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .card-create-schedule {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+    }
+
+    .card-social-media {
+        grid-column: 2 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .card-schedule-social {
+        grid-column: 4 / 5;
+        grid-row: 1 / 4;
+    }
+
+    .card-write-content {
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+    }
+
+    .card-manage-accounts {
+        grid-column: 2 / 3;
+        grid-row: 2 / 4;
+    }
+
+    .card-posting-schedule {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+    }
+
+    .card-audience-growth {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+
+    .card-grow-followers {
+        grid-column: 3 / 5;
+        grid-row: 4 / 5;
+    }
+}
+
+footer { margin-top: 2rem; }

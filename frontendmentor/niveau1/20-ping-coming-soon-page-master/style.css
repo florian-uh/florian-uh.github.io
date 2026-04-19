@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue: hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+  
+  --font-family: 'Libre Franklin', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-family);
+  font-size: 20px;
+  color: var(--very-dark-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.container { max-width: 640px; width: 100%; text-align: center; }
+
+.logo { width: 56px; margin-bottom: 30px; }
+
+.title { font-weight: 300; font-size: 28px; margin-bottom: 12px; }
+.title span { font-weight: 700; }
+
+.subtitle { color: var(--gray); font-size: 16px; margin-bottom: 24px; }
+
+.form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+.input-wrap { position: relative; }
+
+input[type="email"] {
+  width: 100%; padding: 14px 20px; border: 1px solid var(--pale-blue); border-radius: 30px; font-size: 14px;
+}
+
+input[type="email"].error { border-color: var(--light-red); }
+
+.error-msg { display: none; color: var(--light-red); font-size: 12px; text-align: left; margin: 6px 20px 0; }
+
+.btn-primary { padding: 14px 24px; border: none; border-radius: 30px; background: var(--blue); color: white; font-weight: 600; cursor: pointer; box-shadow: 0 8px 16px rgba(79,125,243,0.3); }
+.btn-primary:hover { opacity: 0.9; }
+
+.illustration img { width: 100%; max-width: 520px; display: block; margin: 0 auto; }
+
+.site-footer { margin-top: 32px; }
+.copyright { color: var(--gray); font-size: 12px; margin-top: 18px; }
+.attribution { font-size: 11px; margin-top: 12px; }
+
+@media (min-width: 768px) {
+  .title { font-size: 42px; }
+  .form { flex-direction: row; align-items: flex-start; }
+  .input-wrap { flex: 1; }
+  .btn-primary { width: 200px; }
+  .error-msg { position: absolute; left: 20px; bottom: -22px; }
+}

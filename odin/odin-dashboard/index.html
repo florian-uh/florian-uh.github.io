@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Icônes Material -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="material-icons">dashboard</span>
+                <h2>Dashboard</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><span class="material-icons">home</span>Home</li>
+                    <li><span class="material-icons">person</span>Profile</li>
+                    <li><span class="material-icons">mail</span>Messages</li>
+                    <li><span class="material-icons">history</span>History</li>
+                    <li><span class="material-icons">check_circle</span>Tasks</li>
+                    <li><span class="material-icons">groups</span>Communities</li>
+                </ul>
+            </nav>
+            <nav class="secondary">
+                <ul>
+                    <li><span class="material-icons">settings</span>Settings</li>
+                    <li><span class="material-icons">help</span>Support</li>
+                    <li><span class="material-icons">security</span>Privacy</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="search-bar">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="user-info">
+                <span class="material-icons">notifications</span>
+                <img src="img/user-avatar.png" alt="User Avatar" class="avatar">
+                <span class="username">Morgan Oakley</span>
+            </div>
+            <div class="header-buttons">
+                <button>New</button>
+                <button>Upload</button>
+                <button>Share</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Projects -->
+            <section class="projects">
+                <h3>Your Projects</h3>
+                <div class="project-grid">
+                    <div class="card highlight">
+                        <h4>Super Cool Project</h4>
+                        <p>Sed tempus ut lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</p>
+                        <div class="card-actions">
+                            <span class="material-icons">star_border</span>
+                            <span class="material-icons">visibility</span>
+                            <span class="material-icons">share</span>
+                        </div>
+                    </div>
+                    <div class="card highlight">
+                        <h4>Less Cool Project</h4>
+                        <p>Nullam condimentum ipsum ut lectus vehicula consectetur. Quisque sed dolor tincidunt...</p>
+                        <div class="card-actions">
+                            <span class="material-icons">star_border</span>
+                            <span class="material-icons">visibility</span>
+                            <span class="material-icons">share</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4>Impossible App</h4>
+                        <p>In hac habitasse platea dictumst. Vivamus dictum rutrum arcu...</p>
+                        <div class="card-actions">
+                            <span class="material-icons">star_border</span>
+                            <span class="material-icons">visibility</span>
+                            <span class="material-icons">share</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4>Easy Peasy App</h4>
+                        <p>Etiam cursus eros ac efficitur fringilla. Vestibulum dignissim urna eget accumsan...</p>
+                        <div class="card-actions">
+                            <span class="material-icons">star_border</span>
+                            <span class="material-icons">visibility</span>
+                            <span class="material-icons">share</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4>Ad Blocker</h4>
+                        <p>Quisque eget rutrum nisl. Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis...</p>
+                        <div class="card-actions">
+                            <span class="material-icons">star_border</span>
+                            <span class="material-icons">visibility</span>
+                            <span class="material-icons">share</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h4>Money Maker</h4>
+                        <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien...</p>
+                        <div class="card-actions">
+                            <span class="material-icons">star_border</span>
+                            <span class="material-icons">visibility</span>
+                            <span class="material-icons">share</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Announcements -->
+            <section class="announcements">
+                <h3>Announcements</h3>
+                <div class="card">
+                    <h4>Site Maintenance</h4>
+                    <p>Vestibulum condimentum tellus lacus, in accumsan elit maximus ac...</p>
+                </div>
+                <div class="card">
+                    <h4>Community Share Day</h4>
+                    <p>Nam vel lectus tincidunt, rutrum nulla eu, ornare libero...</p>
+                </div>
+                <div class="card">
+                    <h4>Updated Privacy Policy</h4>
+                    <p>Phasellus efficitur nisi eget elit consectetur...</p>
+                </div>
+            </section>
+
+            <!-- Trending -->
+            <section class="trending">
+                <h3>Trending</h3>
+                <div class="card trending-user">@tegan - World Peace Builder</div>
+                <div class="card trending-user">@morgan - Super Cool Project</div>
+                <div class="card trending-user">@kendall - Life Changing App</div>
+                <div class="card trending-user">@alex - No Traffic Maker</div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

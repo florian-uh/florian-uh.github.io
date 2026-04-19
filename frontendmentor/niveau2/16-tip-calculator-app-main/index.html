@@ -2,55 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Tip Calculator App</title>
-  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
+  <header class="header">
+    <img src="./images/logo.svg" alt="Splitter Logo">
+  </header>
+
   <main class="container">
-    <div class="logo">
-      <img src="images/logo.svg" alt="Splitter Logo">
-    </div>
     <div class="calculator">
-      <div class="input-section">
-        <label for="bill">Bill</label>
-        <input type="number" id="bill" placeholder="0">
-        <label for="tip">Select Tip %</label>
-        <div class="tip-buttons">
-          <button class="tip-btn" data-tip="5">5%</button>
-          <button class="tip-btn" data-tip="10">10%</button>
-          <button class="tip-btn" data-tip="15">15%</button>
-          <button class="tip-btn" data-tip="25">25%</button>
-          <button class="tip-btn" data-tip="50">50%</button>
-          <input type="text" id="custom-tip" placeholder="Custom">
-        </div>
-        <label for="people">Number of People</label>
-        <input type="number" id="people" placeholder="0">
-      </div>
-      <div class="output-section">
-        <div class="output">
-          <div class="output-label">
-            <p>Tip Amount</p>
-            <span>/ person</span>
+      <!-- Input Side -->
+      <section class="calculator__inputs">
+        <div class="form-group">
+          <label for="bill" class="label">Bill</label>
+          <div class="input-wrapper input-wrapper--bill">
+            <input type="number" id="bill" class="input" placeholder="0" step="0.01">
           </div>
-          <p class="output-value" id="tip-amount">$0.00</p>
         </div>
-        <div class="output">
-          <div class="output-label">
-            <p>Total</p>
-            <span>/ person</span>
+
+        <div class="form-group">
+          <label class="label">Select Tip %</label>
+          <div class="tip-grid">
+            <button class="btn-tip" data-tip="5">5%</button>
+            <button class="btn-tip" data-tip="10">10%</button>
+            <button class="btn-tip" data-tip="15">15%</button>
+            <button class="btn-tip" data-tip="25">25%</button>
+            <button class="btn-tip" data-tip="50">50%</button>
+            <input type="number" id="custom-tip" class="input input--custom" placeholder="Custom">
           </div>
-          <p class="output-value" id="total-amount">$0.00</p>
         </div>
-        <button id="reset" class="reset-btn" disabled>Reset</button>
-      </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label for="people" class="label">Number of People</label>
+            <span id="people-error" class="error-msg hidden">Can't be zero</span>
+          </div>
+          <div class="input-wrapper input-wrapper--people">
+            <input type="number" id="people" class="input" placeholder="0">
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Side -->
+      <section class="calculator__results">
+        <div class="result-row">
+          <div class="result-label">
+            <p class="result-title">Tip Amount</p>
+            <p class="result-subtitle">/ person</p>
+          </div>
+          <p class="result-value">$<span id="tip-per-person">0.00</span></p>
+        </div>
+
+        <div class="result-row">
+          <div class="result-label">
+            <p class="result-title">Total</p>
+            <p class="result-subtitle">/ person</p>
+          </div>
+          <p class="result-value">$<span id="total-per-person">0.00</span></p>
+        </div>
+
+        <button id="reset-btn" class="btn-reset" disabled>Reset</button>
+      </section>
     </div>
   </main>
-  <div class="attribution">
+  
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/florian-uh/florian-uh.github.io/tree/main/frontendmentor/niveau2/16-tip-calculator-app-main">Florian-uh</a>.
-  </div>
+    Coded by <a href="#">Junie</a>.
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

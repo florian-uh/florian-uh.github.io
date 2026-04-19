@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Sign-up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Colonne gauche avec image + logo -->
+        <div class="left">
+            <div class="logo-box">
+                <img src="img/odin-lined.png" alt="Odin Logo">
+                <h1>ODIN</h1>
+            </div>
+            <p class="photo-credit">
+                Photo by <a href="https://unsplash.com/@haliewestphoto" target="_blank">Halie West</a> on Unsplash
+            </p>
+        </div>
+
+        <!-- Colonne droite avec formulaire -->
+        <div class="right">
+            <div class="intro">
+                <p><strong>This is not a real online service!</strong> You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
+                <p><strong>You know</strong> you want to.</p>
+            </div>
+
+            <form id="signup-form">
+                <h2>Let's do this!</h2>
+                
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" required>
+                    </div>
+                    <div class="field">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="field">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+
+            <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- .left{
+    background-image: url(img/vasilis-karkalas-K6g72PAaDD8-unsplash.jpg);
+}-->

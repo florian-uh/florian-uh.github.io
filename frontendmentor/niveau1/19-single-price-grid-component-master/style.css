@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+  
+  --font-family: 'Karla', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  background-color: var(--light-gray);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 30px;
+}
+
+.container {
+  max-width: 635px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-top {
+  padding: 40px;
+}
+
+.card-title {
+  color: var(--cyan);
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.card-subtitle {
+  color: var(--bright-yellow);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  color: var(--grayish-blue);
+  line-height: 1.6;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 635px) {
+  .card-bottom {
+    flex-direction: row;
+  }
+}
+
+.subscription-card {
+  background-color: var(--cyan);
+  padding: 40px;
+  color: #fff;
+  flex: 1;
+}
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.per-month {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.price-detail {
+  margin-bottom: 28px;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--bright-yellow);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s;
+}
+
+.signup-btn:hover {
+  opacity: 0.8;
+}
+
+.why-us-card {
+  background-color: rgba(42, 178, 175, 0.85); /* Slightly lighter cyan */
+  padding: 40px;
+  color: #fff;
+  flex: 1;
+}
+
+.why-us-list {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.attribution a {
+  color: var(--cyan);
+}

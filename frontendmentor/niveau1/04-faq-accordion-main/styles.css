@@ -1,127 +1,146 @@
-/* Importation de la police Work Sans depuis Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* Définition des variables CSS pour les couleurs principales */
-:root{
-    --white: hsl(0, 100%, 100%);                /* Blanc pur */
-    --purple-100: hsl(275, 100%, 97%);          /* Violet très clair (fond) */
-    --purple-600: hsl(292, 16%, 49%);           /* Violet moyen (texte) */
-    --purple-950: hsl(292, 42%, 14%);           /* Violet très foncé (texte important) */
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
 }
 
-/* Réinitialisation du box-sizing et suppression des marges/paddings par défaut */
-*{
-    box-sizing: border-box;                     /* Inclut padding et border dans la taille */
-    margin: 0;                                  
-    padding: 0;
+:root {
+  --white: hsl(0, 100%, 100%);
+  --purple-100: hsl(275, 100%, 97%);
+  --purple-600: hsl(292, 16%, 49%);
+  --purple-950: hsl(292, 42%, 14%);
+  
+  --font-family: 'Work Sans', sans-serif;
 }
 
-/* Style général de la page HTML */
-html{
-    font-family: "Work Sans", sans-serif;       /* Police principale */
-    font-size: 16px;                            /* Taille de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Mise en page du body */
 body {
-    min-height: 100vh;                          /* Hauteur minimale de la fenêtre */
-    background-color: var(--purple-100);        /* Fond violet très clair */
-    display: flex;                              /* Utilisation de Flexbox */
-    flex-direction: column;                     /* Empilement vertical */
-    align-items: center;                        /* Centrage horizontal */
+  font-family: var(--font-family);
+  font-size: 16px;
+  background-color: var(--purple-100);
+  background-image: url("assets/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 232px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
 }
 
-/* Motif SVG du haut de page */
-.pattern-bg img {
-    width: 100vw;                               /* Prend toute la largeur de la fenêtre */
-    max-width: 100%;                            /* Ne dépasse pas la largeur */
-    display: block;                             /* Supprime l'espace sous l'image */
-    height: auto;                               /* Hauteur automatique */
-    min-height: 180px;                          /* Hauteur minimale du motif */
+@media (min-width: 768px) {
+  body {
+    background-image: url("assets/images/background-pattern-desktop.svg");
+    background-size: 100% 320px;
+  }
 }
 
-/* Carte principale FAQ */
-#card {
-    width: 40%;                                        /* Largeur de la carte */
-    margin-top: -4vw;                                  /* Remonte la carte sous le motif */
-    margin-bottom: 40px;                               /* Espace sous la carte */
-    padding: 32px 32px 24px 32px;                      /* Espacement intérieur */
-    background-color: var(--white);                    /* Fond blanc */
-    border-radius: 16px;                               /* Bords arrondis */
-    box-shadow: 0 8px 32px 0 rgba(60, 0, 100, 0.15); /* Ombre portée */
-    position: relative;                                /* Pour le z-index */
-    z-index: 1;                                        /* Au-dessus du motif */
+.faq-card {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 600px;
+  margin: 140px 0 24px;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
 }
 
-/* En-tête de la carte */
-.top-card{
-    height: 10vh;                               /* Hauteur de l'en-tête */
-    display: flex;                              /* Flexbox pour aligner les éléments */
-    align-items: center;                        /* Centrage vertical */
+.faq-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
 }
 
-/* Titre principal */
-h1{
-    margin-left: 10px;                          /* Décalage à gauche */
-    font-size: 2em;                             /* Taille du titre */
-    font-weight: 700;                           /* Gras */
+.star-icon {
+  width: 40px;
+  height: 40px;
 }
 
-/* Paragraphe général */
-p{
-    font-size: 1em;                             /* Taille du texte */
-    color: var(--purple-600);                   /* Couleur du texte */
+.faq-header h1 {
+  color: var(--purple-950);
+  font-size: 56px;
+  font-weight: 700;
 }
 
-/* Question (ligne cliquable) */
-.question{
-    padding: 10px 0;                            /* Espacement vertical */
-    display: flex;                              /* Flexbox pour aligner texte et icône */
-    align-items: center;                        /* Centrage vertical */
-    cursor: pointer;                            /* Curseur pointeur au survol */
+.accordion {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Texte de la question */
-.question>p{
-    margin: 0;                                  /* Pas de marge */
-    font-weight: 600;                           /* Texte en gras */
-    flex: 1;                                    /* Prend toute la largeur disponible */
+.accordion-item {
+  border-bottom: 1px solid var(--purple-100);
+  padding: 24px 0;
 }
 
-/* Icône de la question */
-.question>img{
-    align-self: flex-end;                       /* Aligne l'icône en bas */
-    margin-top: 10px;                           /* Espacement au-dessus de l'icône */
+.accordion-item:last-child {
+  border-bottom: none;
 }
 
-/* Réponse (contenu masqué/affiché) */
-.reponse{
-    max-height: 0;                                                     /* Hauteur initiale à 0 (caché) */
-    overflow: hidden;                                                  /* Cache le contenu débordant */
-    padding: 0;                                                        /* Pas de padding par défaut */
-    border-top: 1px solid var(--purple-100);                           /* Ligne de séparation */
-    color: var(--purple-950);                                          /* Couleur du texte */
-    line-height: 1.5;                                                  /* Hauteur de ligne */
-    transition: max-height 0.5s ease-in-out, padding 0.8s ease-in-out; /* Animation fluide */
-    width: 100%;                                                       /* Prend toute la largeur */
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  gap: 24px;
 }
 
-/* Texte de la réponse */
-.reponse>p{
-    font-weight: 600;                          /* Texte en gras */
+.question {
+  color: var(--purple-950);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: color 0.2s;
 }
 
-/* Réponse ouverte (affichée) */
-.reponse.open{
-    max-height: 500px;                         /* Hauteur suffisante pour afficher le contenu */
-    padding: 10px 0;                           /* Ajoute du padding lors de l'ouverture */
+.accordion-header:hover .question {
+  color: #AD28EB;
 }
 
-/* Attribution (pied de page) */
-.attribution{ 
-    font-size: 11px;                           /* Petite taille de texte */
-    text-align: center;                        /* Centrage du texte */
+.accordion-content {
+  margin-top: 24px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
-.attribution a{ 
-    color: hsl(228, 45%, 44%);                 /* Couleur du lien */
+
+.accordion-content p {
+  color: var(--purple-600);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: auto;
+  padding: 20px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 500px) {
+  .faq-card {
+    padding: 24px;
+    margin-top: 120px;
+  }
+
+  .faq-header h1 {
+    font-size: 32px;
+  }
+
+  .star-icon {
+    width: 24px;
+    height: 24px;
+  }
 }

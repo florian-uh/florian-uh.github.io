@@ -11,6 +11,7 @@
 }
 body{
     min-height: 100vh;
+    background-color: var(--white);
 }
 header{
     background: linear-gradient(hsl(212, 45%, 89%), hsl(216, 15%, 48%));

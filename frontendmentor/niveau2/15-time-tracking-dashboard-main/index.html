@@ -2,102 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Time tracking dashboard</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 <body>
-  <main>
-    <div class="profil-card" id="profil">
-      <div class="top-card">
-          <img src="./images/image-jeremy.png" alt="Jeremy Robson" class="profile-image">
-          <div class="top-text">
+  <main class="container">
+    <section class="dashboard">
+      <!-- Profile Card -->
+      <div class="card card--profile">
+        <div class="profile-header">
+          <img src="./images/image-jeremy.png" alt="Jeremy Robson" class="profile-img">
+          <div class="profile-info">
             <p>Report for</p>
             <h1>Jeremy Robson</h1>
           </div>
-      </div>
-      <div id="menu">
-        <ul>
-          <li id="daily">Daily</li>
-          <li id="weekly">Weekly</li>
-          <li id="monthly">Monthly</li>
-        </ul>
-      </div>
-    </div>
-    <div id="work" class="card">
-      <div class="top"></div>
-      <div class="top-display">
-        <div class="top-info">
-          <h3>Work</h3>
-          <img src="images/icon-ellipsis.svg" alt="icon-ellipsis">
         </div>
-        <div class="display">
+        <div class="profile-filters">
+          <button class="filter-btn" data-timeframe="daily">Daily</button>
+          <button class="filter-btn active" data-timeframe="weekly">Weekly</button>
+          <button class="filter-btn" data-timeframe="monthly">Monthly</button>
         </div>
       </div>
-    </div>
-    <div id="play" class="card">
-      <div class="top"></div>
-      <div class="top-display">
-        <div class="top-info">
-          <h3>Play</h3>
-          <img src="images/icon-ellipsis.svg" alt="icon-ellipsis">
-        </div>
-        <div class="display">
-        </div>
+
+      <!-- Category Cards will be loaded here dynamically -->
+      <div id="cards-container" class="cards-container">
+        <!-- Template for each card -->
       </div>
-    </div>
-    <div id="study" class="card">
-      <div class="top"></div>
-      <div class="top-display">
-        <div class="top-info">
-          <h3>Study</h3>
-          <img src="images/icon-ellipsis.svg" alt="icon-ellipsis">
-        </div>
-        <div class="display">
-        </div>
-      </div>
-    </div>
-    <div id="exercice" class="card">
-      <div class="top"></div>
-      <div class="top-display">
-        <div class="top-info">
-          <h3>Exercice</h3>
-          <img src="images/icon-ellipsis.svg" alt="icon-ellipsis">
-        </div>
-        <div class="display">
-        </div>
-      </div>
-    </div>
-    <div id="social" class="card">
-      <div class="top"></div>
-      <div class="top-display">
-        <div class="top-info">
-          <h3>Social</h3>
-          <img src="images/icon-ellipsis.svg" alt="icon-ellipsis">
-        </div>
-        <div class="display">
-        </div>
-      </div>
-    </div>
-    <div id="selfcare" class="card">
-      <div class="top"></div>
-      <div class="top-display">
-        <div class="top-info">
-          <h3>Self care</h3>
-          <img src="images/icon-ellipsis.svg" alt="icon-ellipsis">
-        </div>
-        <div class="display">
-        </div>
-      </div>
-    </div>
+    </section>
   </main>
-  <div class="attribution">
+  
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="#">Junie</a>.
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>

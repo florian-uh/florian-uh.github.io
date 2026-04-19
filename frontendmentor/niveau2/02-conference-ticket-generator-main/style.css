@@ -1,0 +1,380 @@
+:root {
+  /* Colors */
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-300: hsl(252, 6%, 83%);
+  --neutral-500: hsl(245, 15%, 58%);
+  --neutral-700: hsl(245, 19%, 35%);
+  --neutral-900: hsl(248, 70%, 10%);
+
+  --orange-500: hsl(7, 88%, 67%);
+  --orange-700: hsl(7, 71%, 60%);
+
+  /* Gradient */
+  --gradient-text: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+
+  /* Typography */
+  --ff-inconsolata: 'Inconsolata', monospace;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, p, label, input, button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-inconsolata);
+  background-color: var(--neutral-900);
+  background-image: url('./assets/images/background-mobile.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--neutral-0);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.background-container img {
+  position: absolute;
+}
+
+.pattern-lines { top: 0; left: 0; width: 100%; }
+.pattern-circle { top: 10%; right: -50px; }
+.pattern-squiggly-line-top { top: 10%; right: 10%; }
+.pattern-squiggly-line-bottom { bottom: 0; left: 0; }
+
+.main-content {
+  flex: 1;
+  padding: 40px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 150px;
+}
+
+/* Registration Section */
+.registration__title {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.registration__text {
+  font-size: 20px;
+  color: var(--neutral-300);
+  margin-bottom: 40px;
+}
+
+.form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.upload-area {
+  border: 2px dashed var(--neutral-500);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.upload-area:hover, .upload-area.dragover {
+  border-color: var(--neutral-300);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.upload-icon-bg {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.upload-instruction p {
+  color: var(--neutral-300);
+  font-size: 18px;
+}
+
+.avatar-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-preview img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.avatar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--neutral-300);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form__info, .form__error {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--neutral-500);
+}
+
+.form__error {
+  color: var(--orange-500);
+}
+
+.info-icon {
+  width: 16px;
+}
+
+.form__input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--neutral-500);
+  border-radius: 12px;
+  padding: 16px;
+  color: var(--neutral-0);
+  font-family: inherit;
+  font-size: 18px;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--neutral-300);
+}
+
+.form__input.error {
+  border-color: var(--orange-500);
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn--primary {
+  background-color: var(--orange-500);
+  color: var(--neutral-900);
+}
+
+.btn--primary:hover {
+  background-color: var(--orange-700);
+}
+
+/* Ticket Section */
+.ticket-confirmation {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.confirmation__title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.confirmation__text {
+  font-size: 20px;
+  color: var(--neutral-300);
+  margin-bottom: 60px;
+}
+
+.orange-text {
+  color: var(--orange-500);
+}
+
+/* Ticket Design */
+.ticket {
+  background-image: url('./assets/images/pattern-ticket.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  aspect-ratio: 2/1;
+  padding: 24px;
+  position: relative;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+}
+
+.ticket__header {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.ticket__logo {
+  width: 200px;
+}
+
+.ticket__date {
+  color: var(--neutral-300);
+  font-size: 18px;
+  padding-left: 55px;
+}
+
+.ticket__body {
+  grid-column: 1 / 2;
+  align-self: end;
+}
+
+.ticket__user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ticket__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+}
+
+.ticket__name {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.ticket__github {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--neutral-300);
+  font-size: 20px;
+}
+
+.github-icon {
+  width: 24px;
+}
+
+.ticket__number {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  writing-mode: vertical-rl;
+  font-size: 30px;
+  color: var(--neutral-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10px;
+}
+
+/* Footer */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 20px;
+  color: var(--neutral-500);
+}
+
+.attribution a {
+  color: var(--orange-500);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  body {
+    background-image: url('./assets/images/background-desktop.png');
+  }
+
+  .main-content {
+    padding: 60px 40px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .registration__title, .confirmation__title {
+    font-size: 56px;
+  }
+
+  .registration__text, .confirmation__text {
+    font-size: 24px;
+  }
+  
+  .pattern-circle { top: 5%; right: 10%; }
+  .pattern-squiggly-line-bottom { left: auto; right: 0; }
+}
