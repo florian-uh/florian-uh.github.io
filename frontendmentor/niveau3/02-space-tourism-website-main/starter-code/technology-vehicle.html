@@ -6,27 +6,57 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400&family=Bellefair&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Space tourism website</title>
 </head>
-<body>
+<body class="technology">
+  <header class="primary-header flex">
+    <div>
+      <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+    </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+    <nav>
+        <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+            <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a></li>
+            <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="destination-moon.html"><span aria-hidden="true">01</span>Destination</a></li>
+            <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="crew-commander.html"><span aria-hidden="true">02</span>Crew</a></li>
+            <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="technology-vehicle.html"><span aria-hidden="true">03</span>Technology</a></li>
+        </ul>
+    </nav>
+  </header>
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+  <main id="main" class="grid-container grid-container--technology">
+    <h1 class="numbered-title"><span aria-hidden="true">03</span> Space launch 101</h1>
 
-  03 Space launch 101
+    <div class="number-indicators flex" role="tablist" aria-label="technology list" style="--gap: 1rem;">
+        <button aria-selected="true" role="tab" aria-controls="vehicle-panel" tabindex="0" data-type="technology" data-value="Launch vehicle">1</button>
+        <button aria-selected="false" role="tab" aria-controls="spaceport-panel" tabindex="-1" data-type="technology" data-value="Spaceport">2</button>
+        <button aria-selected="false" role="tab" aria-controls="capsule-panel" tabindex="-1" data-type="technology" data-value="Space capsule">3</button>
+    </div>
 
-  1
-  2
-  3
+    <article class="technology-info" id="vehicle-panel" role="tabpanel" tabindex="0">
+        <header class="flex" style="flex-direction: column; gap: .5rem;">
+          <h2 class="fs-200 ff-sans-cond uppercase letter-spacing-3 text-accent">The terminology...</h2>
+          <p id="tech-name" class="fs-700 ff-serif uppercase">Launch vehicle</p>
+        </header>
+        <p id="tech-description">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
+        payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
+        WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
+        it's quite an awe-inspiring sight on the launch pad!</p>
+    </article>
 
-  The terminology...
-  Launch vehicle
+    <picture id="tech-image">
+      <source srcset="assets/technology/image-launch-vehicle-landscape.jpg" media="(max-width: 45rem)">
+      <img src="assets/technology/image-launch-vehicle-portrait.jpg" alt="Launch vehicle">
+    </picture>
+  </main>
 
-  A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
-  payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
-  WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
-  it's quite an awe-inspiring sight on the launch pad!
+  <script src="navigation.js"></script>
+  <script src="tabs.js"></script>
 </body>
 </html>

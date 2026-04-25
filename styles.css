@@ -168,6 +168,11 @@ main {
   gap: 2vw;
   padding: 2vw;
 }
+#projets{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
 article {
   flex: 3;
   min-width: 300px;

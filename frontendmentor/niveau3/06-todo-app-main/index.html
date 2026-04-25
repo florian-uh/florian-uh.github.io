@@ -2,35 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution { font-size: 11px; text-align: center; margin-top: 40px; color: var(--lt-dark-grayish-blue); }
+    .attribution a { color: var(--bright-blue); }
   </style>
 </head>
-<body>
+<body data-theme="light">
+  <div class="hero-bg"></div>
+  
+  <div class="container">
+    <header>
+      <h1>Todo</h1>
+      <button id="theme-toggle"><img src="./images/icon-moon.svg" alt="Theme Toggle"></button>
+    </header>
 
-  Todo
+    <div class="input-section">
+      <div class="circle"></div>
+      <input type="text" id="todo-input" placeholder="Create a new todo..." aria-label="Create a new todo">
+    </div>
 
-  <!-- Add dynamic number --> items left
+    <div class="todo-card">
+      <div class="todo-list">
+        <!-- Dynamic content -->
+      </div>
+      <div class="todo-footer">
+        <span id="items-left">0 items left</span>
+        <div class="filters">
+          <button class="active">All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
+        <button id="clear-completed">Clear Completed</button>
+      </div>
+    </div>
 
-  All
-  Active 
-  Completed
+    <div class="mobile-filters filters">
+      <button class="active">All</button>
+      <button>Active</button>
+      <button>Completed</button>
+    </div>
 
-  Clear Completed
+    <p class="drag-hint">Drag and drop to reorder list</p>
 
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,248 @@
+:root {
+  --primary: hsl(180, 29%, 50%);
+  --bg-main: hsl(180, 52%, 96%);
+  --bg-filter: hsl(180, 31%, 95%);
+  --dark-gray-cyan: hsl(180, 8%, 52%);
+  --very-dark-gray-cyan: hsl(180, 14%, 20%);
+  --font-family: 'League Spartan', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 15px;
+  background-color: var(--bg-main);
+  min-height: 100vh;
+}
+
+header {
+  height: 156px;
+  background-color: var(--primary);
+  background-image: url('./images/bg-header-desktop.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 600px) {
+  header {
+    background-image: url('./images/bg-header-mobile.svg');
+  }
+}
+
+main {
+  max-width: 1110px;
+  margin: -36px auto 120px;
+  padding: 0 24px;
+}
+
+.filter-bar {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -5px rgba(13, 113, 130, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  min-height: 72px;
+  visibility: hidden;
+}
+
+.filter-bar.active {
+  visibility: visible;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filter-tag {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-filter);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.filter-tag span {
+  padding: 4px 8px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.filter-tag button {
+  background-color: var(--primary);
+  border: none;
+  padding: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.filter-tag button:hover {
+  background-color: var(--very-dark-gray-cyan);
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: var(--dark-gray-cyan);
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clear-btn:hover {
+  color: var(--primary);
+}
+
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.job-card {
+  background-color: #fff;
+  padding: 32px 40px;
+  border-radius: 5px;
+  box-shadow: 0 15px 20px -5px rgba(13, 113, 130, 0.15);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: border-left 0.2s;
+}
+
+.job-card.featured {
+  border-left: 5px solid var(--primary);
+}
+
+.job-logo {
+  width: 88px;
+  height: 88px;
+  margin-right: 24px;
+}
+
+.job-info {
+  flex-grow: 1;
+}
+
+.job-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.company {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.badge {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  padding-top: 7px;
+}
+
+.badge-new {
+  background-color: var(--primary);
+}
+
+.badge-featured {
+  background-color: var(--very-dark-gray-cyan);
+}
+
+.position {
+  font-size: 22px;
+  color: var(--very-dark-gray-cyan);
+  font-weight: 700;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.position:hover {
+  color: var(--primary);
+}
+
+.job-meta {
+  display: flex;
+  gap: 16px;
+  color: var(--dark-gray-cyan);
+}
+
+.job-meta span:not(:last-child)::after {
+  content: "•";
+  margin-left: 16px;
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.tag {
+  background-color: var(--bg-filter);
+  color: var(--primary);
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding-top: 8px;
+}
+
+.tag:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+@media (max-width: 850px) {
+  .job-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px 24px;
+    margin-top: 40px;
+  }
+  .job-logo {
+    position: absolute;
+    top: -24px;
+    width: 48px;
+    height: 48px;
+  }
+  .job-info {
+    width: 100%;
+    border-bottom: 1px solid #b7c4c4;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+  .job-tags {
+    justify-content: flex-start;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 20px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
