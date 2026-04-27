@@ -3,168 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <meta name="author" content="Florian Uhlinger">
-  <meta name="description" content="Portfolio de Florian Uhlinger, développeur web freelance. Découvrez mes projets, compétences et contactez-moi pour vos besoins en développement web.">
-  <meta name="keywords" content="développeur web, freelance, portfolio, HTML, CSS, JavaScript, Florian Uhlinger">
+  <meta name="description" content="Portfolio de Florian Uhlinger, développeur web. Découvrez mes projets, compétences et contactez-moi.">
+  <meta name="keywords" content="développeur web, frontend, portfolio, HTML, CSS, JavaScript, React">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#181818">
-  <meta property="og:title" content="Le petit dev - Portfolio de Florian Uhlinger">
-  <meta property="og:description" content="Portfolio, projets, compétences et contact pour vos besoins en développement web.">
+  <meta name="theme-color" content="#2563eb">
+  <meta property="og:title" content="Le petit dev - Portfolio Florian Uhlinger">
+  <meta property="og:description" content="Portfolio de projets web modernes et responsifs.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://florian-uh.github.io/">
   <meta property="og:image" content="https://florian-uh.github.io/assets/preview.png">
   <link rel="canonical" href="https://florian-uh.github.io/">
+  <link rel="icon" href="img/linux.jpeg" type="image/jpeg">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://kit.fontawesome.com/132c2773b1.js" crossorigin="anonymous"></script>
-  <title>Le petit dev - Portfolio Florian Uhlinger</title>
+  <script src="https://kit.fontawesome.com/132c2773b1.js" crossorigin="anonymous" defer></script>
+  <title>Le petit dev - Portfolio</title>
 </head>
 <body>
   <header>
-    <div class="top-header">
-      <div class="logo">
-        <img src="img/linux.jpeg" alt="linux-logo" width="48" height="48">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="index.html" class="logo-link">
+          <img src="img/linux.jpeg" alt="Logo du site" width="48" height="48" class="logo-img">
+          <h1>Le p'tit dev</h1>
+        </a>
       </div>
-      <h1>Le p'tit dev</h1>
-      <button id="toggle-dark-mode" aria-pressed="false" aria-label="Activer le mode sombre">clair</button>
+      <button id="toggle-dark-mode" class="theme-toggle" aria-pressed="false" aria-label="Basculer le mode sombre">
+        <span class="theme-icon">🌙</span>
+      </button>
     </div>
-    <nav id="navbar" aria-label="Navigation principale">
-      <ul>
-        <li><a href="index.html" aria-current="page">Accueil</a></li>
-        <li><a href="frontendmentor/index.html">Front-end Mentor</a></li>
-        <li><a href="odin/index.html">Odin's Project</a></li>
-        <li><a href="autres/index.html">Templates</a></li>
-        <li><a href="autres/html/contact.html">Contact</a></li>
+    <nav id="navbar" class="navbar" aria-label="Navigation principale">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page" class="nav-link">Accueil</a></li>
+        <li><a href="frontendmentor/index.html" class="nav-link">Front-end Mentor</a></li>
+        <li><a href="odin/index.html" class="nav-link">Odin's Project</a></li>
+        <li><a href="autres/index.html" class="nav-link">Templates</a></li>
+        <li><a href="autres/html/contact.html" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- Section compétences -->
-    <section id="competences">
-      <h2>Mes compétences techniques</h2>
-      <div class="block-comps">
-        <div class="block-comp">
-          <h3>HTML5</h3>
-          <p>structure sémantique, accessibilité</p>
+    <div class="main-content">
+      <!-- Section compétences -->
+      <section id="competences" class="section">
+        <div class="section-header">
+          <h2>Compétences techniques</h2>
         </div>
-        <div class="block-comp">
-          <h3>CSS3</h3>
-          <p>lexbox, grid, responsive, animations</p>
+        <div class="skills-grid">
+          <article class="skill-card" data-skill="html5">
+            <h3>HTML5</h3>
+            <p>Structure sémantique, accessibilité</p>
+          </article>
+          <article class="skill-card" data-skill="css3">
+            <h3>CSS3</h3>
+            <p>Flexbox, Grid, responsive, animations</p>
+          </article>
+          <article class="skill-card" data-skill="javascript">
+            <h3>JavaScript</h3>
+            <p>DOM, ES6+, Fetch API, modules</p>
+          </article>
+          <article class="skill-card" data-skill="git">
+            <h3>Git & GitHub</h3>
+            <p>Versioning, branches, collaboration</p>
+          </article>
+          <article class="skill-card" data-skill="frameworks">
+            <h3>Frameworks</h3>
+            <p>Tailwind CSS, React (bases)</p>
+          </article>
         </div>
-        <div class="block-comp">
-          <h3>JavaScript</h3>
-          <p>DOM, ES6+, fetch API, modules</p>
-        </div>
-        <div class="block-comp">
-          <h3>Git / GitHub</h3>
-          <p>versioning, branches, collaboration</p>
-        </div>
-        <div class="block-comp">
-          <h3>Frameworks</h3>
-          <p>Tailwind CSS, React (bases)</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Section projets -->
-    <section id="projets">
-      <h2>Mes dernières réalisations</h2>
-      <div class="cartes">
+      <!-- Section projets -->
+      <section id="projets" class="section">
+        <div class="section-header">
+          <h2>Projets Frontend Mentor</h2>
+          <p class="section-description">Exercices du site <a href="https://www.frontendmentor.io/" target="_blank" rel="noopener">Frontend Mentor</a>, couvrant HTML5, CSS3, JavaScript et React. Plusieurs niveaux de difficulté pour progresser continuellement.</p>
+        </div>
+      
+      <div class="projects-grid">
         <article class="carte">
           <a href="frontendmentor/niveau1/08-qr-code-component-main/index.html">
-            <img src="frontendmentor/niveau1/08-qr-code-component-main/preview.jpg" 
-                 alt="Aperçu du projet qr-code">
-            <h3>qr code component main</h3>
+            <img src="frontendmentor/niveau1/08-qr-code-component-main/preview.jpg" alt="Aperçu du projet QR Code">
+            <h3>QR Code Component</h3>
           </a>
-          <p>Simple projet de mise en page d'un qr code.</p>
+          <p>Simple projet de mise en page d'un QR code.</p>
         </article>
 
         <article class="carte">
           <a href="frontendmentor/niveau1/04-faq-accordion-main/index.html">
-            <img src="frontendmentor/niveau1/04-faq-accordion-main/preview.jpg" 
-                 alt="Aperçu faq-accordion-main">
-            <h3>F.A.Q accordion main</h3>
+            <img src="frontendmentor/niveau1/04-faq-accordion-main/preview.jpg" alt="Aperçu FAQ Accordion">
+            <h3>F.A.Q Accordion</h3>
           </a>
-          <p>Serie de questions, reponses sous la forme de foire aux questions.</p>
+          <p>Série de questions/réponses sous forme d'accordéon.</p>
         </article>
 
         <article class="carte">
           <a href="frontendmentor/niveau1/16-four-card-feature-section-master/index.html">
-            <img src="frontendmentor/niveau1/16-four-card-feature-section-master/design/desktop-design.jpg" 
-                 alt="Aperçu du projet four card">
-            <h3>Four card feature section master</h3>
+            <img src="frontendmentor/niveau1/16-four-card-feature-section-master/design/desktop-design.jpg" alt="Aperçu Four Card Feature">
+            <h3>Four Card Feature Section</h3>
           </a>
-          <p>Représentation de cartes, cet exercice met en pratique la disposition en grille.</p>
+          <p>Mise en pratique de la disposition en grille (CSS Grid).</p>
         </article>
+
         <article class="carte">
           <a href="frontendmentor/niveau2/04-product-list-with-cart-main/index.html">
-            <img src="frontendmentor/niveau2/04-product-list-with-cart-main/preview.jpg" 
-                 alt="Aperçu du projet Product list with cart">
-            <h3>Product list with cart</h3>
+            <img src="frontendmentor/niveau2/04-product-list-with-cart-main/preview.jpg" alt="Aperçu Product List">
+            <h3>Product List with Cart</h3>
           </a>
-          <p>Page d’accueil simulant une boutique : ajout de produits au panier et manipulation du DOM.</p>
+          <p>Simulation de boutique avec ajout au panier et manipulation du DOM.</p>
         </article>
 
         <article class="carte">
           <a href="frontendmentor/niveau2/09-news-homepage-main/index.html">
-            <img src="frontendmentor/niveau2/09-news-homepage-main/design/desktop-preview.jpg" 
-                 alt="Aperçu du projet News Homepage">
+            <img src="frontendmentor/niveau2/09-news-homepage-main/design/desktop-preview.jpg" alt="Aperçu News Homepage">
             <h3>News Homepage</h3>
           </a>
-          <p>Page d’accueil d’un site tech, parfaite pour travailler la mise en page avec CSS Grid.</p>
+          <p>Page d'accueil tech utilisant CSS Grid pour des layouts complexes.</p>
         </article>
 
         <article class="carte">
           <a href="frontendmentor/niveau2/15-time-tracking-dashboard-main/index.html">
-            <img src="frontendmentor/niveau2/15-time-tracking-dashboard-main/preview.jpg" 
-                 alt="Aperçu du projet Time tracking dashboard">
-            <h3>Time tracking dashboard</h3>
+            <img src="frontendmentor/niveau2/15-time-tracking-dashboard-main/preview.jpg" alt="Aperçu Time Tracking Dashboard">
+            <h3>Time Tracking Dashboard</h3>
           </a>
-          <p>Tableau de bord permettant de visualiser le temps passé sur différentes activités.</p>
+          <p>Tableau de bord pour visualiser le temps passé sur diverses activités.</p>
         </article>
       </div>
-      <button id="btn1">Voir tous les projets</button>
-    </section>
-
-    <!-- Section articles -->
-    <section id="articles">
-      <h2>Derniers articles & tutos</h2>
-      <div class="articles">
-        <article class="post">
-          <h3>Flexbox : le modèle de boîtes flexible</h3>
-          <p>Flexbox permet de contrôler facilement l'alignement, la direction et l'ordre des éléments pour créer des layouts adaptatifs.</p>
-          <a href="articles/flexbox.md" class="lire-suite">Lire la suite</a>
-        </article>
-
-        <article class="post">
-          <h3>Découvrir CSS Grid</h3>
-          <p>CSS Grid offre un contrôle total sur les lignes et colonnes pour réaliser des mises en page complexes.</p>
-          <a href="#" class="lire-suite">Lire la suite</a>
-        </article>
+      
+      <div class="section-footer">
+        <a href="frontendmentor/index.html" class="btn btn-primary">Voir tous les projets</a>
       </div>
-
-      <button class="btn">Voir tous les articles</button>
     </section>
+
+      </section>
+
+      <!-- Section articles -->
+      <section id="articles" class="section">
+        <div class="section-header">
+          <h2>Articles & Ressources</h2>
+        </div>
+        <div class="articles-grid">
+          <article class="post-card">
+            <div class="post-header">
+              <h3>Flexbox : le modèle de boîtes flexible</h3>
+            </div>
+            <p class="post-excerpt">Flexbox permet de contrôler facilement l'alignement, la direction et l'ordre des éléments pour créer des layouts adaptatifs.</p>
+            <a href="articles/flexbox.md" class="read-more">Lire la suite <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="post-card">
+            <div class="post-header">
+              <h3>Découvrir CSS Grid</h3>
+            </div>
+            <p class="post-excerpt">CSS Grid offre un contrôle total sur les lignes et colonnes pour réaliser des mises en page complexes.</p>
+            <a href="#" class="read-more">Lire la suite <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Ressources</h2>
+      <nav aria-label="Ressources externes">
+        <ul class="resources-list">
+          <li><a href="https://developer.mozilla.org/fr/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          <li><a href="https://www.frontendmentor.io/" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></li>
+          <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">FreeCodeCamp</a></li>
+        </ul>
+      </nav>
+    </aside>
   </main>
 
-  <aside>
-    <h3>Ressources utiles</h3>
-    <ul>
-        <li><a href="https://developer.mozilla.org/fr/" target="_blank" rel="noopener">MDN Web Docs</a></li>
-        <li><a href="https://www.frontendmentor.io/" target="_blank" rel="noopener">Frontend Mentor</a></li>
-        <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">FreeCodeCamp</a></li>
-    </ul>
-  </aside>
-
   <footer>
-    <p>&copy; 2025 Florian Uhlinger. Tous droits réservés.</p>
-    <div class="social">
-      <a href="https://github.com/florian-uh" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://linkedin.com/in/florian-uhlinger" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <div class="footer-content">
+      <p>&copy; <span id="year">2025</span> Florian Uhlinger. Tous droits réservés.</p>
+      <nav class="social-links" aria-label="Réseaux sociaux">
+        <a href="https://github.com/florian-uh" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/florian-uhlinger" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+      </nav>
     </div>
   </footer>
 
-  <!-- Scripts à la fin pour améliorer les performances -->
   <script src="script.js" defer></script>
 </body>
 </html>
