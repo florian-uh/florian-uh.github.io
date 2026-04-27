@@ -1,53 +1,212 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
+@import 'common.css';
+
+main {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
 }
-.container{
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+
+.expense-container {
+    max-width: 900px;
+    margin: 0 auto;
     width: 100%;
 }
-h1, h2{
-    color: #333;
+
+.expense-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.form-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.input-group input,
+.input-group select {
+    padding: 0.75rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.button-group,
+.clear-button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.button-group button,
+.clear-button-group button {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.button-group button {
+    background-color: var(--primary);
+    color: white;
+}
+
+.button-group button:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.clear-button-group button {
+    background-color: var(--gray-300);
+    color: var(--gray-700);
+}
+
+.clear-button-group button:hover {
+    background-color: var(--gray-400);
+}
+
+.expenses-list {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.expenses-list h2 {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    margin: 0;
+}
+
+.expense-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.expense-item:hover {
+    background: var(--gray-100);
+}
+
+.expense-item:last-child {
+    border-bottom: none;
+}
+
+.expense-info {
+    flex: 1;
+}
+
+.expense-category {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.expense-description {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.expense-amount {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--success);
+    margin: 0 1.5rem;
+}
+
+.expense-delete {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.expense-delete:hover {
+    background: #e53e3e;
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
     text-align: center;
 }
-h1{
-    margin-bottom: 20px;
+
+.stat-card h3 {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
-h2{
-    margin-bottom: 15px;
+
+.stat-card .amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
 }
-.input-group{
-    margin-bottom: 15px;
+
+@media (max-width: 768px) {
+    .expense-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .expense-amount {
+        margin: 0;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
-.input-group label{
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-}
-.input-group input,
-.input-group select{
-    width: calc(100% - 10px);
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-.button-group button,
-.clear-button-group button{
-    background-color: #FF69B4;
+
     color: white;
     border: none;
     padding: 10px 20px;
